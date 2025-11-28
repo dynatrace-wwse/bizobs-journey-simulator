@@ -141,7 +141,7 @@ For a "Microsoft Azure Enterprise Purchase" journey:
 ```
 
 ### Action Required
-Review the generated prompts and click **"Process Check"** to validate the configuration.
+Review the generated prompts and click **"Process Response & Continue"** to validate the configuration.
 
 ## Step 4: Process Validation & Checks
 
@@ -185,13 +185,15 @@ The validation step ensures all components are properly configured before data g
 ```
 
 ### Action Required
-Once all validations pass, click **"Generate Data"** to create your customer journey.
+Once all validations pass, click **"Continue to Generate Data"** to create your customer journey.
 
 ## Step 5: Data Generation & Service Creation
 
 ![Data Generation](img/Data-Generation.png)
 
 The final step executes the journey simulation, creating real services and generating observability data.
+
+Click **"Run Journey Simulation"** to create your customer journey.
 
 ### Real-Time Generation Process
 
