@@ -2,497 +2,244 @@
 
 # Getting Started
 
-Welcome to the BizObs Journey Simulator - your comprehensive platform for business observability, performance testing, and customer journey analysis! This guide will walk you through setting up the full application suite and exploring its powerful features.
+Welcome to the **BizObs Journey Simulator**! This guide shows you how to create comprehensive customer journeys with business observability through our intuitive **4-Step Workflow**.
 
-## 🎯 What You'll Build
+## 🚀 Quick Setup
 
-By the end of this guide, you'll have a complete business observability platform featuring:
+### Access the Platform
 
-- **🎭 Multi-Persona Journey Simulation**: 4 detailed customer personas with realistic behaviors
-- **📊 Real-Time Business Metrics**: Revenue, conversion rates, and customer satisfaction tracking  
-- **🔄 LoadRunner Integration**: Automated performance test generation and execution
-- **� Dynatrace BizEvents**: Business KPI tracking and correlation with technical metrics
-- **🎪 Advanced Error Simulation**: Realistic failure scenarios for resilience testing
-- **🏗️ Microservices Architecture**: 15+ dynamic services with intelligent orchestration
-- **🚀 Production-Ready Deployment**: Kubernetes, Nginx, and CI/CD configurations
-
-## 🔧 Prerequisites & Architecture Overview
-
-### Required Components
-- **GitHub Account**: For Codespaces or repository access
-- **Dynatrace Environment**: SaaS or Managed tenant with BizEvents enabled
-- **Node.js 18+**: For local development (automatic in Codespaces)
-- **Docker** (Optional): For containerized deployment
-
-### Application Architecture
-```mermaid
-graph TB
-    A[Web Interface] --> B[Journey Orchestrator]
-    B --> C[Service Manager]
-    C --> D[Dynamic Service Pool]
-    C --> E[LoadRunner Generator]
-    C --> F[Dynatrace Integration]
-    D --> G[Persona Services]
-    D --> H[Business Logic]
-    F --> I[BizEvents]
-    F --> J[Distributed Traces]
-    E --> K[Performance Tests]
+**Option 1: GitHub Codespaces (Recommended)**
+```bash
+# Navigate to: https://github.com/dynatrace-wwse/bizobs-journey-simulator
+# Click: Code → Codespaces → Create codespace on main
+# Platform automatically starts at: localhost:8080
 ```
 
-## 🚀 Quick Start (5 Minutes)
-
-### GitHub Codespaces (Recommended)
-
-!!! tip "Instant Environment"
-    Pre-configured with all dependencies, extensions, and integrations ready to use.
-
-1. **Launch Codespace**
-   ```bash
-   # Navigate to: https://github.com/dynatrace-wwse/bizobs-journey-simulator
-   # Click: Code → Codespaces → Create codespace on main
-   ```
-
-2. **Auto-Configuration** (happens automatically)
-   - Node.js dependencies installed
-   - Services architecture initialized  
-   - Development environment configured
-
-3. **Start the Platform**
-   ```bash
-   cd app
-   npm start
-   ```
-
-4. **Access the Interface**
-   - Web UI: Port 8080 (auto-forwarded)
-   - API Endpoints: Port 8080/api/*
-   - Microservices: Ports 8083-8099 (dynamic allocation)
-
-## 🔧 Full Local Setup
-
-### Option 1: Standard Node.js Setup
-
+**Option 2: Local Setup**
 ```bash
-# Clone and initialize
 git clone https://github.com/dynatrace-wwse/bizobs-journey-simulator.git
 cd bizobs-journey-simulator/app
-
-# Install dependencies
-npm install
-
-# Configure Dynatrace (optional)
-export DT_TENANT="https://abc12345.live.dynatrace.com"
-export DT_API_TOKEN="your-api-token"
-
-# Start the application
-npm start
+npm install && npm start
+# Access at: http://localhost:8080
 ```
 
-### Option 2: Production Setup with OneAgent
+## 🎯 App Overview & Navigation
 
-```bash
-# Install Dynatrace OneAgent (follow official guide)
-# Download from: https://docs.dynatrace.com/docs/ingest-from/dynatrace-oneagent
+When you open the platform, you'll see the main interface with four distinct sections:
 
-# Clone and setup
-git clone https://github.com/dynatrace-wwse/bizobs-journey-simulator.git
-cd bizobs-journey-simulator
+> 📸 **[Screenshot Needed: Main App Interface]**  
+> *Show the complete 4-step workflow interface with Step 1-4 tabs visible*
 
-# Use production startup script
-chmod +x start-server.sh
-./start-server.sh
+### Main Interface Components:
+- **Step Navigation Tabs**: Clear 1-4 step progression at the top
+- **Business Context Panel**: Company and journey configuration area  
+- **Real-time Metrics**: Live business and technical performance data
+- **Action Buttons**: Execute simulations and generate LoadRunner tests
+
+## 🎯 Step-by-Step Customer Journey Creation
+
+Follow this complete walkthrough to create your first business observability demonstration:
+
+### **Step 1: Customer Details** 👤 
+**Define Your Business Foundation**
+
+> 📸 **[Screenshot Needed: Step 1 - Customer Details Tab]**  
+> *Show the input form with Company Name, Domain, and Journey Requirements fields*
+
+Fill in your business context:
+
+1. **Company Name**: Enter your business name (e.g., "TechFlow Inc")
+2. **Website Domain**: Add your domain (e.g., "techflow.com")  
+3. **Journey Requirements**: Describe your customer flow
+
+**Example Input:**
+```
+Company Name: TechFlow Inc
+Domain: techflow.com
+Journey Requirements: SaaS trial signup process with onboarding, 
+feature exploration, and conversion to paid subscription
 ```
 
-### Option 3: Container Deployment
+**💡 What Happens Next:**
+The platform analyzes your inputs and prepares industry-specific prompts and service architecture recommendations.
 
-```bash
-# Docker Compose (includes nginx, services)
-docker-compose up -d
+### **Step 2: Generate Prompts** 🤖
+**AI-Powered Business Intelligence Creation**
 
-# Or Kubernetes deployment
-kubectl apply -f app/k8s/
+> 📸 **[Screenshot Needed: Step 2 - Generate Prompts Tab]**  
+> *Show the generated prompts section with C-suite and Customer Journey prompt text areas*
+
+Click **"Generate Prompts"** to create AI-powered business scenarios:
+
+**What You'll See:**
+- **C-suite Analysis Prompt**: Executive-level business insights for your company
+- **Customer Journey Prompt**: Detailed user flow optimized for GitHub Copilot
+- **Copy to Clipboard**: Easy integration with AI coding assistants
+
+**Example Generated Output:**
+```markdown
+🎯 TechFlow Inc Customer Journey Analysis
+
+Create a comprehensive SaaS trial journey focusing on:
+- Freemium signup with email verification and onboarding
+- Feature discovery through guided tutorials and tooltips  
+- Usage tracking with conversion triggers at 7-day and 14-day marks
+- Revenue target: $99-299 per conversion with 23% trial-to-paid rate
 ```
 
-## 🎮 Application Tour & Key Features
+**💡 Next Action:**
+Copy these prompts and use them with GitHub Copilot to enhance your business scenarios and technical implementation.
 
-### 🏠 Main Dashboard Overview
+### **Step 3: Process Check** ⚡
+**Validation & Configuration**
 
-When you access http://localhost:8080, you'll see:
+> 📸 **[Screenshot Needed: Step 3 - Process Check Tab]**  
+> *Show the validation dashboard with journey steps, business metrics, and configuration options*
 
-1. **Journey Control Panel**
-   - Real-time simulation controls
-   - Performance metrics dashboard
-   - Active session monitoring
+Review and configure your journey before execution:
 
-2. **Persona Selection Hub**
-   - 4 detailed customer personas with behavioral patterns
-   - Customizable journey configurations
-   - Success rate and conversion tracking
+**Journey Validation:**
+- ✅ **Journey Steps**: Review the generated customer touchpoints
+- ✅ **Business Metrics**: Validate revenue and conversion rate calculations  
+- ✅ **Service Architecture**: Confirm microservices that will be created
+- ⚠️ **Error Simulation**: Toggle realistic failure scenarios (optional)
 
-3. **Business Metrics Display**
-   - Revenue per journey: $0-$500 range
-   - Conversion rates: Success/failure percentages
-   - Customer satisfaction scores
-   - Time-to-completion analytics
-
-### 🎭 Customer Personas Deep Dive
-
-#### 1. Karen - Retail Customer
-```json
-{
-  "profile": "Price-conscious mobile shopper",
-  "behavior": {
-    "device": "mobile-first",
-    "speed": "quick decisions", 
-    "price_sensitivity": "high",
-    "loyalty": "deal-driven"
-  },
-  "journey_preferences": ["e-commerce", "deals", "fast-checkout"],
-  "typical_revenue": "$45-85",
-  "conversion_rate": "68%"
-}
+**Key Configuration Options:**
+```
+Customer Persona: Choose from Karen, Raj, Alex, or Sophia
+Think Time: 1-10 seconds (user behavior pacing)
+Error Rate: 0-20% (failure simulation percentage) 
+Service Count: 5-18 services (architecture complexity)
 ```
 
-#### 2. Raj - Insurance Professional  
-```json
-{
-  "profile": "Risk-aware thorough researcher",
-  "behavior": {
-    "device": "desktop-preferred",
-    "speed": "methodical analysis",
-    "research": "extensive comparison",
-    "trust": "brand-focused"
-  },
-  "journey_preferences": ["insurance", "financial", "comparison"],
-  "typical_revenue": "$180-350",
-  "conversion_rate": "84%"
-}
+**💡 Pro Tip:**
+Enable error simulation to demonstrate how business metrics correlate with technical performance issues.
+
+### **Step 4: Generate Data** 📊
+**Execute Comprehensive Simulations**
+
+> 📸 **[Screenshot Needed: Step 4 - Generate Data Tab]**  
+> *Show both Single Simulation and LoadRunner Testing Mode buttons with results dashboard*
+
+Choose your execution mode:
+
+#### **🎯 Single Simulation Mode**
+Perfect for live demonstrations:
+
+> 📸 **[Screenshot Needed: Single Simulation Results]**  
+> *Show real-time business metrics dashboard with revenue, conversion rate, and service status*
+
+**What You'll See:**
+```
+🔄 TechFlow Journey - Alex Persona (Live)
+💰 Revenue: $199.99 projected
+ Step: 5/7 completed (71% progress)
+⏱️  Response: 0.9s avg (Excellent)
+😊 Satisfaction: 4.4/5.0
+🔄 Services: 12/12 active
 ```
 
-#### 3. Alex - Tech Enthusiast
-```json
-{
-  "profile": "Innovation-focused early adopter",
-  "behavior": {
-    "device": "multi-platform",
-    "speed": "rapid exploration",
-    "features": "cutting-edge preference",
-    "integration": "API-savvy"
-  },
-  "journey_preferences": ["tech", "innovation", "integration"],
-  "typical_revenue": "$95-180",
-  "conversion_rate": "72%"
-}
-```
+#### **🏎️ LoadRunner Testing Mode**
+Enterprise performance testing:
 
-#### 4. Sophia - Enterprise Buyer
-```json
-{
-  "profile": "Process-oriented compliance-focused",
-  "behavior": {
-    "device": "desktop-enterprise",
-    "speed": "deliberate evaluation",
-    "compliance": "regulatory-aware",
-    "approval": "multi-stakeholder"
-  },
-  "journey_preferences": ["enterprise", "compliance", "approval-flow"],
-  "typical_revenue": "$2500-5000",
-  "conversion_rate": "91%"
-}
-```
+> 📸 **[Screenshot Needed: LoadRunner Script Generation]**  
+> *Show the generated C-script preview and download options*
 
-### 🎪 Journey Templates & Scenarios
+**Generated Artifacts:**
+- **Complete C-Scripts**: Ready-to-run LoadRunner tests
+- **Multiple Scenarios**: Light (20 users) → Heavy (300 users)
+- **Business Context**: Revenue tracking under load
+- **Download Options**: Scripts and configuration files
 
-#### 1. E-Commerce Journey (Karen's Specialty)
-```bash
-Discovery → Browse → Compare → Cart → Checkout → Payment → Confirmation
-```
-- **Duration**: 3-8 minutes
-- **Services Involved**: 8 microservices
-- **Business Events**: 12 key touchpoints
-- **Revenue Impact**: $45-85 per completion
-
-#### 2. Insurance Policy Journey (Raj's Domain)
-```bash
-Research → Quote → Compare → Application → Underwriting → Payment → Policy Issue
-```
-- **Duration**: 15-25 minutes
-- **Services Involved**: 12 microservices
-- **Business Events**: 18 key touchpoints  
-- **Revenue Impact**: $180-350 per completion
-
-#### 3. Enterprise SaaS Journey (Sophia's Process)
-```bash
-Evaluation → Demo → Trial → Procurement → Approval → Contract → Activation
-```
-- **Duration**: 45-90 minutes (enterprise complexity)
-- **Services Involved**: 15 microservices
-- **Business Events**: 24 key touchpoints
-- **Revenue Impact**: $2500-5000 per completion
-
-## 🔄 LoadRunner Integration & Performance Testing
-
-### Automated Test Generation
-
-The platform automatically generates LoadRunner C-scripts based on your journey simulations:
-
-1. **Access LoadRunner Integration**
-   ```bash
-   curl -X POST http://localhost:8080/api/loadrunner/generate
-   ```
-
-2. **Generated Artifacts**
-   - `app/loadrunner-tests/`: Test scenarios and scripts
-   - **C-Scripts**: Ready-to-run LoadRunner tests
-   - **Config Files**: Test parameters and data sets
-   - **Scenarios**: Light, Medium, Heavy, Spike, Stress test configs
-
-3. **Performance Test Scenarios**
-   ```bash
-   # View available scenarios
-   ls app/loadrunner-tests/scenarios/
-   
-   # Output:
-   # light-load.json    - 10 users, 5 min ramp
-   # medium-load.json   - 50 users, 10 min ramp  
-   # heavy-load.json    - 200 users, 15 min ramp
-   # spike-test.json    - 500 users, 1 min spike
-   # stress-test.json   - 1000 users, sustained load
-   ```
-
-### LoadRunner Script Generation
+**Sample Generated Script:**
 ```c
-// Auto-generated LoadRunner script example
-Action()
-{
-    lr_start_transaction("BizObs_Journey_Karen_ECommerce");
+Action() {
+    lr_start_transaction("BizObs_TechFlow_SaaS_Journey");
     
-    // Discovery Phase with business context
-    lr_start_transaction("Product_Discovery");
-    web_custom_request("discovery_api", 
-        "URL=http://localhost:8080/api/journey/discover",
+    web_add_header("dt-meta-businessRevenue", "199.99");
+    web_add_header("dt-meta-customerPersona", "Alex");
+    
+    web_custom_request("saas_signup", 
+        "URL=http://localhost:8080/api/journey/signup",
         "Method=POST",
-        "Body={\"persona\":\"Karen\",\"category\":\"retail\"}",
+        "Body={\"company\":\"TechFlow\",\"persona\":\"Alex\"}",
         LAST);
-    lr_end_transaction("Product_Discovery", LR_AUTO);
-    
-    // Continue with full journey simulation...
-    lr_end_transaction("BizObs_Journey_Karen_ECommerce", LR_AUTO);
-    return 0;
+        
+    lr_end_transaction("BizObs_TechFlow_SaaS_Journey", LR_AUTO);
 }
 ```
 
-## 📊 Dynatrace Integration & Business Events
+## � What You Get
 
-### BizEvents Configuration
+After completing the 4-step workflow, you'll have:
 
-The platform automatically sends business events to Dynatrace:
+**📊 Complete Business Observability Stack**
+- **Live Customer Journeys**: Real-time business metrics with revenue tracking
+- **Dynamic Microservices**: 5-18 services that scale based on your journey complexity
+- **Dynatrace Integration**: BizEvents and distributed traces with business context
+- **Performance Testing**: LoadRunner C-scripts ready for enterprise testing
 
-```javascript
-// Example BizEvents being tracked
-{
-  "eventType": "bizevents.journeys.conversion",
-  "persona": "Karen",
-  "journey": "ecommerce",
-  "revenue": 67.50,
-  "conversionStep": "payment",
-  "timestamp": "2024-11-28T10:30:00Z",
-  "sessionId": "sess_123456",
-  "customAttributes": {
-    "customerSatisfaction": 4.2,
-    "pageLoadTime": 1.2,
-    "errorCount": 0
-  }
-}
-```
+## 🎭 Customer Personas
 
-### Business KPIs Dashboard
+> 📸 **[Screenshot Needed: Customer Personas Selection]**  
+> *Show the 4 persona cards (Karen, Raj, Alex, Sophia) with their behavioral profiles*
 
-Monitor these key metrics in Dynatrace:
+Choose from 4 realistic behavioral profiles:
 
-1. **Revenue Metrics**
-   - Revenue per journey
-   - Conversion value trends
-   - Customer lifetime value
+**🛍️ Karen - Retail Customer**
+- Mobile-first shopper, quick decisions, deal-driven
+- Revenue: $45-85 | Conversion: 68% | Journey: E-commerce
 
-2. **Operational Metrics**  
-   - Journey completion rates
-   - Step-by-step conversion funnel
-   - Error impact on revenue
+**🛡️ Raj - Insurance Professional** 
+- Risk-aware researcher, methodical analysis, brand-focused
+- Revenue: $180-350 | Conversion: 84% | Journey: Insurance
 
-3. **Performance Correlation**
-   - Page load time vs conversion
-   - Error rate vs customer satisfaction
-   - Service performance vs revenue
+**🚀 Alex - Tech Enthusiast**
+- Innovation-focused early adopter, rapid exploration
+- Revenue: $95-180 | Conversion: 72% | Journey: SaaS
 
-## 🎪 Advanced Error Simulation
+**🏢 Sophia - Enterprise Buyer**
+- Process-oriented, compliance-focused, multi-stakeholder
+- Revenue: $2500-5000 | Conversion: 91% | Journey: Enterprise
 
-### Realistic Failure Scenarios
+## 🔍 What Happens in Dynatrace
 
-Test your observability with built-in error patterns:
+> 📸 **[Screenshot Needed: Dynatrace BizEvents Dashboard]**  
+> *Show business metrics dashboard with revenue, conversion rates, and customer satisfaction*
 
-```bash
-# Trigger specific error types
-curl -X POST http://localhost:8080/api/simulate/error \
-  -H "Content-Type: application/json" \
-  -d '{
-    "type": "payment_gateway_timeout",
-    "severity": "high", 
-    "duration": "5m",
-    "affectedPersona": "Karen"
-  }'
-```
+**Automatically Generated:**
+- **BizEvents**: Revenue and conversion tracking for each journey step
+- **Service Map**: Dynamic microservices appearing based on your business flow
+- **Distributed Traces**: End-to-end customer journey visibility with business context
+- **Business Dashboards**: Executive-level KPI reporting and trend analysis
 
-### Error Categories
+## 🚀 Try Your First Journey
 
-1. **Payment Failures**
-   - Gateway timeouts
-   - Credit card declines  
-   - Processing errors
+**Quick 5-Minute Demo:**
+1. Access the platform at localhost:8080
+2. Enter your company details (Step 1)
+3. Generate AI prompts (Step 2) 
+4. Review configuration (Step 3)
+5. Execute single simulation (Step 4)
+6. Watch real-time business metrics and Dynatrace traces
 
-2. **Service Dependencies**
-   - Database connection issues
-   - Third-party API failures
-   - Authentication problems
+!!! tip "Ready to Start?"
+    The platform combines the simplicity of a 4-step workflow with the sophistication of enterprise observability. Perfect for demonstrations, proof-of-concepts, and business stakeholder presentations.
 
-3. **Performance Degradation**
-   - Slow response times
-   - Memory leaks
-   - CPU spikes
+## 📋 Screenshot Requirements Summary
 
-## 🔍 API Endpoints & Integration
+To complete this documentation, capture these key screenshots:
 
-### Core APIs
-
-```bash
-# Journey Management
-GET    /api/journeys              # List available journeys
-POST   /api/journey/start         # Start journey simulation  
-PUT    /api/journey/{id}/pause    # Pause active journey
-DELETE /api/journey/{id}          # Stop journey
-
-# Persona Management  
-GET    /api/personas              # List customer personas
-POST   /api/persona/customize     # Create custom persona
-GET    /api/persona/{id}/metrics  # Get persona performance
-
-# LoadRunner Integration
-POST   /api/loadrunner/generate   # Generate test scripts
-GET    /api/loadrunner/scenarios  # List test scenarios
-POST   /api/loadrunner/execute    # Run performance test
-
-# Business Metrics
-GET    /api/metrics/revenue       # Revenue analytics
-GET    /api/metrics/conversion    # Conversion rates  
-GET    /api/metrics/satisfaction  # Customer satisfaction
-
-# Error Simulation
-POST   /api/simulate/error        # Trigger error scenarios
-GET    /api/simulate/status       # Check simulation status
-POST   /api/simulate/recover      # Recover from errors
-```
-
-### WebSocket Real-Time Updates
-
-```javascript
-// Connect to real-time journey updates
-const ws = new WebSocket('ws://localhost:8080/ws/journeys');
-ws.onmessage = (event) => {
-  const update = JSON.parse(event.data);
-  console.log('Journey Update:', update);
-  // Handle real-time metrics, completion events, errors
-};
-```
-
-## 🎯 First Journey Simulation
-
-### Step-by-Step Walkthrough
-
-1. **Choose Your Persona**
-   - Click on "Karen" for a quick e-commerce simulation
-   - Review her behavioral profile and preferences
-
-2. **Configure Journey Parameters**
-   ```json
-   {
-     "persona": "Karen",
-     "journey": "ecommerce",
-     "errorRate": 5,
-     "thinkTime": 2000,
-     "iterations": 10
-   }
-   ```
-
-3. **Start Simulation**
-   - Click "Start Journey"
-   - Watch real-time metrics update
-   - Monitor service interactions
-
-4. **Observe Results**
-   - **Business Metrics**: Revenue generated, conversion rate
-   - **Technical Metrics**: Response times, error rates  
-   - **Dynatrace Data**: Services, traces, BizEvents
-
-5. **Generate LoadRunner Test** 
-   - Click "Generate LoadRunner Script"
-   - Download C-script for performance testing
-   - Review test scenarios
-
-## 📈 Monitoring & Observability
-
-### What to Watch in Dynatrace
-
-1. **Services View**
-   - 15+ microservices appearing dynamically
-   - Service dependencies and call patterns
-   - Performance hotspots and bottlenecks
-
-2. **Distributed Traces**
-   - Complete customer journey traces
-   - Business context in span attributes
-   - Error propagation analysis
-
-3. **BizEvents Dashboard** 
-   - Revenue per journey completion
-   - Conversion funnel analysis
-   - Customer satisfaction trends
-
-### Business Metrics Dashboard
-
-The application provides real-time business observability:
-
-```
-📊 Live Metrics Dashboard
-├─ 💰 Total Revenue: $1,247.50
-├─ 📈 Conversion Rate: 73.2%
-├─ 😊 Customer Satisfaction: 4.3/5
-├─ ⏱️ Avg Journey Time: 8.4 min
-└─ 🔄 Active Sessions: 12
-```
-
-## 🚀 Next Steps & Advanced Features
-
-### Immediate Next Actions
-
-1. **Explore All Personas** - Try Raj's insurance journey for complex workflows
-2. **Generate Performance Tests** - Create LoadRunner scripts for your scenarios  
-3. **Configure Error Scenarios** - Test resilience with failure simulations
-4. **Business Dashboards** - Set up Dynatrace BizEvents dashboards
-5. **Custom Journeys** - Build your own customer personas and journeys
-
-### Advanced Configurations
-
-- **Custom Personas**: Define new customer types and behaviors
-- **Journey Builder**: Create complex multi-step business processes
-- **Error Orchestration**: Design realistic failure scenarios
-- **Performance Tuning**: Optimize for high-load scenarios
-- **Integration Patterns**: Connect with external systems
-
-!!! success "Platform Ready!"
-    Your comprehensive BizObs Journey Simulator is now operational with full business observability, performance testing, and error simulation capabilities. You're ready to explore the advanced concepts and features!
+1. **Main App Interface**: 4-step workflow tabs
+2. **Step 1**: Customer Details input form
+3. **Step 2**: Generated prompts with copy buttons
+4. **Step 3**: Validation dashboard with configuration options
+5. **Step 4**: Both simulation modes and results
+6. **Customer Personas**: 4 persona selection cards
+7. **Dynatrace Integration**: BizEvents dashboard with business metrics
 
 <div class="grid cards" markdown>
-- [📚 Explore Core Concepts :octicons-arrow-right-24:](3-concepts.md)
-- [🔧 Advanced Features :octicons-arrow-right-24:](4-advanced-features.md)  
-- [🧪 LoadRunner Integration :octicons-arrow-right-24:](6-resources.md)
+- [📚 Core Concepts :octicons-arrow-right-24:](3-concepts.md)
+- [🎪 App Functionality :octicons-arrow-right-24:](app-functionality.md)
+- [🧪 Advanced Features :octicons-arrow-right-24:](5-advanced-features.md)
 </div>
