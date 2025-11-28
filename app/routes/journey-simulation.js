@@ -19,6 +19,41 @@ const DEFAULT_JOURNEY_STEPS = [
     return `${name}.com`;
 }
 
+// Generate a concise journey detail name for Dynatrace tags
+function generateJourneyDetail(payload, stepData) {
+  // Try to extract from journey requirements or journey type
+  if (payload.journey?.journeyType) {
+    return payload.journey.journeyType.replace(/[^a-zA-Z0-9\s]/g, '').trim();
+  }
+  
+  // Try to infer from step names - create a meaningful summary
+  if (stepData && stepData.length > 0) {
+    const firstStep = stepData[0]?.stepName || '';
+    const lastStep = stepData.length > 1 ? stepData[stepData.length - 1]?.stepName : '';
+    
+    // Common journey patterns
+    if (firstStep.toLowerCase().includes('discovery') || firstStep.toLowerCase().includes('landing')) {
+      if (lastStep.toLowerCase().includes('purchase') || lastStep.toLowerCase().includes('checkout')) {
+        return 'Purchase Journey';
+      } else if (lastStep.toLowerCase().includes('trial') || lastStep.toLowerCase().includes('signup')) {
+        return 'Trial Signup';
+      } else if (lastStep.toLowerCase().includes('subscription') || lastStep.toLowerCase().includes('upgrade')) {
+        return 'Subscription Journey';
+      } else if (lastStep.toLowerCase().includes('support') || lastStep.toLowerCase().includes('service')) {
+        return 'Support Journey';
+      }
+    }
+    
+    // Fallback to first step + flow
+    if (firstStep) {
+      return `${firstStep.replace(/([a-z])([A-Z])/g, '$1 $2')} Flow`;
+    }
+  }
+  
+  // Final fallback
+  return 'Customer Journey';
+}
+
 // Extract Dynatrace tracing headers from incoming request
 function extractTracingHeaders(req) {
   const tracingHeaders = {};
@@ -187,6 +222,67 @@ function generateAdditionalFields(existingFields, companyName, customerIndex) {
       49.99 + (customerIndex * 5)
     ];
   }
+
+  // REVENUE AND FINANCIAL METRICS
+  if (!fields.transactionValue) fields.transactionValue = Math.round((50 + (customerIndex * 25) + Math.random() * 200) * 100) / 100;
+  if (!fields.orderTotal) fields.orderTotal = Math.round((75 + (customerIndex * 35) + Math.random() * 300) * 100) / 100;
+  if (!fields.averageOrderValue) fields.averageOrderValue = Math.round((85 + (customerIndex * 20)) * 100) / 100;
+  if (!fields.customerLifetimeValue) fields.customerLifetimeValue = Math.round((500 + (customerIndex * 150) + Math.random() * 1000) * 100) / 100;
+  if (!fields.revenuePerCustomer) fields.revenuePerCustomer = Math.round((200 + (customerIndex * 75)) * 100) / 100;
+  if (!fields.profitMargin) fields.profitMargin = Math.round((0.15 + (customerIndex % 4) * 0.05) * 100) / 100;
+  if (!fields.discountApplied) fields.discountApplied = customerIndex % 3 === 0 ? Math.round((5 + Math.random() * 15) * 100) / 100 : 0;
+  if (!fields.taxAmount) fields.taxAmount = Math.round((fields.orderTotal * 0.08) * 100) / 100;
+  if (!fields.shippingCost) fields.shippingCost = customerIndex % 2 === 0 ? Math.round((5 + Math.random() * 15) * 100) / 100 : 0;
+  
+  // PRICING AND TIER INFORMATION
+  if (!fields.pricingTier) fields.pricingTier = ['Bronze', 'Silver', 'Gold', 'Platinum'][customerIndex % 4];
+  if (!fields.subscriptionLevel) fields.subscriptionLevel = ['Basic', 'Premium', 'Enterprise', 'Ultimate'][customerIndex % 4];
+  if (!fields.membershipStatus) fields.membershipStatus = ['Regular', 'VIP', 'Elite', 'Ambassador'][customerIndex % 4];
+  if (!fields.contractValue) fields.contractValue = Math.round((1000 + (customerIndex * 500) + Math.random() * 5000) * 100) / 100;
+  if (!fields.annualRevenue) fields.annualRevenue = Math.round((fields.customerLifetimeValue * 2.5) * 100) / 100;
+  
+  // BUSINESS INTELLIGENCE METRICS
+  if (!fields.acquisitionCost) fields.acquisitionCost = Math.round((25 + (customerIndex * 10) + Math.random() * 50) * 100) / 100;
+  if (!fields.retentionProbability) fields.retentionProbability = Math.round((0.7 + (customerIndex % 3) * 0.1) * 100) / 100;
+  if (!fields.churnRisk) fields.churnRisk = customerIndex % 4 === 0 ? 'high' : customerIndex % 3 === 0 ? 'medium' : 'low';
+  if (!fields.upsellPotential) fields.upsellPotential = Math.round((fields.customerLifetimeValue * 0.3) * 100) / 100;
+  if (!fields.crossSellOpportunity) fields.crossSellOpportunity = customerIndex % 2 === 0 ? 'high' : 'medium';
+  if (!fields.customerSegmentValue) fields.customerSegmentValue = ['High-Value', 'Mid-Value', 'Standard', 'Budget'][customerIndex % 4];
+  if (!fields.marketSegment) fields.marketSegment = ['Enterprise', 'SMB', 'Mid-Market', 'Startup'][customerIndex % 4];
+  
+  // PERFORMANCE AND CONVERSION METRICS
+  if (!fields.conversionRate) fields.conversionRate = Math.round((0.05 + (customerIndex % 5) * 0.02) * 100) / 100;
+  if (!fields.engagementScore) fields.engagementScore = Math.round((60 + (customerIndex * 8) + Math.random() * 25) * 100) / 100;
+  if (!fields.satisfactionRating) fields.satisfactionRating = Math.round((3.5 + (customerIndex % 3) * 0.5) * 100) / 100;
+  if (!fields.netPromoterScore) fields.netPromoterScore = Math.round((40 + (customerIndex % 6) * 10) * 100) / 100;
+  if (!fields.purchaseFrequency) fields.purchaseFrequency = Math.round((2 + (customerIndex % 4) * 1.5) * 100) / 100;
+  if (!fields.timeToConversion) fields.timeToConversion = Math.round((5 + (customerIndex * 2) + Math.random() * 10) * 100) / 100;
+  
+  // COMPETITIVE AND MARKET POSITIONING
+  if (!fields.competitiveAdvantage) fields.competitiveAdvantage = ['Price', 'Quality', 'Service', 'Innovation'][customerIndex % 4];
+  if (!fields.marketShare) fields.marketShare = Math.round((0.05 + (customerIndex % 3) * 0.03) * 100) / 100;
+  if (!fields.brandLoyalty) fields.brandLoyalty = ['Low', 'Medium', 'High', 'Very High'][customerIndex % 4];
+  if (!fields.competitorComparison) fields.competitorComparison = ['Better', 'Similar', 'Superior', 'Leading'][customerIndex % 4];
+  
+  // OPERATIONAL EFFICIENCY METRICS
+  if (!fields.processingTime) fields.processingTime = Math.round((10 + (customerIndex * 5) + Math.random() * 20) * 100) / 100;
+  if (!fields.operationalCost) fields.operationalCost = Math.round((fields.revenuePerCustomer * 0.4) * 100) / 100;
+  if (!fields.efficiencyRating) fields.efficiencyRating = Math.round((70 + (customerIndex % 4) * 7.5) * 100) / 100;
+  if (!fields.resourceUtilization) fields.resourceUtilization = Math.round((0.6 + (customerIndex % 3) * 0.15) * 100) / 100;
+  if (!fields.costPerAcquisition) fields.costPerAcquisition = Math.round((fields.acquisitionCost * 1.2) * 100) / 100;
+  
+  // RISK AND COMPLIANCE METRICS
+  if (!fields.riskLevel) fields.riskLevel = ['Low', 'Medium', 'High', 'Critical'][customerIndex % 4];
+  if (!fields.complianceScore) fields.complianceScore = Math.round((85 + (customerIndex % 3) * 5) * 100) / 100;
+  if (!fields.fraudRisk) fields.fraudRisk = customerIndex % 5 === 0 ? 'high' : customerIndex % 3 === 0 ? 'medium' : 'low';
+  if (!fields.securityRating) fields.securityRating = ['A', 'B', 'C', 'A+'][customerIndex % 4];
+  
+  // FORECASTING AND GROWTH METRICS
+  if (!fields.growthPotential) fields.growthPotential = Math.round((fields.customerLifetimeValue * 0.25) * 100) / 100;
+  if (!fields.futureValue) fields.futureValue = Math.round((fields.customerLifetimeValue * 1.5) * 100) / 100;
+  if (!fields.expansionOpportunity) fields.expansionOpportunity = ['Limited', 'Moderate', 'High', 'Exceptional'][customerIndex % 4];
+  if (!fields.marketTrend) fields.marketTrend = ['Declining', 'Stable', 'Growing', 'Expanding'][customerIndex % 4];
+  if (!fields.seasonalImpact) fields.seasonalImpact = Math.round((0.1 + (customerIndex % 3) * 0.05) * 100) / 100;
 
   return fields;
 }
@@ -577,7 +673,8 @@ router.post('/simulate-journey', async (req, res) => {
       journeyId = `journey_${Date.now()}`, 
       customerId = `customer_${Date.now()}`,
       chained = true,
-      thinkTimeMs = 250
+      thinkTimeMs = 250,
+      errorSimulationEnabled = true
     } = req.body || {};
     
     const correlationId = req.correlationId;
@@ -737,46 +834,46 @@ router.post('/simulate-journey', async (req, res) => {
     console.log(`[journey-sim] Simplified additionalFields:`, currentPayload.additionalFields);
     console.log(`[journey-sim] Company: ${currentPayload.companyName}, Domain: ${currentPayload.domain}`);
     
-    // Start services with company context
+    // Start services with company context including journey detail
+    const journeyDetail = generateJourneyDetail(currentPayload, stepData);
     const companyContext = {
       companyName: currentPayload.companyName,
       domain: currentPayload.domain,
-      industryType: currentPayload.industryType
+      industryType: currentPayload.industryType,
+      journeyDetail: journeyDetail
     };
     
     // Compute per-step error plans based on customer profile, with optional hints from the journey JSON
+    // 🔧 ARCHITECTURAL IMPROVEMENT: Use error configuration from journey data (Step 3 processing)
+    // instead of runtime decisions based on UI toggle state
     const errorPlannedSteps = stepData.map(s => {
-      // Start with customer-derived plan
-      let plan = computeCustomerError(currentPayload.companyName, s.stepName);
-
-      // Allow AI/journey JSON to provide an optional hint per step
-      const hint = s.originalStep?.errorHint || s.originalStep?.errorPlan;
-      if (hint && typeof hint === 'object') {
-        const typeFromHint = hint.type || hint.errorType;
-        const statusFromHint = hint.httpStatus || hint.status;
-        const likelihood = typeof hint.likelihood === 'number' ? Math.max(0, Math.min(1, hint.likelihood)) : null;
-        // force=true overrides randomness (deterministic demo)
-        const forced = hint.force === true;
-        const shouldFail = forced ? true : (likelihood != null ? Math.random() < likelihood : null);
-
-        if (shouldFail === true) {
-          const chosenType = typeFromHint || plan.errorType || 'service_unavailable';
-          const chosenStatus = statusFromHint || plan.httpStatus || 500;
-          plan = {
-            hasError: true,
-            errorType: chosenType,
-            httpStatus: chosenStatus,
-            errorMessage: generateErrorMessage(chosenType, s.stepName),
-            retryable: ![400, 404, 422].includes(Number(chosenStatus)),
-            severity: Number(chosenStatus) >= 500 ? 'critical' : Number(chosenStatus) >= 400 ? 'warning' : 'info'
-          };
-        } else if (shouldFail === false) {
-          // Explicitly indicate success if hint likelihood says so
-          plan = { hasError: false };
-        }
+      console.log(`[journey-sim] Processing step: ${s.stepName}, hasError from journey data: ${s.originalStep?.hasError}, errorHint: ${s.originalStep?.errorHint || 'none'}`);
+      
+      // Use error configuration embedded in journey data by Step 3 processing
+      const hasErrorFromJourneyData = s.originalStep?.hasError === true;
+      const errorHintFromJourneyData = s.originalStep?.errorHint;
+      
+      if (hasErrorFromJourneyData) {
+        console.log(`[journey-sim] 🔴 Error configured for step: ${s.stepName} (from Step 3 journey processing)`);
+        
+        // Use journey data error configuration with customer-specific error profiles as fallback
+        let plan = computeCustomerError(currentPayload.companyName, s.stepName);
+        
+        // Apply error configuration from journey data
+        plan = {
+          hasError: true,
+          errorType: plan.errorType || 'service_unavailable',
+          httpStatus: plan.httpStatus || 500,
+          errorMessage: errorHintFromJourneyData || generateErrorMessage(plan.errorType || 'service_unavailable', s.stepName),
+          retryable: ![400, 404, 422].includes(Number(plan.httpStatus || 500)),
+          severity: Number(plan.httpStatus || 500) >= 500 ? 'critical' : Number(plan.httpStatus || 500) >= 400 ? 'warning' : 'info'
+        };
+        
+        return { ...s, ...plan };
+      } else {
+        console.log(`[journey-sim] ✅ Success configured for step: ${s.stepName} (from Step 3 journey processing)`);
+        return { ...s, hasError: false };
       }
-
-      return { ...s, ...plan };
     });
 
     for (const stepInfo of errorPlannedSteps) {
@@ -995,7 +1092,8 @@ router.post('/simulate-multiple-journeys', async (req, res) => {
       customers = 1,
       thinkTimeMs = 250,
       aiJourney,
-      journey
+      journey,
+      errorSimulationEnabled = true
     } = req.body || {};
 
     // Enforce customer limit of 5
@@ -1133,7 +1231,7 @@ router.post('/simulate-multiple-journeys', async (req, res) => {
             businessRationale: step.businessRationale,
             substeps: step.substeps,
             originalStep: step,
-            hasError: false
+            hasError: errorSimulationEnabled ? computeCustomerError(companyName, step.stepName || step.name || 'UnknownStep').hasError : false
           };
         });
 
@@ -1270,7 +1368,7 @@ router.post('/simulate-multiple-journeys', async (req, res) => {
               stepDescription: step.description,
               stepCategory: step.category,
               thinkTimeMs,
-              hasError: false,
+              hasError: errorSimulationEnabled ? computeCustomerError(companyName, step.stepName).hasError : false,
               
               // Duration and business context
               estimatedDuration: step.estimatedDuration,
@@ -1401,7 +1499,7 @@ router.post('/simulate-multiple-journeys', async (req, res) => {
               stepDescription: step.description,
               stepCategory: step.category,
               thinkTimeMs,
-              hasError: false,
+              hasError: errorSimulationEnabled ? computeCustomerError(companyName, step.stepName).hasError : false,
               
               // Add duration fields from Copilot response for OneAgent capture
               estimatedDuration: step.estimatedDuration,
@@ -1749,7 +1847,8 @@ router.post('/simulate-batch-chained', async (req, res) => {
       steps: customSteps,
       companyName: bodyCompany,
       domain: bodyDomain,
-      industryType: bodyIndustry
+      industryType: bodyIndustry,
+      errorSimulationEnabled = true
     } = req.body || {};
 
     // Enforce customer limit of 5
@@ -1799,7 +1898,7 @@ router.post('/simulate-batch-chained', async (req, res) => {
     // Compute per-step error plan
     const errorPlannedSteps = stepData.map(s => {
       const hint = s.originalStep?.errorHint || s.originalStep?.errorPlan;
-      let plan = computeCustomerError(companyName, s.stepName);
+      let plan = errorSimulationEnabled ? computeCustomerError(companyName, s.stepName) : { hasError: false };
       if (hint && typeof hint === 'object') {
         const typeFromHint = hint.type || hint.errorType;
         const statusFromHint = hint.httpStatus || hint.status;
