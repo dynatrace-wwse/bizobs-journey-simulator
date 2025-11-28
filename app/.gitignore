@@ -33,6 +33,11 @@ apply-dynatrace-config.*
 
 # Runtime artifacts and temporary files
 services/.dynamic-runners/
+saved-configs/config-*.json
+bizobs.pid
+test-*.html
+test-*.json
+*.tmp
 .DS_Store
 *.swp
 *.swo
