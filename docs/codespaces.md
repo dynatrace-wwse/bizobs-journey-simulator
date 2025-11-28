@@ -1,89 +1,235 @@
---8<-- "snippets/3-codespaces.js"
+--8<-- "snippets/codespaces.js"
 
---8<-- "snippets/dt-enablement.md"
+## Launch GitHub Codespaces
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dynatrace-wwse/enablement-codespaces-template){target="_blank"}
+GitHub Codespaces provides the fastest way to get started with the BizObs Journey Simulator. The environment comes pre-configured with all dependencies, extensions, and integrations ready to use.
 
-TODO: Add the sizing & secrets needed.
+!!! tip "Recommended Approach"
+    Codespaces eliminates setup complexity and provides a consistent, cloud-based development environment perfect for demos and learning.
 
+## 🚀 Quick Launch Steps
 
+### 1. Access the Repository
+Navigate to the BizObs Journey Simulator repository:
+```
+https://github.com/dynatrace-wwse/bizobs-journey-simulator
+```
 
-## 1. Codespaces configuration
-!!! tip "Branch, Machine sizing & secrets"
-    - Branch
-        - select the **main** branch
-    - Machine sizing
-        - As a machine type select **2-core**
-    - Secrets (enter your credentials within the following variables)
-        - DT_ENVIRONMENT
-        - DT_OPERATOR_TOKEN
-        - DT_INGEST_TOKEN
+### 2. Create Codespace
+1. **Click** the green "**Code**" button
+2. **Select** the "**Codespaces**" tab  
+3. **Click** "**Create codespace on main**"
+4. **Wait** for the environment to initialize (2-3 minutes)
 
+![Codespaces Launch](img/codespaces_installing.png)
 
-## 2. While the Codespace is set-up for you, learn powerful usecases with Dynatrace
-We know your time is very valuable. This codespace takes around 6 minutes to be fully operational. A local Kubernetes ([kind](https://kind.sigs.k8s.io/){target="_blank"}) cluster monitored by Dynatrace will be configured and in it a sample application, the TODO app will be deployed. To make your experience best, we are also installing and configuring tools like:
+### 3. Automatic Configuration
+The Codespace automatically:
+- ✅ **Installs Node.js 18+** runtime environment
+- ✅ **Installs npm dependencies** for the BizObs application
+- ✅ **Configures port forwarding** for web interface (8080) and services (8081-8120)
+- ✅ **Sets up VS Code extensions** for optimal development experience
+- ✅ **Initializes the application** with core services running
 
-**k9s kubectl helm node jq python3 gh**
+![Codespaces Complete](img/codespaces_finish.png)
 
-![Codespaces installing](img/codespaces_installing.png)
+## 🔧 What's Pre-Configured
 
-## 3. Explore what has been deployed
+### Development Environment
+- **Node.js Runtime**: Version 18+ with npm package manager
+- **VS Code Extensions**: Debugging, JSON formatting, HTTP client tools
+- **Terminal Access**: Full bash terminal for command execution
+- **File System**: Complete repository access with editing capabilities
 
-Your Codespace has now deployed the following resources:
+### Application Stack
+- **Main Application**: Business Observability Generator on port 8080
+- **Core Services**: Three essential services (Discovery, Purchase, DataPersistence)
+- **Dynamic Port Management**: Automatic port allocation for generated services
+- **Service Health Monitoring**: Built-in health checks and status reporting
 
-- A local Kubernetes ([kind](https://kind.sigs.k8s.io/){target="_blank"}) cluster monitored by Dynatrace, with some pre-deployed apps
-  that will be used later in the demo.
-
-- After a couple of minutes, you'll see this screen in your codespaces terminal. It contains the links to the local expose labguide and the UI of the application which we will be doing our Hands-On training.
-![Codespaces finish](img/codespaces_finish.png)
-
-
-## 4. Tips & Tricks
-
-We want to boost your learning and try to make your DEV experience as smooth as possible with Dynatrace trainings. Your Codespaces have a couple of convenience features added. 
-
-### Show the greeting
-In the terminal, there are functions loaded for your convenience. By creating a new Terminal the Greeting will be shown that includes the links to the exposed apps, the Github  pages, the Github Repository, the Dynatrace Tenant that is bound to this devcontainer and some of the tools installed.
-
-You can create a new Terminal directly in VSCode, type `zsh` or call the function `printGreeting` and that will print the greeting with the most relevant information.
-
-### Make your trainigs interactive
-All functions writen in the `functions.sh` file can be called in the terminal. Also the custom ones written in `my_functions.sh` file. For example there is a custom function as an example called `customFunction`. Type it in the terminal and see the output.
-![custom function](img/custom_function.png)
-
-
-### Navigating in your local Kubernetes
-The client `kubectl` and `k9s`are configured so you can navigate in your local Kubernetes like butter. 
-![k9s](img/k9s.png)
-
-### Exposing the apps to the public
-The TODO app is being exposed in the devcontainer to your localhost. If you want to make the endpoints public accesible, just go to the ports section in VsCode, right click on them and change the visibility to public.
-
-
-## 5. Troubleshooting
-
-
-### Exposing the App
-
-The todoApp is already exposed via NodePort in the port 30100, if you want to expose it in another port like the one defined 8080 in the service, then type and to expose the TODO app, type `exposeTodoApp`, 
-
+### Port Configuration
+The Codespace automatically forwards these ports:
 ```bash
-exposeTodoApp(){
-  printInfo "Exposing Todo App in your dev.container"
-  nohup kubectl port-forward service/todoapp 8080:8080  -n todoapp --address="0.0.0.0" > /tmp/kubectl-port-forward.log 2>&1 &
+Port 8080  -> Main Web Interface (Public)
+Port 8081+ -> Dynamic Microservices (Private)
+```
+
+## 🌐 Accessing Your Application
+
+### Web Interface
+Once the Codespace is ready:
+
+1. **Look for the notification**: "Your application running on port 8080 is available"
+2. **Click** "**Open in Browser**" or navigate to the forwarded URL
+3. **Verify** you see the Business Observability Generator welcome page
+
+**Alternative Access:**
+- Use the **Ports** tab in VS Code
+- Click the **globe icon** next to port 8080
+- **Copy** the public URL for sharing
+
+### API Endpoints
+Test the API endpoints directly:
+```bash
+# In the Codespace terminal:
+curl http://localhost:8080/api/health
+curl http://localhost:8080/api/journey-simulation/health
+```
+
+## 🔍 Verify Installation
+
+### 1. Application Health Check
+```bash
+# Run in the Codespace terminal
+curl -s http://localhost:8080/api/health | jq .
+```
+
+**Expected Response:**
+```json
+{
+  "status": "ok",
+  "timestamp": "2025-11-28T...",
+  "mainProcess": {
+    "pid": 1234,
+    "uptime": 45.2,
+    "port": 8080
+  },
+  "childServices": [
+    {
+      "service": "DiscoveryService-DefaultCompany",
+      "running": true,
+      "pid": 1235
+    }
+  ]
 }
 ```
 
-### Showing open ports in the container
-There is a helper function loaded in the shell to see the open ports in the dev.container.
-
+### 2. Core Services Status
 ```bash
-showOpenPorts(){
-  sudo netstat -tulnp
-}
+# Check running Node.js processes
+ps aux | grep -E "(Service|Process)" | grep -v grep
 ```
 
+**Expected Output:** Should show 3+ Node.js processes running
+
+### 3. Port Allocation
+```bash
+# Check port usage
+netstat -tulpn | grep :80
+```
+
+**Expected Output:** Ports 8080-8083+ should be in use
+
+## 🎯 Quick Test Journey
+
+### Create Your First Journey
+Use the web interface or API to create a test journey:
+
+**Via Web Interface:**
+1. **Navigate** to the forwarded port 8080 URL
+2. **Click** "Get Started"
+3. **Fill out** the customer details form:
+   - Company Name: `Codespace Test Corp`
+   - Domain: `test.codespace.com`
+   - Industry Type: `Technology`
+   - Journey Type: `Environment Validation`
+
+**Via API (in terminal):**
+```bash
+curl -X POST http://localhost:8080/api/journey-simulation/simulate-journey \
+  -H "Content-Type: application/json" \
+  -d '{
+    "companyName": "CodespaceTestCorp",
+    "domain": "test.codespace.com",
+    "industryType": "Technology",
+    "journey": {
+      "companyName": "CodespaceTestCorp",
+      "domain": "test.codespace.com",
+      "industryType": "Technology", 
+      "journeyType": "Environment Validation",
+      "journeyDetail": "Codespace Setup Test",
+      "steps": [
+        {"stepName": "Setup", "description": "Environment setup verification"},
+        {"stepName": "Validation", "description": "System validation check"}
+      ]
+    },
+    "journeyId": "codespace_test_001",
+    "customerId": "test_001"
+  }' | jq .
+```
+
+**Expected Result:**
+- New services created and running
+- Complete journey response with business metadata
+- Services visible in process list
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+**Application Not Starting:**
+```bash
+# Check logs
+cd "/workspaces/bizobs-journey-simulator/BizObs Generator"
+npm start
+```
+
+**Port 8080 Already in Use:**
+```bash
+# Kill any existing processes
+pkill -f "node server.js"
+npm start
+```
+
+**Services Not Creating:**
+```bash
+# Check service manager logs
+tail -f logs/bizobs.log
+```
+
+**Dependencies Missing:**
+```bash
+# Reinstall dependencies
+cd "/workspaces/bizobs-journey-simulator/BizObs Generator"
+npm install
+npm start
+```
+
+### Advanced Configuration
+
+**Custom Environment Variables:**
+```bash
+# Set custom configuration (optional)
+export MAIN_SERVER_PORT=8080
+export SERVICE_PORT_RANGE_START=8081
+export SERVICE_PORT_RANGE_END=8120
+```
+
+**Development Mode:**
+```bash
+# Run with debug logging
+DEBUG=* npm start
+```
+
+## 🔗 Dynatrace Integration
+
+### Connect Your Environment
+To see the business observability data in Dynatrace:
+
+1. **Ensure** your Dynatrace environment is configured (see Getting Started guide)
+2. **Optional**: Configure OneAgent if you want to see services in Dynatrace
+3. **Run** journey simulations to generate business events
+4. **Verify** data appears in Dynatrace BizEvents and Services views
+
+### Public URL Sharing
+The Codespace provides a public URL for sharing:
+- **Copy** the forwarded port 8080 URL from the Ports tab
+- **Share** with colleagues for collaborative demos
+- **Use** in Dynatrace synthetic monitoring (if desired)
+
+!!! success "Codespace Ready!"
+    Your BizObs Journey Simulator is now running in a fully configured cloud environment. You're ready to start creating comprehensive customer journeys with business observability data.
 
 <div class="grid cards" markdown>
-- [Let's start our enablement:octicons-arrow-right-24:](4-content.md)
+- [🛤️ Create Your First Journey :octicons-arrow-right-24:](journey1-azure-enterprise.md)
 </div>

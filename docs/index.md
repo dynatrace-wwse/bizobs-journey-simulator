@@ -1,166 +1,60 @@
 --8<-- "snippets/index.js"
-
 --8<-- "snippets/disclaimer.md"
 
-# Business Observability Journey Simulator
+## Business Observability Journey Simulator Tutorial
 
-Transform simple business requirements into **comprehensive observability demonstrations** with AI-powered customer journeys, real business metrics, and enterprise-grade performance testing.
+## What's this tutorial all about
+In this tutorial we will embark on a Business Observability journey learning how to create, simulate, and analyze customer journeys with complete visibility into both technical performance and business outcomes using the Dynatrace platform.
+
+The Business Observability Journey Simulator is a comprehensive solution that bridges the gap between technical metrics and business KPIs, providing instant insights into how system performance impacts customer experience, revenue generation, and business success.
+
+- Create realistic multi-step customer journeys with business context
+- Generate dynamic microservices with enhanced Dynatrace metadata
+- Monitor real-time business KPIs alongside technical performance  
+- Analyze complete customer journey traces with business impact data
+- Demonstrate the power of business observability to stakeholders
+- Build comprehensive dashboards showing technical-to-business correlation
 
 <p align="center">
   <img src="img/bizobs_banner.png" alt="BizObs Journey Simulator" width="600">
 </p>
 
-## 🎯 What This Platform Does
+Are you ready to start the Business Observability journey and learn how to connect technical performance with business outcomes? 
 
-The **BizObs Journey Simulator** transforms business requirements into comprehensive observability demonstrations through a simple **4-step workflow**:
+!!! tip "What will we do"
+    In this tutorial we will learn how to create comprehensive customer journeys that generate real business observability data. We'll simulate enterprise scenarios like Microsoft Azure purchases, retail e-commerce transactions, and insurance policy processes - all with complete Dynatrace integration showing both technical metrics and business KPIs!
 
-**🔄 The Complete Process:**
-1. **📝 Customer Details** - Define company context and journey requirements
-2. **🤖 Generate Prompts** - AI-powered Copilot integration for business scenarios  
-3. **⚡ Process Check** - Validate configuration and enable error simulation
-4. **📊 Generate Data** - Execute with real metrics and LoadRunner performance testing
+## 🎯 What You'll Learn
 
-**🎯 What You Get:**
-- **Realistic Customer Journeys** with measurable business outcomes
-- **Dynamic Microservices Architecture** that scales based on complexity
-- **LoadRunner Performance Tests** with automated C-script generation
-- **Dynatrace Business Observability** with revenue correlation and distributed tracing
+This hands-on enablement will guide you through:
 
-## 🎪 Platform Capabilities
+- **🛤️ Journey Creation**: Build realistic multi-step customer journeys using our intuitive UI
+- **📊 Business Context**: Inject industry-specific metadata and business KPIs into every service call
+- **🔍 Dynatrace Integration**: Complete observability with enhanced DT_TAGS, distributed traces, and business events
+- **📈 Real-Time Analytics**: Monitor business metrics like revenue, conversion rates, and customer satisfaction
+- **🎭 Customer Personas**: Simulate different customer behaviors with realistic think times and error tolerance
+- **⚡ Dynamic Services**: Auto-generated microservices with clean naming and business context
 
-**🎭 Multi-Industry Support**
-- **E-Commerce**: Shopping, checkout, payment processing journeys
-- **Insurance**: Policy applications, claims processing, underwriting workflows  
-- **SaaS**: Trial signups, onboarding, feature adoption tracking
-- **Enterprise**: RFP processes, procurement workflows, contract management
+## 🌟 Journey Scenarios We'll Build
 
-**📊 Business Intelligence**
-- **Real Revenue Tracking**: Actual monetary values correlated with technical performance
-- **Customer Personas**: 4 realistic behavioral profiles with unique conversion patterns
-- **Conversion Analytics**: Step-by-step funnel analysis with drop-off identification
-- **Executive Dashboards**: Business KPI reporting for stakeholder visibility
+### Microsoft Azure Enterprise Purchase
+`ProductDiscovery → PricingEvaluation → ProofOfConcept → ContractNegotiation → DeploymentPlanning → GoLive`
 
-**🔧 Technical Integration**
-- **Dynatrace BizEvents**: Business context embedded in all technical traces
-- **LoadRunner Automation**: Performance test generation with business correlation
-- **Microservices Architecture**: Dynamic service spawning based on journey complexity
-- **Error Simulation**: Realistic failure patterns with quantified business impact
+### E-Commerce Retail Experience  
+`ProductBrowse → CartAddition → CheckoutProcess → PaymentValidation → OrderConfirmation → FulfillmentTracking`
 
-## 🎯 What Gets Generated
+### Insurance Policy Purchase
+`QuoteRequest → RiskAssessment → PolicyCustomization → UnderwritingReview → PaymentProcessing → PolicyActivation`
 
-**📈 Live Business Metrics**
-```
-💰 Revenue Impact: $127.50 average per journey
-📊 Conversion Rate: 73.4% success rate
-⏱️  Journey Duration: 8.4 minutes average
-😊 Satisfaction Score: 4.2/5.0 rating
-🔄 Active Services: 12 microservices
-```
+## 🚀 Key Features You'll Experience
 
-**🔍 Complete Observability Stack**
-- **Distributed Traces** with business context correlation
-- **LoadRunner C-Scripts** with automated performance test generation  
-- **Dynatrace Integration** with revenue and conversion tracking
-- **Error Simulation** with realistic failure patterns and business impact
-
-## 🚀 Live Demo Scenarios
+- **✨ AI-Powered Prompts**: Generate business-focused observability prompts tailored to your industry
+- **🏷️ Enhanced Metadata**: Comprehensive DT_TAGS with industry-type, journey-detail, and company context  
+- **🎯 Clean Service Names**: Auto-generated services with meaningful, business-aligned names
+- **📊 Business KPIs**: Revenue tracking, conversion rates, customer satisfaction, and performance correlation
+- **🔄 Real-Time Simulation**: Live journey execution with immediate Dynatrace data flow
+- **⚡ Zero Duplicates**: Single source of truth for metadata with no conflicting tags
 
 <div class="grid cards" markdown>
-- **🛍️ E-Commerce Journey** 
-  
-    GlobalRetail customer flow: Browse → Cart → Checkout → Payment → Fulfillment
-    
-    *Average Revenue: $87.50 | Duration: 6.2 min | Services: 10*
-
-- **🛡️ Insurance Application**
-  
-    SecureLife policy process: Quote → Application → Underwriting → Approval → Activation
-    
-    *Average Revenue: $425.00 | Duration: 22.1 min | Services: 14*
-
-- **🚀 SaaS Onboarding**
-  
-    TechFlow platform journey: Trial → Demo → Purchase → Setup → Activation
-    
-    *Average Revenue: $199.99 | Duration: 15.7 min | Services: 12*
-
-- **🏢 Enterprise Procurement**
-  
-    GlobalCorp solution buying: RFP → Evaluation → Demo → Contract → Implementation
-    
-    *Average Revenue: $4,250.00 | Duration: 89.3 min | Services: 18*
-</div>
-
-## 🎓 What You'll Learn
-
-**Business Observability Mastery**
-- Transform technical monitoring into business intelligence
-- Correlate performance metrics with revenue impact
-- Build executive-level dashboards with meaningful KPIs
-- Implement realistic customer journey simulations
-
-**Technical Implementation**
-- Dynatrace BizEvents integration patterns
-- Microservices observability with business context
-- LoadRunner automation with performance correlation
-- Advanced error simulation and resilience testing
-
-**AI-Powered Development**
-- GitHub Copilot integration for business scenarios
-- Automated prompt generation for domain contexts
-- Intelligent customer persona development
-- AI-driven journey optimization
-
-## 🚀 Getting Started
-
-Choose your path to explore business observability:
-
-<div class="grid cards" markdown>
-- **⚡ Quick Start (5 Minutes)**
-  
-    Launch GitHub Codespaces and experience the 4-step workflow
-    
-    [🚀 Get Started :octicons-arrow-right-24:](2-getting-started.md)
-
-- **🔧 Production Setup**
-  
-    Full installation with Dynatrace OneAgent and LoadRunner integration
-    
-    [📖 Installation Guide :octicons-arrow-right-24:](2-getting-started.md#production-setup)
-
-- **🎪 App Functionality**
-  
-    Explore real API endpoints and comprehensive test cases
-    
-    [🔍 Explore Features :octicons-arrow-right-24:](app-functionality.md)
-
-- **📊 Business Intelligence**
-  
-    Focus on persona-based scenarios and executive dashboards
-    
-    [📈 Business Focus :octicons-arrow-right-24:](3-concepts.md)
-</div>
-
-## 🎯 Key Benefits
-
-**For Engineering Teams**
-- Complete observability stack with realistic load testing
-- Microservices architecture patterns with dynamic scaling
-- Error simulation and resilience testing capabilities
-
-**For Business Stakeholders**  
-- Revenue correlation with technical performance metrics
-- Customer persona insights with conversion analytics
-- Executive dashboards with actionable business intelligence
-
-**For Demonstrations**
-- Ready-to-use scenarios across multiple industries
-- Real-time business metrics with compelling visual dashboards
-- Comprehensive observability story from business to technical
-
-!!! success "Ready to Transform Your Observability?"
-    Experience how technical observability becomes powerful when connected to business outcomes. This platform demonstrates the complete journey from simple business requirements to sophisticated observability demonstrations.
-
-<div class="grid cards" markdown>
-- [🚀 **Start Your Journey** :octicons-arrow-right-24:](2-getting-started.md)
+- [Yes! let's begin :octicons-arrow-right-24:](2-getting-started.md)
 </div>
