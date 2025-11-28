@@ -20,7 +20,7 @@ Each step builds upon the previous, creating rich business context that flows th
 
 ## Step 1: Application Welcome Page
 
-![App Welcome Page](img/App-Welcome-Page.png)
+![App Welcome Page](img/BizObs-Welcome-Screen.png)
 
 The welcome page introduces the Business Observability Generator with its key capabilities:
 
