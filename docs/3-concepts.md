@@ -36,7 +36,7 @@ The welcome page introduces the Business Observability Generator with its key ca
 - ✅ **Dynatrace Integration** with comprehensive DT_TAGS
 
 ### Action Required
-Click **"Get Started"** to proceed to customer details entry.
+Click **"Start Building Your Journey"** to proceed to customer details entry.
 
 ## Step 2: Customer Details Input
 
