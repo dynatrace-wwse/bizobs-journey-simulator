@@ -1,0 +1,1774 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2-getting-started/">
+      
+      
+        <link rel="next" href="../4-advanced-features/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Concepts - Dynatrace Enablement Lab: Business Observability Journey Simulator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+  <!-- Add scripts that need to run before here -->
+  
+      
+    
+  <!-- Add scripts that need to run afterwards here -->
+   <!-- TODO: BeforeGoLive: Replace Agentless RUM Snippet
+    1. Create an agentless application in Dynatrace from with convention 'dynatrace-wwse/repositoryname'
+    2. https://hci34192.apps.dynatrace.com/ui/apps/dynatrace.classic.deploy.agentless/#install/agentless;gtf=-2h;gf=all
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/PLACEHOLDEr/REPLACE_WITH_YOUR_SNIPPET/1234abcd1234abcd_complete.js" crossorigin="anonymous"></script>
+    -->
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/1612cf70810/bf81393wlb/7c50bce5c0cc890f_complete.js" crossorigin="anonymous"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creating-your-customer-journey" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-header__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Enablement Lab: Business Observability Journey Simulator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concepts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-nav__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    Dynatrace Enablement Lab: Business Observability Journey Simulator
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#journey-creation-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Journey Creation Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-application-welcome-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Application Welcome Page
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Application Welcome Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-see" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You See
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-highlighted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features Highlighted
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Required
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-customer-details-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Customer Details Input
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Customer Details Input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-fields-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Fields Explained
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Form Fields Explained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#company-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Company Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-specifics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journey Specifics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-required_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Required
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-ai-powered-prompt-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: AI-Powered Prompt Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: AI-Powered Prompt Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Happens Here
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Happens Here">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-observability-ai-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Observability AI Prompts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-metadata-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhanced Metadata Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-generated-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Generated Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-required_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Required
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-process-validation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Process Validation &amp; Checks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Process Validation & Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-validations-performed" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Validations Performed
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Validations Performed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Configuration Completeness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-naming-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Service Naming Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-structure-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Metadata Structure Check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-prompt-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ AI Prompt Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-validation-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Validation Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-required_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Required
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-data-generation-service-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Data Generation &amp; Service Creation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Data Generation & Service Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-time-generation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time Generation Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-Time Generation Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-progress-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Live Progress Tracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-service-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Dynamic Service Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-observability-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Business Observability Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generated-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 What Gets Created
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 What Gets Created">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Microservices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynatrace Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Context
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#journey-execution-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Journey Execution Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Journey Execution Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynatrace Data Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-journey-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎪 Advanced Journey Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎪 Advanced Journey Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-enterprise-journeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Step Enterprise Journeys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-commerce-customer-journeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      E-Commerce Customer Journeys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saas-trial-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      SaaS Trial Conversions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Verification &amp; Next Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Verification & Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confirm-journey-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirm Journey Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ready-for-dynatrace-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ready for Dynatrace Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-advanced-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#journey-creation-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Journey Creation Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-application-welcome-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Application Welcome Page
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Application Welcome Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-see" class="md-nav__link">
+    <span class="md-ellipsis">
+      What You See
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features-highlighted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features Highlighted
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Required
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-customer-details-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Customer Details Input
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Customer Details Input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-fields-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Fields Explained
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Form Fields Explained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#company-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Company Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-specifics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journey Specifics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-required_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Required
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-ai-powered-prompt-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: AI-Powered Prompt Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: AI-Powered Prompt Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Happens Here
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Happens Here">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-observability-ai-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Observability AI Prompts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-metadata-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhanced Metadata Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-generated-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Generated Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-required_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Required
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-process-validation-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Process Validation &amp; Checks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Process Validation & Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-validations-performed" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Validations Performed
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Validations Performed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Configuration Completeness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-naming-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Service Naming Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-structure-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Metadata Structure Check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-prompt-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ AI Prompt Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-validation-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Validation Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-required_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Action Required
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-data-generation-service-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Data Generation &amp; Service Creation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Data Generation & Service Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#real-time-generation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time Generation Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-Time Generation Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-progress-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Live Progress Tracking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-service-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Dynamic Service Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-observability-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Business Observability Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generated-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 What Gets Created
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 What Gets Created">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Microservices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynatrace Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Context
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#journey-execution-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Journey Execution Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Journey Execution Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynatrace Data Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-journey-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎪 Advanced Journey Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎪 Advanced Journey Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-enterprise-journeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Step Enterprise Journeys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-commerce-customer-journeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      E-Commerce Customer Journeys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saas-trial-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      SaaS Trial Conversions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Verification &amp; Next Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Verification & Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confirm-journey-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirm Journey Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ready-for-dynatrace-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ready for Dynatrace Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>// JavaScript snippet placeholder for Creating Your Journey documentation
+// This file enables the --8&lt;-- snippet inclusion functionality</p>
+<h1 id="creating-your-customer-journey">Creating Your Customer Journey<a class="headerlink" href="#creating-your-customer-journey" title="Permanent link">#</a></h1>
+<p>Now that you have the BizObs Generator application running, let's walk through creating your first customer journey using the intuitive web interface. This step-by-step guide follows the actual UI workflow with screenshots and detailed explanations.</p>
+<h2 id="journey-creation-overview">🎯 Journey Creation Overview<a class="headerlink" href="#journey-creation-overview" title="Permanent link">#</a></h2>
+<p>The BizObs Generator uses a streamlined 4-step process to create comprehensive business observability data:</p>
+<div class="highlight"><pre><span></span><code>graph LR
+    A[&quot;🏠 Welcome&quot;] --&gt; B[&quot;📋 Customer Details&quot;]
+    B --&gt; C[&quot;🤖 Generate Prompts&quot;]
+    C --&gt; D[&quot;✅ Process Check&quot;]
+    D --&gt; E[&quot;📊 Data Generation&quot;]
+</code></pre></div>
+<p>Each step builds upon the previous, creating rich business context that flows through to Dynatrace for complete observability.</p>
+<h2 id="step-1-application-welcome-page">Step 1: Application Welcome Page<a class="headerlink" href="#step-1-application-welcome-page" title="Permanent link">#</a></h2>
+<p><img alt="App Welcome Page" src="../img/BizObs-Welcome-Screen.png" /></p>
+<p>The welcome page introduces the Business Observability Generator with its key capabilities:</p>
+<h3 id="what-you-see">What You See<a class="headerlink" href="#what-you-see" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Clean, Professional Interface</strong> with Dynatrace branding</li>
+<li><strong>Four-Step Process Overview</strong> clearly outlined</li>
+<li><strong>Getting Started Button</strong> to begin journey creation</li>
+</ul>
+<h3 id="key-features-highlighted">Key Features Highlighted<a class="headerlink" href="#key-features-highlighted" title="Permanent link">#</a></h3>
+<ul>
+<li>✅ <strong>AI-Powered Prompt Generation</strong> for business observability</li>
+<li>✅ <strong>Dynamic Service Creation</strong> with clean naming conventions  </li>
+<li>✅ <strong>Enhanced Metadata Integration</strong> including industry-type and journey-detail</li>
+<li>✅ <strong>Dynatrace Integration</strong> with comprehensive DT_TAGS</li>
+</ul>
+<h3 id="action-required">Action Required<a class="headerlink" href="#action-required" title="Permanent link">#</a></h3>
+<p>Click <strong>"Start Building Your Journey"</strong> to proceed to customer details entry.</p>
+<h2 id="step-2-customer-details-input">Step 2: Customer Details Input<a class="headerlink" href="#step-2-customer-details-input" title="Permanent link">#</a></h2>
+<p><img alt="Customer Details" src="../img/Customer-Details.png" /></p>
+<p>This critical step captures the business context that will flow through all generated services and traces.</p>
+<h3 id="form-fields-explained">Form Fields Explained<a class="headerlink" href="#form-fields-explained" title="Permanent link">#</a></h3>
+<h4 id="company-information"><strong>Company Information</strong><a class="headerlink" href="#company-information" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Company Name</strong>: Primary identifier for service naming and metadata</li>
+<li><em>Example</em>: "Microsoft", "Tesla", "Salesforce"</li>
+<li><em>Impact</em>: Used in service naming (<code>ProductDiscoveryService-Microsoft</code>)</li>
+<li><strong>Domain</strong>: Company website for business context</li>
+<li><em>Example</em>: "www.microsoft.com", "tesla.com"</li>
+<li><em>Impact</em>: Added to DT_TAGS as <code>domain=www_microsoft_com</code></li>
+</ul>
+<h4 id="industry-classification"><strong>Industry Classification</strong><a class="headerlink" href="#industry-classification" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Industry Type</strong>: High-level industry category</li>
+<li><em>Examples</em>: "Cloud Software", "Electric Vehicles", "Financial Services"</li>
+<li><em>Impact</em>: Creates <code>industry-type=cloud_software</code> tag for business segmentation</li>
+</ul>
+<h4 id="journey-specifics"><strong>Journey Specifics</strong><a class="headerlink" href="#journey-specifics" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Journey Type</strong>: The business process being simulated</li>
+<li><em>Examples</em>: "Product Purchase", "Trial Signup", "Account Creation"</li>
+<li><em>Impact</em>: Provides context for AI prompt generation</li>
+<li><strong>Journey Detail</strong>: Specific variation or sub-process</li>
+<li><em>Examples</em>: "Azure Enterprise Purchase", "Model Y Configuration", "Premium Upgrade"</li>
+<li><em>Impact</em>: Creates <code>journey-detail=azure_enterprise_purchase</code> tag</li>
+</ul>
+<h4 id="process-steps"><strong>Process Steps</strong><a class="headerlink" href="#process-steps" title="Permanent link">#</a></h4>
+<p>Define the actual steps in your customer journey:
+- <strong>Step Name</strong>: Clear, business-meaningful step identifier
+- <strong>Description</strong>: Detailed explanation of what happens in this step
+- <strong>Add/Remove Steps</strong>: Dynamic step management</p>
+<h3 id="example-configuration">Example Configuration<a class="headerlink" href="#example-configuration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;companyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;www.microsoft.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;industryType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cloud Software&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">&quot;journeyType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Product Purchase&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;journeyDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Azure Enterprise Purchase&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;stepName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscovery&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Azure services discovery and evaluation&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;stepName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PricingEvaluation&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enterprise pricing and cost analysis&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="action-required_1">Action Required<a class="headerlink" href="#action-required_1" title="Permanent link">#</a></h3>
+<p>Fill out all fields completely, then click <strong>"Generate Prompts"</strong> to proceed.</p>
+<h2 id="step-3-ai-powered-prompt-generation">Step 3: AI-Powered Prompt Generation<a class="headerlink" href="#step-3-ai-powered-prompt-generation" title="Permanent link">#</a></h2>
+<p><img alt="Generate Prompts" src="../img/Generate-Prompts.png" /></p>
+<p>This step leverages AI to create business-focused prompts specifically tailored for observability analysis.</p>
+<h3 id="what-happens-here">What Happens Here<a class="headerlink" href="#what-happens-here" title="Permanent link">#</a></h3>
+<h4 id="business-observability-ai-prompts"><strong>Business Observability AI Prompts</strong><a class="headerlink" href="#business-observability-ai-prompts" title="Permanent link">#</a></h4>
+<p>The system generates two specialized prompts:</p>
+<ol>
+<li><strong>Primary Business Analysis Prompt</strong></li>
+<li>Industry-specific business observability recommendations</li>
+<li>Key performance indicators for your journey type</li>
+<li>Common pain points and optimization opportunities</li>
+<li>
+<p>Dynatrace-specific monitoring strategies</p>
+</li>
+<li>
+<p><strong>Enhanced Journey Context Prompt</strong></p>
+</li>
+<li>Step-by-step business impact analysis</li>
+<li>Technical requirements for each journey phase</li>
+<li>Error scenarios and resilience testing recommendations</li>
+<li>Customer experience optimization insights</li>
+</ol>
+<h4 id="enhanced-metadata-integration"><strong>Enhanced Metadata Integration</strong><a class="headerlink" href="#enhanced-metadata-integration" title="Permanent link">#</a></h4>
+<p>The prompts incorporate your specific inputs:
+- <strong>Company Context</strong>: Industry best practices and benchmarks
+- <strong>Journey Details</strong>: Process-specific KPIs and metrics
+- <strong>Industry Type</strong>: Sector-specific observability patterns
+- <strong>Technical Considerations</strong>: Service architecture recommendations</p>
+<h3 id="example-generated-content">Example Generated Content<a class="headerlink" href="#example-generated-content" title="Permanent link">#</a></h3>
+<p>For a "Microsoft Azure Enterprise Purchase" journey:</p>
+<div class="highlight"><pre><span></span><code><span class="gs">**Business Observability Focus for Cloud Software Industry:**</span>
+<span class="k">-</span><span class="w"> </span>Track enterprise sales cycle progression through Azure service discovery
+<span class="k">-</span><span class="w"> </span>Monitor pricing evaluation duration impact on conversion rates
+<span class="k">-</span><span class="w"> </span>Measure customer decision-making bottlenecks in complex enterprise purchases
+<span class="k">-</span><span class="w"> </span>Analyze technical evaluation steps and their business impact
+<span class="k">-</span><span class="w"> </span>Correlate service performance with enterprise customer satisfaction
+</code></pre></div>
+<h3 id="action-required_2">Action Required<a class="headerlink" href="#action-required_2" title="Permanent link">#</a></h3>
+<p>Review the generated prompts and click <strong>"Process Response &amp; Continue"</strong> to validate the configuration.</p>
+<h2 id="step-4-process-validation-checks">Step 4: Process Validation &amp; Checks<a class="headerlink" href="#step-4-process-validation-checks" title="Permanent link">#</a></h2>
+<p><img alt="Process Checks" src="../img/Process-Checks.png" /></p>
+<p>The validation step ensures all components are properly configured before data generation begins.</p>
+<h3 id="system-validations-performed">System Validations Performed<a class="headerlink" href="#system-validations-performed" title="Permanent link">#</a></h3>
+<h4 id="configuration-completeness"><strong>✅ Configuration Completeness</strong><a class="headerlink" href="#configuration-completeness" title="Permanent link">#</a></h4>
+<ul>
+<li>All required fields populated</li>
+<li>Journey steps properly defined</li>
+<li>Business context validated</li>
+<li>Metadata structure verified</li>
+</ul>
+<h4 id="service-naming-validation"><strong>✅ Service Naming Validation</strong><a class="headerlink" href="#service-naming-validation" title="Permanent link">#</a></h4>
+<ul>
+<li>Clean service names generated (no duplicate suffixes)</li>
+<li>Company-specific naming conventions applied</li>
+<li>Dynatrace service detection compatibility confirmed</li>
+</ul>
+<h4 id="metadata-structure-check"><strong>✅ Metadata Structure Check</strong><a class="headerlink" href="#metadata-structure-check" title="Permanent link">#</a></h4>
+<ul>
+<li>DT_TAGS format validation</li>
+<li>Industry-type and journey-detail integration confirmed</li>
+<li>No duplicate metadata sources detected</li>
+<li>Lowercase formatting compliance verified</li>
+</ul>
+<h4 id="ai-prompt-validation"><strong>✅ AI Prompt Validation</strong><a class="headerlink" href="#ai-prompt-validation" title="Permanent link">#</a></h4>
+<ul>
+<li>Business observability focus confirmed</li>
+<li>Industry-specific content generated</li>
+<li>Journey context properly integrated</li>
+<li>Dynatrace integration recommendations included</li>
+</ul>
+<h3 id="example-validation-results">Example Validation Results<a class="headerlink" href="#example-validation-results" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>✅<span class="w"> </span>Company:<span class="w"> </span>Microsoft
+✅<span class="w"> </span>Industry<span class="w"> </span>Type:<span class="w"> </span>cloud_software
+✅<span class="w"> </span>Journey<span class="w"> </span>Detail:<span class="w"> </span>azure_enterprise_purchase<span class="w">  </span>
+✅<span class="w"> </span>Service<span class="w"> </span>Names:<span class="w"> </span>ProductDiscoveryService,<span class="w"> </span>PricingEvaluationService
+✅<span class="w"> </span>DT_TAGS:<span class="w"> </span>Comprehensive<span class="w"> </span>metadata<span class="w"> </span>structure<span class="w"> </span>validated
+✅<span class="w"> </span>AI<span class="w"> </span>Prompts:<span class="w"> </span>Business<span class="w"> </span>observability<span class="w"> </span>content<span class="w"> </span>generated
+</code></pre></div>
+<h3 id="action-required_3">Action Required<a class="headerlink" href="#action-required_3" title="Permanent link">#</a></h3>
+<p>Once all validations pass, click <strong>"Continue to Generate Data"</strong> to create your customer journey.</p>
+<h2 id="step-5-data-generation-service-creation">Step 5: Data Generation &amp; Service Creation<a class="headerlink" href="#step-5-data-generation-service-creation" title="Permanent link">#</a></h2>
+<p><img alt="Data Generation" src="../img/Data-Generation.png" /></p>
+<p>The final step executes the journey simulation, creating real services and generating observability data.</p>
+<p>Click <strong>"Run Journey Simulation"</strong> to create your customer journey.</p>
+<h3 id="real-time-generation-process">Real-Time Generation Process<a class="headerlink" href="#real-time-generation-process" title="Permanent link">#</a></h3>
+<h4 id="live-progress-tracking"><strong>📊 Live Progress Tracking</strong><a class="headerlink" href="#live-progress-tracking" title="Permanent link">#</a></h4>
+<ul>
+<li>Service creation progress indicators</li>
+<li>Real-time status updates</li>
+<li>Error handling and recovery information</li>
+<li>Completion metrics and summaries</li>
+</ul>
+<h4 id="dynamic-service-creation"><strong>🚀 Dynamic Service Creation</strong><a class="headerlink" href="#dynamic-service-creation" title="Permanent link">#</a></h4>
+<p>Services are created with enhanced metadata:
+<div class="highlight"><pre><span></span><code>🚀<span class="w"> </span>Starting<span class="w"> </span>child<span class="w"> </span>service:<span class="w"> </span>ProductDiscoveryService<span class="w"> </span>on<span class="w"> </span>port<span class="w"> </span><span class="m">8096</span><span class="w"> </span>
+<span class="w">   </span>Company:<span class="w"> </span>Microsoft<span class="w"> </span><span class="o">(</span>domain:<span class="w"> </span>www.microsoft.com,<span class="w"> </span>industry:<span class="w"> </span>Cloud<span class="w"> </span>Software<span class="o">)</span>
+
+DT_TAGS:<span class="w"> </span><span class="nv">company</span><span class="o">=</span>microsoft<span class="w"> </span><span class="nv">app</span><span class="o">=</span>bizobs-journey<span class="w"> </span><span class="nv">service</span><span class="o">=</span>productdiscoveryservice<span class="w"> </span>
+<span class="w">         </span>release-stage<span class="o">=</span>production<span class="w"> </span><span class="nv">owner</span><span class="o">=</span>ace-box-demo<span class="w"> </span>customer-id<span class="o">=</span>microsoft-demo<span class="w"> </span>
+<span class="w">         </span><span class="nv">environment</span><span class="o">=</span>ace-box<span class="w"> </span><span class="nv">product</span><span class="o">=</span>dynatrace<span class="w"> </span><span class="nv">domain</span><span class="o">=</span>www_microsoft_com<span class="w"> </span>
+<span class="w">         </span><span class="nv">industry</span><span class="o">=</span>cloud_software<span class="w"> </span>industry-type<span class="o">=</span>cloud_software<span class="w"> </span>
+<span class="w">         </span>journey-detail<span class="o">=</span>azure_enterprise_purchase
+</code></pre></div></p>
+<h4 id="business-observability-data"><strong>📈 Business Observability Data</strong><a class="headerlink" href="#business-observability-data" title="Permanent link">#</a></h4>
+<p>Each service generates rich business context:
+- <strong>Journey Trace</strong>: Complete end-to-end journey tracking
+- <strong>Business Metrics</strong>: Revenue, conversion rates, customer satisfaction
+- <strong>Performance Data</strong>: Response times, error rates, throughput
+- <strong>Customer Context</strong>: Device type, location, behavior patterns</p>
+<h3 id="generated-data-structure">Generated Data Structure<a class="headerlink" href="#generated-data-structure" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;journey&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;journeyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;microsoft_azure_purchase_001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;customerId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enterprise_customer_001&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;correlationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a28fcc4f-d3e0-4290-ba40-4f138f2877aa&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;companyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;industryType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cloud Software&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;journeyDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Azure Enterprise Purchase&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;stepName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscovery&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;serviceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscoveryService&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;processingTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">154</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;itemsDiscovered&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;touchpointsAnalyzed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;dataSourcesConnected&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;businessValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="what-gets-created">🎯 What Gets Created<a class="headerlink" href="#what-gets-created" title="Permanent link">#</a></h2>
+<h3 id="dynamic-microservices"><strong>Dynamic Microservices</strong><a class="headerlink" href="#dynamic-microservices" title="Permanent link">#</a></h3>
+<p>Each journey step creates a dedicated microservice:
+- <strong>Clean Naming</strong>: <code>ProductDiscoveryService</code>, <code>PricingEvaluationService</code>
+- <strong>Port Allocation</strong>: Dynamic port assignment (8080-8120 range)
+- <strong>Process Management</strong>: Individual PIDs for each service
+- <strong>Health Monitoring</strong>: Built-in health check endpoints</p>
+<h3 id="dynatrace-integration"><strong>Dynatrace Integration</strong><a class="headerlink" href="#dynatrace-integration" title="Permanent link">#</a></h3>
+<p>Complete observability data:
+- <strong>Distributed Traces</strong>: W3C trace context propagation
+- <strong>Service Maps</strong>: Automatic service discovery and relationships
+- <strong>Business Events</strong>: Custom business KPIs and metrics
+- <strong>Enhanced Tags</strong>: Industry, journey, and company context</p>
+<h3 id="business-context"><strong>Business Context</strong><a class="headerlink" href="#business-context" title="Permanent link">#</a></h3>
+<p>Rich metadata flowing through all systems:
+- <strong>Company Context</strong>: Industry-specific business patterns
+- <strong>Journey Context</strong>: Step-by-step business impact tracking
+- <strong>Customer Context</strong>: Behavioral patterns and preferences
+- <strong>Performance Context</strong>: Technical metrics tied to business outcomes</p>
+<h2 id="journey-execution-results">🚀 Journey Execution Results<a class="headerlink" href="#journey-execution-results" title="Permanent link">#</a></h2>
+<p>After successful generation, you'll see:</p>
+<h3 id="service-summary"><strong>Service Summary</strong><a class="headerlink" href="#service-summary" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>📊<span class="w"> </span>Journey<span class="w"> </span>Generation<span class="w"> </span>Complete!
+✅<span class="w"> </span>Services<span class="w"> </span>Created:<span class="w"> </span><span class="m">2</span>
+✅<span class="w"> </span>Total<span class="w"> </span>Processing<span class="w"> </span>Time:<span class="w"> </span><span class="m">7</span>.8<span class="w"> </span>seconds
+✅<span class="w"> </span>Business<span class="w"> </span>Value<span class="w"> </span>Generated:<span class="w"> </span><span class="nv">$3</span>,247.50
+✅<span class="w"> </span>Customer<span class="w"> </span>Satisfaction:<span class="w"> </span><span class="m">4</span>.2/5.0
+</code></pre></div>
+<h3 id="dynatrace-data-flow"><strong>Dynatrace Data Flow</strong><a class="headerlink" href="#dynatrace-data-flow" title="Permanent link">#</a></h3>
+<p>All generated data automatically flows to Dynatrace:
+- <strong>Services</strong>: Appear in Services view with clean names
+- <strong>Traces</strong>: Complete journey traces with business context
+- <strong>Tags</strong>: Enhanced metadata for business analysis
+- <strong>Events</strong>: Business KPIs for executive dashboards</p>
+<h2 id="advanced-journey-patterns">🎪 Advanced Journey Patterns<a class="headerlink" href="#advanced-journey-patterns" title="Permanent link">#</a></h2>
+<h3 id="multi-step-enterprise-journeys"><strong>Multi-Step Enterprise Journeys</strong><a class="headerlink" href="#multi-step-enterprise-journeys" title="Permanent link">#</a></h3>
+<p>Create complex B2B processes:
+<div class="highlight"><pre><span></span><code>Discovery<span class="w"> </span>→<span class="w"> </span>Evaluation<span class="w"> </span>→<span class="w"> </span>Procurement<span class="w"> </span>→<span class="w"> </span>Approval<span class="w"> </span>→<span class="w"> </span>Contract<span class="w"> </span>→<span class="w"> </span>Activation
+</code></pre></div></p>
+<h3 id="e-commerce-customer-journeys"><strong>E-Commerce Customer Journeys</strong><a class="headerlink" href="#e-commerce-customer-journeys" title="Permanent link">#</a></h3>
+<p>Build retail customer experiences:
+<div class="highlight"><pre><span></span><code>Browse<span class="w"> </span>→<span class="w"> </span>Compare<span class="w"> </span>→<span class="w"> </span>Cart<span class="w"> </span>→<span class="w"> </span>Checkout<span class="w"> </span>→<span class="w"> </span>Payment<span class="w"> </span>→<span class="w"> </span>Fulfillment
+</code></pre></div></p>
+<h3 id="saas-trial-conversions"><strong>SaaS Trial Conversions</strong><a class="headerlink" href="#saas-trial-conversions" title="Permanent link">#</a></h3>
+<p>Design software evaluation flows:
+<div class="highlight"><pre><span></span><code>Landing<span class="w"> </span>→<span class="w"> </span>Signup<span class="w"> </span>→<span class="w"> </span>Trial<span class="w"> </span>→<span class="w"> </span>Feature<span class="w"> </span>Exploration<span class="w"> </span>→<span class="w"> </span>Purchase<span class="w"> </span>Decision
+</code></pre></div></p>
+<h2 id="verification-next-steps">✅ Verification &amp; Next Steps<a class="headerlink" href="#verification-next-steps" title="Permanent link">#</a></h2>
+<h3 id="confirm-journey-creation"><strong>Confirm Journey Creation</strong><a class="headerlink" href="#confirm-journey-creation" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>Check Service Health</strong>: All services running with green status</li>
+<li><strong>Verify Dynatrace Data</strong>: Services appearing in Dynatrace UI</li>
+<li><strong>Review Business Metrics</strong>: KPIs generated and tracked</li>
+<li><strong>Test API Endpoints</strong>: Journey simulation endpoints accessible</li>
+</ol>
+<h3 id="ready-for-dynatrace-analysis"><strong>Ready for Dynatrace Analysis</strong><a class="headerlink" href="#ready-for-dynatrace-analysis" title="Permanent link">#</a></h3>
+<p>Your journey is now generating continuous observability data perfect for:
+- <strong>Executive Dashboards</strong>: Business KPI tracking
+- <strong>Service Performance Analysis</strong>: Technical optimization
+- <strong>Customer Experience Monitoring</strong>: Journey success rates<br />
+- <strong>Business Impact Correlation</strong>: Technical issues vs business outcomes</p>
+<div class="admonition success">
+<p class="admonition-title">Journey Created Successfully!</p>
+<p>Your customer journey is now live and generating comprehensive business observability data. Proceed to Dynatrace to visualize and analyze the insights.</p>
+</div>
+<div class="grid cards">
+<ul>
+<li><a href="../4-dynatrace-visualization/">📊 Visualizing Data in Dynatrace <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span></a></li>
+<li><a href="5-advanced-features.md">🔧 Advanced Journey Patterns <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span></a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

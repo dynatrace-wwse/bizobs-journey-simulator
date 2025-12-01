@@ -1,0 +1,1097 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>App Functionality Showcase - Dynatrace Enablement Lab: Business Observability Journey Simulator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+  <!-- Add scripts that need to run before here -->
+  
+      
+    
+  <!-- Add scripts that need to run afterwards here -->
+   <!-- TODO: BeforeGoLive: Replace Agentless RUM Snippet
+    1. Create an agentless application in Dynatrace from with convention 'dynatrace-wwse/repositoryname'
+    2. https://hci34192.apps.dynatrace.com/ui/apps/dynatrace.classic.deploy.agentless/#install/agentless;gtf=-2h;gf=all
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/PLACEHOLDEr/REPLACE_WITH_YOUR_SNIPPET/1234abcd1234abcd_complete.js" crossorigin="anonymous"></script>
+    -->
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/1612cf70810/bf81393wlb/7c50bce5c0cc890f_complete.js" crossorigin="anonymous"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#app-functionality-showcase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-header__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Enablement Lab: Business Observability Journey Simulator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              App Functionality Showcase
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-nav__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    Dynatrace Enablement Lab: Business Observability Journey Simulator
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-advanced-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-application-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Core Application Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Core Application Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dynamic-service-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Dynamic Service Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-loadrunner-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. LoadRunner Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-customer-error-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Customer Error Profiles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-api-endpoints-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Real API Endpoints &amp; Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Real API Endpoints & Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#journey-management-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journey Management APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Journey Management APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-a-journey-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start a Journey Simulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-journey-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Journey Simulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadrunner-integration-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      LoadRunner Integration APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LoadRunner Integration APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-loadrunner-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate LoadRunner Scripts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-available-test-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Available Test Scenarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-management-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Management APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Management APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-service-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Service Health
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-all-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset All Services
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-simulation-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Simulation APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Simulation APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigger-custom-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trigger Custom Errors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-analytics-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metrics &amp; Analytics APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics & Analytics APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-journey-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Journey Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-test-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Practical Test Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Practical Test Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-case-1-e-commerce-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Case 1: E-Commerce Journey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-2-insurance-application-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Case 2: Insurance Application Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-3-load-testing-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Case 3: Load Testing Generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-case-4-error-resilience-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Case 4: Error Resilience Testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Observability Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Observability Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynatrace Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Analytics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-customer-specific-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Next: Customer-Specific Test Cases
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="app-functionality-showcase">App Functionality Showcase<a class="headerlink" href="#app-functionality-showcase" title="Permanent link">#</a></h1>
+<p>This section demonstrates the <strong>actual capabilities</strong> of the BizObs Journey Simulator with real-world test use cases, API endpoints, and practical examples. All examples below are based on the live application functionality.</p>
+<h2 id="core-application-features">🎯 Core Application Features<a class="headerlink" href="#core-application-features" title="Permanent link">#</a></h2>
+<h3 id="1-dynamic-service-architecture">1. <strong>Dynamic Service Architecture</strong><a class="headerlink" href="#1-dynamic-service-architecture" title="Permanent link">#</a></h3>
+<p>The app automatically spawns and manages microservices as child processes with proper Dynatrace service splitting:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Real service management from server.js</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DT_SERVICE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;bizobs-main-server&#39;</span><span class="p">;</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DT_LOGICAL_SERVICE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;bizobs-main-server&#39;</span><span class="p">;</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DT_TAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;service=bizobs-main-server&#39;</span><span class="p">;</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DT_CUSTOM_PROP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;service.splitting=enabled&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Available Services:</strong>
+- <code>DiscoveryService</code> - Product/service discovery functionality
+- <code>PurchaseService</code> - Transaction and payment processing
+- <code>DataPersistenceService</code> - Data storage and retrieval
+- Dynamic services spawned per journey step as needed</p>
+<h3 id="2-loadrunner-integration">2. <strong>LoadRunner Integration</strong><a class="headerlink" href="#2-loadrunner-integration" title="Permanent link">#</a></h3>
+<p>Generates real LoadRunner C-scripts with comprehensive test scenarios:</p>
+<p><strong>Load Test Configurations:</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">LOADRUNNER_CONFIGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">light</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">journeyInterval</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">600</span><span class="w"> </span><span class="p">},</span><span class="w">    </span><span class="c1">// 20 users over 10 min</span>
+<span class="w">  </span><span class="nx">medium</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">journeyInterval</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">900</span><span class="w"> </span><span class="p">},</span><span class="w">   </span><span class="c1">// 60 users over 15 min  </span>
+<span class="w">  </span><span class="nx">heavy</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">journeyInterval</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="w"> </span><span class="p">},</span><span class="w">   </span><span class="c1">// 120 users over 20 min</span>
+<span class="w">  </span><span class="nx">stress</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">journeyInterval</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">1800</span><span class="w"> </span><span class="p">},</span><span class="w">   </span><span class="c1">// 360 users over 30 min</span>
+<span class="w">  </span><span class="nx">extreme</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">journeyInterval</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">1800</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">// 600 users over 30 min</span>
+<span class="w">  </span><span class="nx">peak</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">journeyInterval</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1">// 600 users over 20 min</span>
+<span class="p">};</span>
+</code></pre></div></p>
+<h3 id="3-customer-error-profiles">3. <strong>Customer Error Profiles</strong><a class="headerlink" href="#3-customer-error-profiles" title="Permanent link">#</a></h3>
+<p>Realistic error simulation based on customer characteristics:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">CUSTOMER_ERROR_PROFILES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="s1">&#39;acme corp&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">errorRate</span><span class="o">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">errorTypes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;payment_gateway_timeout&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;inventory_service_down&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">httpErrors</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="mf">503</span><span class="p">,</span><span class="w"> </span><span class="mf">429</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">problematicSteps</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;checkout&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;payment&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;order confirmation&#39;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s1">&#39;umbrella corporation&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">errorRate</span><span class="o">:</span><span class="w"> </span><span class="mf">0.35</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">errorTypes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;security_breach_detected&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;system_contamination&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">httpErrors</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="mf">503</span><span class="p">,</span><span class="w"> </span><span class="mf">502</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">problematicSteps</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;verification&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;security&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;data processing&#39;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="real-api-endpoints-examples">🔧 Real API Endpoints &amp; Examples<a class="headerlink" href="#real-api-endpoints-examples" title="Permanent link">#</a></h2>
+<h3 id="journey-management-apis">Journey Management APIs<a class="headerlink" href="#journey-management-apis" title="Permanent link">#</a></h3>
+<h4 id="start-a-journey-simulation"><strong>Start a Journey Simulation</strong><a class="headerlink" href="#start-a-journey-simulation" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>/api/journey-simulation/simulate
+Content-Type:<span class="w"> </span>application/json
+
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;companyName&quot;</span>:<span class="w"> </span><span class="s2">&quot;Acme Corp&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;domain&quot;</span>:<span class="w"> </span><span class="s2">&quot;acme.com&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;industryType&quot;</span>:<span class="w"> </span><span class="s2">&quot;retail&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;steps&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;Discovery&quot;</span>,<span class="w"> </span><span class="s2">&quot;Consideration&quot;</span>,<span class="w"> </span><span class="s2">&quot;Purchase&quot;</span>,<span class="w"> </span><span class="s2">&quot;Confirmation&quot;</span><span class="o">]</span>,
+<span class="w">  </span><span class="s2">&quot;additionalFields&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;customerSegment&quot;</span>:<span class="w"> </span><span class="s2">&quot;premium&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;region&quot;</span>:<span class="w"> </span><span class="s2">&quot;north-america&quot;</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sessionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sess_acme_123456&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;journeySteps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;stepName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Discovery&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;serviceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DiscoveryService-AcmeCorp&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8083</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;responseTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">245</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;businessMetrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;revenue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;conversionRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;totalDuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1247</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;businessImpact&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;totalRevenue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">89.50</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;customerSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h4 id="batch-journey-simulation"><strong>Batch Journey Simulation</strong><a class="headerlink" href="#batch-journey-simulation" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>/api/journey-simulation/simulate-batch-chained
+Content-Type:<span class="w"> </span>application/json
+
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;customers&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="o">{</span><span class="s2">&quot;companyName&quot;</span>:<span class="w"> </span><span class="s2">&quot;Acme Corp&quot;</span>,<span class="w"> </span><span class="s2">&quot;domain&quot;</span>:<span class="w"> </span><span class="s2">&quot;acme.com&quot;</span><span class="o">}</span>,
+<span class="w">    </span><span class="o">{</span><span class="s2">&quot;companyName&quot;</span>:<span class="w"> </span><span class="s2">&quot;GlobalTech&quot;</span>,<span class="w"> </span><span class="s2">&quot;domain&quot;</span>:<span class="w"> </span><span class="s2">&quot;globaltech.io&quot;</span><span class="o">}</span>
+<span class="w">  </span><span class="o">]</span>,
+<span class="w">  </span><span class="s2">&quot;journey&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;steps&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;Discovery&quot;</span>,<span class="w"> </span><span class="s2">&quot;Purchase&quot;</span>,<span class="w"> </span><span class="s2">&quot;Retention&quot;</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>,
+<span class="w">  </span><span class="s2">&quot;thinkTimeMs&quot;</span>:<span class="w"> </span><span class="m">2000</span>
+<span class="o">}</span>
+</code></pre></div>
+<h3 id="loadrunner-integration-apis">LoadRunner Integration APIs<a class="headerlink" href="#loadrunner-integration-apis" title="Permanent link">#</a></h3>
+<h4 id="generate-loadrunner-scripts"><strong>Generate LoadRunner Scripts</strong><a class="headerlink" href="#generate-loadrunner-scripts" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>/api/loadrunner/generate
+Content-Type:<span class="w"> </span>application/json
+
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;journeyConfig&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;companyName&quot;</span>:<span class="w"> </span><span class="s2">&quot;TechStart Inc&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;domain&quot;</span>:<span class="w"> </span><span class="s2">&quot;techstart.com&quot;</span>,<span class="w"> </span>
+<span class="w">    </span><span class="s2">&quot;steps&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;Discovery&quot;</span>,<span class="w"> </span><span class="s2">&quot;Trial&quot;</span>,<span class="w"> </span><span class="s2">&quot;Purchase&quot;</span>,<span class="w"> </span><span class="s2">&quot;Activation&quot;</span><span class="o">]</span>
+<span class="w">  </span><span class="o">}</span>,
+<span class="w">  </span><span class="s2">&quot;testConfig&quot;</span>:<span class="w"> </span><span class="s2">&quot;medium&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;errorSimulationEnabled&quot;</span>:<span class="w"> </span><span class="nb">true</span>
+<span class="o">}</span>
+</code></pre></div>
+<p><strong>Generated Output:</strong>
+- <code>loadrunner-tests/TechStart_2024-11-28/TechStart_Journey.c</code>
+- <code>loadrunner-tests/scenarios/medium-load.json</code>
+- Complete C-script with Dynatrace tagging</p>
+<h4 id="list-available-test-scenarios"><strong>List Available Test Scenarios</strong><a class="headerlink" href="#list-available-test-scenarios" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>/api/loadrunner/scenarios
+</code></pre></div>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;scenarios&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Light load - 20 users over 10 minutes&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;journeyInterval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;estimatedUsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stress&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stress test - 360 users over 30 minutes&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;journeyInterval&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;estimatedUsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="service-management-apis">Service Management APIs<a class="headerlink" href="#service-management-apis" title="Permanent link">#</a></h3>
+<h4 id="check-service-health"><strong>Check Service Health</strong><a class="headerlink" href="#check-service-health" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>/api/services/health
+</code></pre></div>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mainServer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;healthy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8080</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uptime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;childServices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;DiscoveryService-DefaultCompany&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;running&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8083</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;requests&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;PurchaseService-DefaultCompany&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;running&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8084</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12346</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;requests&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h4 id="reset-all-services"><strong>Reset All Services</strong><a class="headerlink" href="#reset-all-services" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>/api/admin/reset-ports
+</code></pre></div>
+<p>Stops all dynamic services and frees up ports for fresh start.</p>
+<h3 id="error-simulation-apis">Error Simulation APIs<a class="headerlink" href="#error-simulation-apis" title="Permanent link">#</a></h3>
+<h4 id="trigger-custom-errors"><strong>Trigger Custom Errors</strong><a class="headerlink" href="#trigger-custom-errors" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>/api/simulate-error
+Content-Type:<span class="w"> </span>application/json
+
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;errorType&quot;</span>:<span class="w"> </span><span class="s2">&quot;payment_gateway_timeout&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;customerName&quot;</span>:<span class="w"> </span><span class="s2">&quot;Acme Corp&quot;</span>,<span class="w"> </span>
+<span class="w">  </span><span class="s2">&quot;stepName&quot;</span>:<span class="w"> </span><span class="s2">&quot;checkout&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;severity&quot;</span>:<span class="w"> </span><span class="s2">&quot;high&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+<h3 id="metrics-analytics-apis">Metrics &amp; Analytics APIs<a class="headerlink" href="#metrics-analytics-apis" title="Permanent link">#</a></h3>
+<h4 id="get-journey-metrics"><strong>Get Journey Metrics</strong><a class="headerlink" href="#get-journey-metrics" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>/api/metrics/journey-summary
+</code></pre></div>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;totalJourneys&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;successfulJourneys&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;conversionRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.70</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;averageRevenue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">156.78</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;topPerformingSteps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Discovery&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Purchase&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;problemAreas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Payment&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Verification&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;businessMetrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;totalRevenue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">13952.42</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;customerSatisfactionScore&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.1</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="practical-test-use-cases">🧪 Practical Test Use Cases<a class="headerlink" href="#practical-test-use-cases" title="Permanent link">#</a></h2>
+<h3 id="test-case-1-e-commerce-journey"><strong>Test Case 1: E-Commerce Journey</strong><a class="headerlink" href="#test-case-1-e-commerce-journey" title="Permanent link">#</a></h3>
+<p><strong>Scenario:</strong> Simulate a retail customer purchasing process with realistic error patterns.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Start the journey</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/journey-simulation/simulate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;companyName&quot;: &quot;Fashion Forward&quot;,</span>
+<span class="s1">    &quot;domain&quot;: &quot;fashionforward.com&quot;,</span>
+<span class="s1">    &quot;industryType&quot;: &quot;retail&quot;,</span>
+<span class="s1">    &quot;steps&quot;: [&quot;Discovery&quot;, &quot;Browse&quot;, &quot;AddToCart&quot;, &quot;Checkout&quot;, &quot;Payment&quot;, &quot;Confirmation&quot;],</span>
+<span class="s1">    &quot;additionalFields&quot;: {</span>
+<span class="s1">      &quot;customerType&quot;: &quot;returning&quot;,</span>
+<span class="s1">      &quot;cartValue&quot;: 89.99</span>
+<span class="s1">    }</span>
+<span class="s1">  }&#39;</span>
+
+<span class="c1"># 2. Monitor progress via WebSocket</span>
+<span class="c1"># Connect to: ws://localhost:8080/ws/journey-updates</span>
+
+<span class="c1"># 3. Check business metrics</span>
+curl<span class="w"> </span>http://localhost:8080/api/metrics/journey-summary
+</code></pre></div>
+<p><strong>Expected Results:</strong>
+- 6 microservices spawned dynamically
+- Real-time business metrics tracking
+- Dynatrace service splitting with proper tagging
+- LoadRunner script generation capability</p>
+<h3 id="test-case-2-insurance-application-flow"><strong>Test Case 2: Insurance Application Flow</strong><a class="headerlink" href="#test-case-2-insurance-application-flow" title="Permanent link">#</a></h3>
+<p><strong>Scenario:</strong> Complex multi-step insurance application with validation and underwriting.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Insurance journey with higher complexity</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/journey-simulation/simulate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;companyName&quot;: &quot;SecureLife Insurance&quot;, </span>
+<span class="s1">    &quot;domain&quot;: &quot;securelife.com&quot;,</span>
+<span class="s1">    &quot;industryType&quot;: &quot;financial&quot;,</span>
+<span class="s1">    &quot;steps&quot;: [&quot;Quote&quot;, &quot;Application&quot;, &quot;Verification&quot;, &quot;Underwriting&quot;, &quot;Approval&quot;, &quot;Policy&quot;],</span>
+<span class="s1">    &quot;additionalFields&quot;: {</span>
+<span class="s1">      &quot;policyType&quot;: &quot;life&quot;,</span>
+<span class="s1">      &quot;coverageAmount&quot;: 250000,</span>
+<span class="s1">      &quot;riskLevel&quot;: &quot;standard&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<h3 id="test-case-3-load-testing-generation"><strong>Test Case 3: Load Testing Generation</strong><a class="headerlink" href="#test-case-3-load-testing-generation" title="Permanent link">#</a></h3>
+<p><strong>Scenario:</strong> Generate performance tests for high-traffic scenarios.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Generate stress test scenario</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/loadrunner/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;journeyConfig&quot;: {</span>
+<span class="s1">      &quot;companyName&quot;: &quot;HighTraffic Corp&quot;,</span>
+<span class="s1">      &quot;domain&quot;: &quot;hightraffic.com&quot;,</span>
+<span class="s1">      &quot;steps&quot;: [&quot;Discovery&quot;, &quot;Purchase&quot;, &quot;Support&quot;]</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;testConfig&quot;: &quot;stress&quot;,</span>
+<span class="s1">    &quot;errorSimulationEnabled&quot;: true</span>
+<span class="s1">  }&#39;</span>
+
+<span class="c1"># 2. Check generated files</span>
+<span class="c1"># loadrunner-tests/HighTraffic_2024-11-28/HighTraffic_Journey.c</span>
+<span class="c1"># loadrunner-tests/scenarios/stress-test.json</span>
+</code></pre></div>
+<h3 id="test-case-4-error-resilience-testing"><strong>Test Case 4: Error Resilience Testing</strong><a class="headerlink" href="#test-case-4-error-resilience-testing" title="Permanent link">#</a></h3>
+<p><strong>Scenario:</strong> Test application behavior under various error conditions.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Start normal journey</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/journey-simulation/simulate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;companyName&quot;: &quot;Umbrella Corporation&quot;,</span>
+<span class="s1">    &quot;domain&quot;: &quot;umbrella.com&quot;, </span>
+<span class="s1">    &quot;steps&quot;: [&quot;Discovery&quot;, &quot;Security&quot;, &quot;Processing&quot;, &quot;Confirmation&quot;]</span>
+<span class="s1">  }&#39;</span>
+
+<span class="c1"># 2. Inject errors mid-journey</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/simulate-error<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;errorType&quot;: &quot;security_breach_detected&quot;,</span>
+<span class="s1">    &quot;customerName&quot;: &quot;Umbrella Corporation&quot;,</span>
+<span class="s1">    &quot;stepName&quot;: &quot;Security&quot;,</span>
+<span class="s1">    &quot;severity&quot;: &quot;critical&quot;</span>
+<span class="s1">  }&#39;</span>
+
+<span class="c1"># 3. Observe error propagation and recovery</span>
+</code></pre></div>
+<h2 id="observability-features">🔍 Observability Features<a class="headerlink" href="#observability-features" title="Permanent link">#</a></h2>
+<h3 id="dynatrace-integration"><strong>Dynatrace Integration</strong><a class="headerlink" href="#dynatrace-integration" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Service Splitting</strong>: Each journey step runs as separate service</li>
+<li><strong>Request Tagging</strong>: Custom tags for business context  </li>
+<li><strong>Distributed Tracing</strong>: End-to-end journey visibility</li>
+<li><strong>Business Events</strong>: Revenue and conversion tracking</li>
+</ul>
+<h3 id="real-time-monitoring"><strong>Real-Time Monitoring</strong><a class="headerlink" href="#real-time-monitoring" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>WebSocket Updates</strong>: Live journey progress</li>
+<li><strong>Health Checks</strong>: Service status monitoring</li>
+<li><strong>Performance Metrics</strong>: Response times and throughput</li>
+<li><strong>Error Tracking</strong>: Failure patterns and impact analysis</li>
+</ul>
+<h3 id="business-analytics"><strong>Business Analytics</strong><a class="headerlink" href="#business-analytics" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Revenue Tracking</strong>: Per-journey monetary value</li>
+<li><strong>Conversion Rates</strong>: Step-by-step success ratios</li>
+<li><strong>Customer Satisfaction</strong>: Experience quality scoring</li>
+<li><strong>Performance Impact</strong>: Technical metrics vs business outcomes</li>
+</ul>
+<h2 id="getting-started">🚀 Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h2>
+<ol>
+<li>
+<p><strong>Start the Application:</strong>
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>app
+npm<span class="w"> </span>start
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Access the Web Interface:</strong></p>
+</li>
+<li>Open http://localhost:8080</li>
+<li>
+<p>Use the interactive dashboard for journey creation</p>
+</li>
+<li>
+<p><strong>Test API Endpoints:</strong></p>
+</li>
+<li>Use the examples above to test functionality</li>
+<li>
+<p>Monitor Dynatrace for service splitting and tracing</p>
+</li>
+<li>
+<p><strong>Generate Load Tests:</strong></p>
+</li>
+<li>Create LoadRunner scripts from journey simulations</li>
+<li>Execute performance testing scenarios</li>
+</ol>
+<p>The application is now ready for comprehensive business observability testing with real customer journeys, error simulation, and performance analysis!</p>
+<h2 id="next-customer-specific-test-cases">📊 Next: Customer-Specific Test Cases<a class="headerlink" href="#next-customer-specific-test-cases" title="Permanent link">#</a></h2>
+<p><em>Ready to receive your specific customer test use case prompts to create targeted journey simulations and documentation.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

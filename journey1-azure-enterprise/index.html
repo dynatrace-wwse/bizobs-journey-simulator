@@ -1,0 +1,883 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Journey1 azure enterprise - Dynatrace Enablement Lab: Business Observability Journey Simulator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+  <!-- Add scripts that need to run before here -->
+  
+      
+    
+  <!-- Add scripts that need to run afterwards here -->
+   <!-- TODO: BeforeGoLive: Replace Agentless RUM Snippet
+    1. Create an agentless application in Dynatrace from with convention 'dynatrace-wwse/repositoryname'
+    2. https://hci34192.apps.dynatrace.com/ui/apps/dynatrace.classic.deploy.agentless/#install/agentless;gtf=-2h;gf=all
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/PLACEHOLDEr/REPLACE_WITH_YOUR_SNIPPET/1234abcd1234abcd_complete.js" crossorigin="anonymous"></script>
+    -->
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/1612cf70810/bf81393wlb/7c50bce5c0cc890f_complete.js" crossorigin="anonymous"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#journey-1-microsoft-azure-enterprise-purchase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-header__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Enablement Lab: Business Observability Journey Simulator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Journey1 azure enterprise
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-nav__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    Dynatrace Enablement Lab: Business Observability Journey Simulator
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-advanced-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#journey-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏢 Journey Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-journey-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Step-by-Step Journey Creation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Step-by-Step Journey Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-access-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Access the Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-customer-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Configure Customer Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Configure Customer Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#company-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Company Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-specifics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journey Specifics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-process-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Process Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-ai-prompt-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: AI Prompt Generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-configuration-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Configuration Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-journey-execution-and-service-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Journey Execution and Service Creation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-business-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Generated Business Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Generated Business Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service-architecture-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Architecture Created
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-metrics-generated" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Metrics Generated
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 What Happens Next
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 What Happens Next">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immediate Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynatrace Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>// JavaScript snippet placeholder for Journey 1: Azure Enterprise documentation
+// This file enables the --8&lt;-- snippet inclusion functionality</p>
+<h1 id="journey-1-microsoft-azure-enterprise-purchase">🛤️ Journey 1: Microsoft Azure Enterprise Purchase<a class="headerlink" href="#journey-1-microsoft-azure-enterprise-purchase" title="Permanent link">#</a></h1>
+<p>In this first journey, we'll create a comprehensive Microsoft Azure enterprise purchase simulation that demonstrates the full power of business observability. This journey will generate real services, business events, and distributed traces that flow directly into Dynatrace.</p>
+<h2 id="what-youll-learn">🎯 What You'll Learn<a class="headerlink" href="#what-youll-learn" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Complete UI Workflow</strong>: Step-by-step journey creation using the web interface</li>
+<li><strong>Business Context Integration</strong>: How industry-specific metadata enhances observability</li>
+<li><strong>Service Generation</strong>: Watch dynamic microservices being created with clean naming</li>
+<li><strong>Distributed Tracing</strong>: See complete customer journey traces with business context</li>
+<li><strong>Business KPIs</strong>: Monitor revenue, conversion rates, and customer satisfaction</li>
+</ul>
+<h2 id="journey-overview">🏢 Journey Overview<a class="headerlink" href="#journey-overview" title="Permanent link">#</a></h2>
+<p><strong>Business Scenario:</strong> A large enterprise is evaluating Microsoft Azure for their cloud infrastructure needs. The journey represents a typical enterprise sales cycle with multiple stakeholders and complex decision-making processes.</p>
+<p><strong>Journey Steps:</strong>
+<div class="highlight"><pre><span></span><code>graph LR
+    A[Product Discovery] --&gt; B[Pricing Evaluation]
+    B --&gt; C[Proof of Concept]
+    C --&gt; D[Contract Negotiation] 
+    D --&gt; E[Deployment Planning]
+    E --&gt; F[Go-Live]
+</code></pre></div></p>
+<p><strong>Expected Business Outcomes:</strong>
+- <strong>Revenue Potential</strong>: $25,000 - $100,000+ per completion
+- <strong>Sales Cycle</strong>: 30-90 days (simulated in minutes)
+- <strong>Conversion Rate</strong>: 75-85% for qualified enterprise prospects
+- <strong>Customer Satisfaction</strong>: 4.2+ /5.0 average rating</p>
+<h2 id="step-by-step-journey-creation">🚀 Step-by-Step Journey Creation<a class="headerlink" href="#step-by-step-journey-creation" title="Permanent link">#</a></h2>
+<h3 id="step-1-access-the-application">Step 1: Access the Application<a class="headerlink" href="#step-1-access-the-application" title="Permanent link">#</a></h3>
+<p><strong>Open your BizObs Generator:</strong>
+- <strong>Codespaces</strong>: Use the forwarded port 8080 URL
+- <strong>Local</strong>: Navigate to <code>http://localhost:8080</code></p>
+<p><strong>Verify the Welcome Page:</strong>
+<img alt="App Welcome Page" src="img/App-Welcome-Page.png" /></p>
+<p>You should see:
+- ✅ Clean, professional interface with Dynatrace branding
+- ✅ Four-step process overview clearly outlined<br />
+- ✅ "Get Started" button prominently displayed</p>
+<p><strong>Click "Get Started"</strong> to begin the journey creation process.</p>
+<h3 id="step-2-configure-customer-details">Step 2: Configure Customer Details<a class="headerlink" href="#step-2-configure-customer-details" title="Permanent link">#</a></h3>
+<p><img alt="Customer Details" src="../img/Customer-Details.png" /></p>
+<p>Fill out the form with the following enterprise scenario details:</p>
+<h4 id="company-information">Company Information<a class="headerlink" href="#company-information" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>Company Name: Microsoft
+Domain: www.microsoft.com
+</code></pre></div>
+<p><strong>Why These Values Matter:</strong>
+- <strong>Company Name</strong> becomes part of service naming: <code>ProductDiscoveryService-Microsoft</code>
+- <strong>Domain</strong> appears in DT_TAGS as <code>domain=www_microsoft_com</code> 
+- Both provide business context in all Dynatrace traces and events</p>
+<h4 id="industry-classification">Industry Classification<a class="headerlink" href="#industry-classification" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>Industry Type: Cloud Software
+</code></pre></div>
+<p><strong>Business Impact:</strong>
+- Creates <code>industry-type=cloud_software</code> tag for business segmentation
+- Enables industry-specific benchmarking in Dynatrace dashboards
+- Triggers industry-appropriate AI prompt generation</p>
+<h4 id="journey-specifics">Journey Specifics<a class="headerlink" href="#journey-specifics" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>Journey Type: Product Purchase
+Journey Detail: Azure Enterprise Purchase
+</code></pre></div>
+<p><strong>Observability Value:</strong>
+- <strong>Journey Type</strong> provides high-level process categorization
+- <strong>Journey Detail</strong> creates <code>journey-detail=azure_enterprise_purchase</code> tag
+- Both enable filtering and analysis of specific business processes</p>
+<h4 id="define-process-steps">Define Process Steps<a class="headerlink" href="#define-process-steps" title="Permanent link">#</a></h4>
+<p><strong>Add the following steps in order:</strong></p>
+<p><strong>Step 1:</strong>
+<div class="highlight"><pre><span></span><code>Step Name: ProductDiscovery
+Description: Azure services discovery and evaluation
+</code></pre></div></p>
+<p><strong>Step 2:</strong><br />
+<div class="highlight"><pre><span></span><code>Step Name: PricingEvaluation
+Description: Enterprise pricing analysis and cost modeling
+</code></pre></div></p>
+<p><strong>Step 3:</strong>
+<div class="highlight"><pre><span></span><code>Step Name: ProofOfConcept
+Description: Technical proof of concept implementation
+</code></pre></div></p>
+<p><strong>Step 4:</strong>
+<div class="highlight"><pre><span></span><code>Step Name: ContractNegotiation  
+Description: Contract terms and pricing negotiation
+</code></pre></div></p>
+<p><strong>Step 5:</strong>
+<div class="highlight"><pre><span></span><code>Step Name: DeploymentPlanning
+Description: Azure deployment architecture planning
+</code></pre></div></p>
+<p><strong>Step 6:</strong>
+<div class="highlight"><pre><span></span><code>Step Name: GoLive
+Description: Production environment go-live
+</code></pre></div></p>
+<p><strong>Click "Generate Prompts"</strong> to proceed to AI-powered content generation.</p>
+<h3 id="step-3-ai-prompt-generation">Step 3: AI Prompt Generation<a class="headerlink" href="#step-3-ai-prompt-generation" title="Permanent link">#</a></h3>
+<p><img alt="Generate Prompts" src="../img/Generate-Prompts.png" /></p>
+<p><strong>What's Happening:</strong>
+The system analyzes your inputs and generates business observability prompts specifically tailored to:
+- <strong>Cloud Software Industry</strong> best practices
+- <strong>Enterprise Purchase Cycles</strong> characteristics<br />
+- <strong>Azure-Specific</strong> business processes
+- <strong>Microsoft</strong> customer journey patterns</p>
+<p><strong>Generated Content Examples:</strong></p>
+<p><strong>Business Observability Focus:</strong>
+<div class="highlight"><pre><span></span><code>🎯 Track enterprise Azure adoption decision points
+📊 Monitor technical evaluation duration vs conversion rates  
+💰 Measure contract value correlation with proof-of-concept success
+🔍 Analyze stakeholder involvement patterns in enterprise purchases
+📈 Correlate technical performance with business decision confidence
+</code></pre></div></p>
+<p><strong>Industry-Specific KPIs:</strong>
+<div class="highlight"><pre><span></span><code>🏭 Cloud Software Industry Benchmarks:
+<span class="k">-</span><span class="w"> </span>Enterprise sales cycle: 60-120 days average
+<span class="k">-</span><span class="w"> </span>Technical evaluation phase: 15-30% of total cycle time
+<span class="k">-</span><span class="w"> </span>Contract negotiation: 20-40% of total cycle time
+<span class="k">-</span><span class="w"> </span>Customer satisfaction correlation with technical performance
+</code></pre></div></p>
+<p><strong>Review the generated prompts</strong> and <strong>click "Process Check"</strong> to validate your configuration.</p>
+<h3 id="step-4-configuration-validation">Step 4: Configuration Validation<a class="headerlink" href="#step-4-configuration-validation" title="Permanent link">#</a></h3>
+<p><img alt="Process Checks" src="../img/Process-Checks.png" /></p>
+<p><strong>System Validation Results:</strong></p>
+<div class="highlight"><pre><span></span><code>✅<span class="w"> </span>Configuration<span class="w"> </span>Completeness
+<span class="w">   </span>•<span class="w"> </span>Company:<span class="w"> </span>Microsoft
+<span class="w">   </span>•<span class="w"> </span>Domain:<span class="w"> </span>www.microsoft.com<span class="w">  </span>
+<span class="w">   </span>•<span class="w"> </span>Industry:<span class="w"> </span>Cloud<span class="w"> </span>Software
+<span class="w">   </span>•<span class="w"> </span>Journey<span class="w"> </span>Steps:<span class="w"> </span><span class="m">6</span><span class="w"> </span>steps<span class="w"> </span>defined
+
+✅<span class="w"> </span>Service<span class="w"> </span>Naming<span class="w"> </span>Validation
+<span class="w">   </span>•<span class="w"> </span>ProductDiscoveryService<span class="w"> </span><span class="o">(</span>clean,<span class="w"> </span>no<span class="w"> </span>duplicates<span class="o">)</span>
+<span class="w">   </span>•<span class="w"> </span>PricingEvaluationService<span class="w"> </span><span class="o">(</span>business-aligned<span class="o">)</span><span class="w"> </span>
+<span class="w">   </span>•<span class="w"> </span>ProofOfConceptService<span class="w"> </span><span class="o">(</span>descriptive<span class="o">)</span>
+<span class="w">   </span>•<span class="w"> </span>ContractNegotiationService<span class="w"> </span><span class="o">(</span>process-specific<span class="o">)</span>
+<span class="w">   </span>•<span class="w"> </span>DeploymentPlanningService<span class="w"> </span><span class="o">(</span>outcome-focused<span class="o">)</span>
+<span class="w">   </span>•<span class="w"> </span>GoLiveService<span class="w"> </span><span class="o">(</span>milestone-clear<span class="o">)</span>
+
+✅<span class="w"> </span>Metadata<span class="w"> </span>Structure<span class="w"> </span>Check
+<span class="w">   </span>•<span class="w"> </span>DT_TAGS<span class="w"> </span>format:<span class="w"> </span>Valid<span class="w"> </span>lowercase<span class="w"> </span>with<span class="w"> </span>underscores
+<span class="w">   </span>•<span class="w"> </span>Industry<span class="w"> </span>integration:<span class="w"> </span>cloud_software<span class="w"> </span>configured
+<span class="w">   </span>•<span class="w"> </span>Journey<span class="w"> </span>context:<span class="w"> </span>azure_enterprise_purchase<span class="w"> </span>confirmed
+<span class="w">   </span>•<span class="w"> </span>No<span class="w"> </span>duplicate<span class="w"> </span>sources:<span class="w"> </span>Single<span class="w"> </span><span class="nb">source</span><span class="w"> </span>of<span class="w"> </span>truth<span class="w"> </span>verified
+
+✅<span class="w"> </span>Business<span class="w"> </span>Observability<span class="w"> </span>Ready
+<span class="w">   </span>•<span class="w"> </span>AI<span class="w"> </span>prompts:<span class="w"> </span>Industry-specific<span class="w"> </span>content<span class="w"> </span>generated
+<span class="w">   </span>•<span class="w"> </span>KPI<span class="w"> </span>tracking:<span class="w"> </span>Revenue,<span class="w"> </span>conversion,<span class="w"> </span>satisfaction<span class="w"> </span>configured
+<span class="w">   </span>•<span class="w"> </span>Distributed<span class="w"> </span>tracing:<span class="w"> </span>W3C<span class="w"> </span>context<span class="w"> </span>propagation<span class="w"> </span>enabled
+</code></pre></div>
+<p><strong>Click "Generate Data"</strong> to create your Microsoft Azure enterprise journey.</p>
+<h3 id="step-5-journey-execution-and-service-creation">Step 5: Journey Execution and Service Creation<a class="headerlink" href="#step-5-journey-execution-and-service-creation" title="Permanent link">#</a></h3>
+<p><img alt="Data Generation" src="../img/Data-Generation.png" /></p>
+<p><strong>Real-Time Service Creation:</strong></p>
+<p>Watch as the system creates your enterprise Azure purchase journey:</p>
+<div class="highlight"><pre><span></span><code>🚀<span class="w"> </span>Creating<span class="w"> </span>Microsoft<span class="w"> </span>Azure<span class="w"> </span>Enterprise<span class="w"> </span>Journey...
+
+📊<span class="w"> </span>Service<span class="w"> </span>Generation<span class="w"> </span>Progress:
+<span class="w">   </span>✅<span class="w"> </span>ProductDiscoveryService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8096</span><span class="o">)</span>
+<span class="w">   </span>✅<span class="w"> </span>PricingEvaluationService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8097</span><span class="o">)</span><span class="w">  </span>
+<span class="w">   </span>✅<span class="w"> </span>ProofOfConceptService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8098</span><span class="o">)</span>
+<span class="w">   </span>✅<span class="w"> </span>ContractNegotiationService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8099</span><span class="o">)</span>
+<span class="w">   </span>✅<span class="w"> </span>DeploymentPlanningService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8100</span><span class="o">)</span>
+<span class="w">   </span>✅<span class="w"> </span>GoLiveService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8101</span><span class="o">)</span>
+
+🏷️<span class="w"> </span>Enhanced<span class="w"> </span>DT_TAGS<span class="w"> </span>Applied:
+<span class="w">   </span><span class="nv">company</span><span class="o">=</span>microsoft
+<span class="w">   </span><span class="nv">app</span><span class="o">=</span>bizobs-journey
+<span class="w">   </span>industry-type<span class="o">=</span>cloud_software
+<span class="w">   </span>journey-detail<span class="o">=</span>azure_enterprise_purchase
+<span class="w">   </span><span class="nv">domain</span><span class="o">=</span>www_microsoft_com
+<span class="w">   </span><span class="nv">product</span><span class="o">=</span>dynatrace
+
+🎯<span class="w"> </span>Journey<span class="w"> </span>Simulation<span class="w"> </span>Complete:
+<span class="w">   </span>Total<span class="w"> </span>Services:<span class="w"> </span><span class="m">6</span><span class="w"> </span>microservices
+<span class="w">   </span>Processing<span class="w"> </span>Time:<span class="w"> </span><span class="m">12</span>.4<span class="w"> </span>seconds<span class="w">  </span>
+<span class="w">   </span>Business<span class="w"> </span>Value<span class="w"> </span>Generated:<span class="w"> </span><span class="nv">$87</span>,500.00
+<span class="w">   </span>Customer<span class="w"> </span>Satisfaction:<span class="w"> </span><span class="m">4</span>.3/5.0
+<span class="w">   </span>Conversion<span class="w"> </span>Probability:<span class="w"> </span><span class="m">82</span>%
+</code></pre></div>
+<h2 id="generated-business-data">📊 Generated Business Data<a class="headerlink" href="#generated-business-data" title="Permanent link">#</a></h2>
+<h3 id="service-architecture-created">Service Architecture Created<a class="headerlink" href="#service-architecture-created" title="Permanent link">#</a></h3>
+<p>Your Microsoft Azure enterprise journey now consists of:</p>
+<p><strong>1. ProductDiscoveryService-Microsoft (Port 8096)</strong>
+- <strong>Business Function</strong>: Azure services evaluation and discovery
+- <strong>Typical Processing Time</strong>: 300-600ms
+- <strong>Business Value</strong>: Lead qualification and needs assessment
+- <strong>KPIs Generated</strong>: Discovery efficiency, service coverage analysis</p>
+<p><strong>2. PricingEvaluationService-Microsoft (Port 8097)</strong><br />
+- <strong>Business Function</strong>: Enterprise pricing analysis and cost modeling
+- <strong>Typical Processing Time</strong>: 450-800ms<br />
+- <strong>Business Value</strong>: Revenue opportunity identification
+- <strong>KPIs Generated</strong>: Pricing accuracy, discount optimization</p>
+<p><strong>3. ProofOfConceptService-Microsoft (Port 8098)</strong>
+- <strong>Business Function</strong>: Technical validation and demonstration
+- <strong>Typical Processing Time</strong>: 800-1200ms
+- <strong>Business Value</strong>: Technical risk mitigation
+- <strong>KPIs Generated</strong>: PoC success rate, technical satisfaction</p>
+<p><strong>4. ContractNegotiationService-Microsoft (Port 8099)</strong>
+- <strong>Business Function</strong>: Terms negotiation and deal structuring<br />
+- <strong>Typical Processing Time</strong>: 200-400ms
+- <strong>Business Value</strong>: Deal closure and revenue realization
+- <strong>KPIs Generated</strong>: Negotiation efficiency, margin preservation</p>
+<p><strong>5. DeploymentPlanningService-Microsoft (Port 8100)</strong>
+- <strong>Business Function</strong>: Azure architecture planning
+- <strong>Typical Processing Time</strong>: 600-1000ms
+- <strong>Business Value</strong>: Implementation success assurance
+- <strong>KPIs Generated</strong>: Planning accuracy, timeline adherence</p>
+<p><strong>6. GoLiveService-Microsoft (Port 8101)</strong>
+- <strong>Business Function</strong>: Production environment activation
+- <strong>Typical Processing Time</strong>: 150-300ms<br />
+- <strong>Business Value</strong>: Customer success and retention
+- <strong>KPIs Generated</strong>: Go-live success rate, customer satisfaction</p>
+<h3 id="business-metrics-generated">Business Metrics Generated<a class="headerlink" href="#business-metrics-generated" title="Permanent link">#</a></h3>
+<p><strong>Revenue Tracking:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;totalContractValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">87500.00</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dealSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enterprise&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;revenueRecognition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Quarterly&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;annualRecurringRevenue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">87500.00</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Customer Experience Metrics:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;customerSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;netPromoterScore&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;technicalSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;businessValueRealized&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;implementationSmoothness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Sales Performance:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;conversionProbability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.82</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;salesCycleDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;touchpointsRequired&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;stakeholdersInvolved&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;competitiveAdvantage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Technical Excellence&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="what-happens-next">🎯 What Happens Next<a class="headerlink" href="#what-happens-next" title="Permanent link">#</a></h2>
+<h3 id="immediate-results">Immediate Results<a class="headerlink" href="#immediate-results" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>6 microservices</strong> running with Microsoft-specific business context</li>
+<li><strong>Complete distributed traces</strong> showing the entire enterprise purchase flow</li>
+<li><strong>Business events</strong> flowing to Dynatrace with revenue and satisfaction data</li>
+<li><strong>Service dependencies</strong> mapping the customer journey progression</li>
+</ul>
+<h3 id="dynatrace-integration">Dynatrace Integration<a class="headerlink" href="#dynatrace-integration" title="Permanent link">#</a></h3>
+<p>All generated data automatically appears in your Dynatrace environment:
+- <strong>Services View</strong>: Clean service names with business context tags
+- <strong>Distributed Traces</strong>: Complete journey traces with W3C propagation
+- <strong>BizEvents</strong>: Business KPIs and revenue tracking
+- <strong>Service Dependencies</strong>: Visual journey flow representation</p>
+<div class="admonition success">
+<p class="admonition-title">Microsoft Azure Enterprise Journey Created!</p>
+<p>Your comprehensive enterprise purchase simulation is now generating continuous business observability data, ready for analysis in Dynatrace.</p>
+</div>
+<div class="grid cards">
+<ul>
+<li><a href="journey1-create-ui.md">💡 Create the Journey via UI <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span></a>  </li>
+<li><a href="journey1-visualize-dynatrace.md">📊 Visualize in Dynatrace <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span></a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,828 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Customer Journeys Overview - Dynatrace Enablement Lab: Business Observability Journey Simulator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+  <!-- Add scripts that need to run before here -->
+  
+      
+    
+  <!-- Add scripts that need to run afterwards here -->
+   <!-- TODO: BeforeGoLive: Replace Agentless RUM Snippet
+    1. Create an agentless application in Dynatrace from with convention 'dynatrace-wwse/repositoryname'
+    2. https://hci34192.apps.dynatrace.com/ui/apps/dynatrace.classic.deploy.agentless/#install/agentless;gtf=-2h;gf=all
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/PLACEHOLDEr/REPLACE_WITH_YOUR_SNIPPET/1234abcd1234abcd_complete.js" crossorigin="anonymous"></script>
+    -->
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/1612cf70810/bf81393wlb/7c50bce5c0cc890f_complete.js" crossorigin="anonymous"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#customer-journeys-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-header__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Enablement Lab: Business Observability Journey Simulator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Customer Journeys Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-nav__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    Dynatrace Enablement Lab: Business Observability Journey Simulator
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-advanced-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#persona-driven-journey-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Persona-Driven Journey Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#journey-types-by-business-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Journey Types by Business Domain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Journey Types by Business Domain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-retail-e-commerce-karens-expertise" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Retail E-Commerce (Karen's Expertise)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-insurance-financial-services-rajs-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Insurance &amp; Financial Services (Raj's Domain)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-technology-saas-alexs-territory" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Technology &amp; SaaS (Alex's Territory)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-enterprise-b2b-sophias-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Enterprise B2B (Sophia's Process)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-observability-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Business Observability Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Business Observability Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-metrics-tracked" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Metrics Tracked
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bizevents-generated" class="md-nav__link">
+    <span class="md-ellipsis">
+      BizEvents Generated
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-journeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Getting Started with Journeys
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Getting Started with Journeys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-journey-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Journey Simulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journey Configuration Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-load-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Performance &amp; Load Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Performance & Load Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generated-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generated Artifacts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-test-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Test Scenarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-error-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎪 Advanced Error Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎪 Advanced Error Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Categories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-intelligence-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Business Intelligence Dashboard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="customer-journeys-overview">Customer Journeys Overview<a class="headerlink" href="#customer-journeys-overview" title="Permanent link">#</a></h1>
+<p>Welcome to the comprehensive guide for customer journeys in the BizObs Journey Simulator. This section provides detailed documentation on our 4 distinct customer personas, their behavioral patterns, and the sophisticated journey simulations you can create.</p>
+<h2 id="persona-driven-journey-architecture">🎭 Persona-Driven Journey Architecture<a class="headerlink" href="#persona-driven-journey-architecture" title="Permanent link">#</a></h2>
+<p>Our journey system is built around realistic customer personas, each with unique characteristics, preferences, and behavioral patterns that reflect real-world customer segments:</p>
+<div class="highlight"><pre><span></span><code>graph TB
+    A[Journey Orchestrator] --&gt; B[Persona Engine]
+    B --&gt; C[Karen - Retail]
+    B --&gt; D[Raj - Insurance] 
+    B --&gt; E[Alex - Tech]
+    B --&gt; F[Sophia - Enterprise]
+    C --&gt; G[E-commerce Flow]
+    D --&gt; H[Insurance Flow]
+    E --&gt; I[SaaS Flow]
+    F --&gt; J[Enterprise Flow]
+    G --&gt; K[BizEvents &amp; Analytics]
+    H --&gt; K
+    I --&gt; K
+    J --&gt; K
+</code></pre></div>
+<h2 id="journey-types-by-business-domain">🔍 Journey Types by Business Domain<a class="headerlink" href="#journey-types-by-business-domain" title="Permanent link">#</a></h2>
+<h3 id="1-retail-e-commerce-karens-expertise">1. <strong>Retail E-Commerce</strong> (Karen's Expertise)<a class="headerlink" href="#1-retail-e-commerce-karens-expertise" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Journey Steps</strong>: Discovery → Browse → Compare → Cart → Checkout → Payment → Confirmation</li>
+<li><strong>Duration</strong>: 3-8 minutes</li>
+<li><strong>Complexity</strong>: Medium (8 microservices)</li>
+<li><strong>Revenue Range</strong>: $45-85</li>
+<li><strong>Conversion Rate</strong>: 68%</li>
+</ul>
+<h3 id="2-insurance-financial-services-rajs-domain">2. <strong>Insurance &amp; Financial Services</strong> (Raj's Domain)<a class="headerlink" href="#2-insurance-financial-services-rajs-domain" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Journey Steps</strong>: Research → Quote → Compare → Application → Underwriting → Payment → Policy Issue</li>
+<li><strong>Duration</strong>: 15-25 minutes  </li>
+<li><strong>Complexity</strong>: High (12 microservices)</li>
+<li><strong>Revenue Range</strong>: $180-350</li>
+<li><strong>Conversion Rate</strong>: 84%</li>
+</ul>
+<h3 id="3-technology-saas-alexs-territory">3. <strong>Technology &amp; SaaS</strong> (Alex's Territory)<a class="headerlink" href="#3-technology-saas-alexs-territory" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Journey Steps</strong>: Discovery → Trial → Evaluation → Integration → Purchase → Activation</li>
+<li><strong>Duration</strong>: 8-15 minutes</li>
+<li><strong>Complexity</strong>: Medium-High (10 microservices)</li>
+<li><strong>Revenue Range</strong>: $95-180</li>
+<li><strong>Conversion Rate</strong>: 72%</li>
+</ul>
+<h3 id="4-enterprise-b2b-sophias-process">4. <strong>Enterprise B2B</strong> (Sophia's Process)<a class="headerlink" href="#4-enterprise-b2b-sophias-process" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Journey Steps</strong>: Evaluation → Demo → RFP → Procurement → Approval → Contract → Implementation</li>
+<li><strong>Duration</strong>: 45-90 minutes</li>
+<li><strong>Complexity</strong>: Very High (15 microservices)</li>
+<li><strong>Revenue Range</strong>: $2500-5000</li>
+<li><strong>Conversion Rate</strong>: 91%</li>
+</ul>
+<h2 id="business-observability-integration">🎯 Business Observability Integration<a class="headerlink" href="#business-observability-integration" title="Permanent link">#</a></h2>
+<p>Each journey generates comprehensive business observability data:</p>
+<h3 id="key-metrics-tracked">Key Metrics Tracked<a class="headerlink" href="#key-metrics-tracked" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Revenue per Journey</strong>: Realistic monetary values based on persona</li>
+<li><strong>Conversion Funnel</strong>: Step-by-step success/failure rates</li>
+<li><strong>Customer Satisfaction</strong>: Persona-specific satisfaction scoring</li>
+<li><strong>Time to Completion</strong>: Journey duration and step timing</li>
+<li><strong>Error Impact</strong>: How technical issues affect business outcomes</li>
+</ul>
+<h3 id="bizevents-generated">BizEvents Generated<a class="headerlink" href="#bizevents-generated" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;eventType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bizevents.journeys.step_completed&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;persona&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Karen&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;journey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ecommerce&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;step&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;revenue&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">67.50</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;customerSatisfaction&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">4.2</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;timestamp&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2024-11-28T10:30:00Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;sessionId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sess_karen_123456&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;technicalMetrics&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;responseTime&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">245</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;errorCount&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;serviceHealth&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">98.5</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="getting-started-with-journeys">🚀 Getting Started with Journeys<a class="headerlink" href="#getting-started-with-journeys" title="Permanent link">#</a></h2>
+<h3 id="quick-journey-simulation">Quick Journey Simulation<a class="headerlink" href="#quick-journey-simulation" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>Select Your Persona</strong>
+   <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/journey/start<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;persona&quot;: &quot;Karen&quot;, &quot;journey&quot;: &quot;ecommerce&quot;}&#39;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Monitor Real-Time Progress</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># WebSocket connection for live updates</span>
+wscat<span class="w"> </span>-c<span class="w"> </span>ws://localhost:8080/ws/journeys
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>View Business Metrics</strong>
+   <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8080/api/metrics/journey/summary
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="journey-configuration-options">Journey Configuration Options<a class="headerlink" href="#journey-configuration-options" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;persona&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Karen|Raj|Alex|Sophia&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;journey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ecommerce|insurance|saas|enterprise&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;errorRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0-20</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;thinkTimeMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000-5000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;iterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1-100</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;includeErrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;generateLoadRunner&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="performance-load-testing">📊 Performance &amp; Load Testing<a class="headerlink" href="#performance-load-testing" title="Permanent link">#</a></h2>
+<p>Each journey automatically generates LoadRunner scripts for performance testing:</p>
+<h3 id="generated-artifacts">Generated Artifacts<a class="headerlink" href="#generated-artifacts" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>C-Scripts</strong>: Complete LoadRunner test scripts</li>
+<li><strong>Parameter Files</strong>: Data-driven test configurations</li>
+<li><strong>Scenarios</strong>: Load patterns (light, medium, heavy, spike, stress)</li>
+<li><strong>Correlation Rules</strong>: Dynamic value extraction</li>
+</ul>
+<h3 id="load-test-scenarios">Load Test Scenarios<a class="headerlink" href="#load-test-scenarios" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Light Load - 10 users, 5min ramp</span>
+<span class="c1"># Medium Load - 50 users, 10min ramp  </span>
+<span class="c1"># Heavy Load - 200 users, 15min ramp</span>
+<span class="c1"># Spike Test - 500 users, 1min spike</span>
+<span class="c1"># Stress Test - 1000 users, sustained</span>
+</code></pre></div>
+<h2 id="advanced-error-simulation">🎪 Advanced Error Simulation<a class="headerlink" href="#advanced-error-simulation" title="Permanent link">#</a></h2>
+<p>Test observability and resilience with realistic failure patterns:</p>
+<h3 id="error-categories">Error Categories<a class="headerlink" href="#error-categories" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Payment Gateway</strong>: Timeouts, declines, processing errors</li>
+<li><strong>Service Dependencies</strong>: Database, API, authentication failures</li>
+<li><strong>Performance Issues</strong>: Slow responses, memory leaks, CPU spikes</li>
+<li><strong>Network Problems</strong>: Connectivity, DNS, SSL certificate issues</li>
+</ul>
+<h3 id="error-configuration">Error Configuration<a class="headerlink" href="#error-configuration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/simulate/error<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;type&quot;: &quot;payment_gateway_timeout&quot;,</span>
+<span class="s1">    &quot;severity&quot;: &quot;high&quot;,</span>
+<span class="s1">    &quot;duration&quot;: &quot;5m&quot;,</span>
+<span class="s1">    &quot;affectedPersona&quot;: &quot;Karen&quot;,</span>
+<span class="s1">    &quot;impactRevenue&quot;: true</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<h2 id="business-intelligence-dashboard">📈 Business Intelligence Dashboard<a class="headerlink" href="#business-intelligence-dashboard" title="Permanent link">#</a></h2>
+<p>Monitor journey performance with comprehensive business metrics:</p>
+<div class="highlight"><pre><span></span><code>📊 Journey Performance Dashboard
+├─ 💰 Total Revenue: $1,247.50 (↑12.3%)
+├─ 📈 Overall Conversion: 73.2% (↓2.1%)
+├─ 😊 Avg Satisfaction: 4.3/5 (↑0.2)
+├─ ⏱️ Avg Duration: 8.4 min (↓1.2 min)
+├─ 🔄 Active Sessions: 12
+└─ 🎯 Top Performer: Sophia (91% conversion)
+</code></pre></div>
+<h2 id="next-steps">🔗 Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<p>Explore the detailed persona documentation to understand each customer type's specific behaviors, preferences, and journey patterns:</p>
+<div class="grid cards">
+<ul>
+<li><a href="persona-karen.md">🛍️ Karen - Retail Customer</a></li>
+<li><a href="persona-raj.md">🛡️ Raj - Insurance Professional</a>  </li>
+<li><a href="persona-alex.md">🚀 Alex - Tech Enthusiast</a></li>
+<li><a href="persona-sophia.md">🏢 Sophia - Enterprise Buyer</a></li>
+<li><a href="custom-journeys.md">🔧 Custom Journey Builder</a></li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Journey Recommendations</p>
+<ul>
+<li>Start with <strong>Karen</strong> for quick e-commerce simulations</li>
+<li>Try <strong>Raj</strong> for complex multi-step workflows  </li>
+<li>Use <strong>Alex</strong> for API-heavy technology integrations</li>
+<li>Deploy <strong>Sophia</strong> for enterprise-scale testing</li>
+<li>Build <strong>Custom Journeys</strong> for your specific use cases</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../3-concepts/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Advanced Features - Dynatrace Enablement Lab: Business Observability Journey Simulator</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+  <!-- Add scripts that need to run before here -->
+  
+      
+    
+  <!-- Add scripts that need to run afterwards here -->
+   <!-- TODO: BeforeGoLive: Replace Agentless RUM Snippet
+    1. Create an agentless application in Dynatrace from with convention 'dynatrace-wwse/repositoryname'
+    2. https://hci34192.apps.dynatrace.com/ui/apps/dynatrace.classic.deploy.agentless/#install/agentless;gtf=-2h;gf=all
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/PLACEHOLDEr/REPLACE_WITH_YOUR_SNIPPET/1234abcd1234abcd_complete.js" crossorigin="anonymous"></script>
+    -->
+    <script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/1612cf70810/bf81393wlb/7c50bce5c0cc890f_complete.js" crossorigin="anonymous"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#advanced-features" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-header__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace Enablement Lab: Business Observability Journey Simulator
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Advanced Features
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dynatrace Enablement Lab: Business Observability Journey Simulator" class="md-nav__button md-logo" aria-label="Dynatrace Enablement Lab: Business Observability Journey Simulator" data-md-component="logo">
+      
+  <img src="https://cdn.bfldr.com/B686QPH3/at/w5hnjzb32k5wcrcxnwcx4ckg/Dynatrace_signet_RGB_HTML.svg?auto=webp&format=pngg" alt="logo">
+
+    </a>
+    Dynatrace Enablement Lab: Business Observability Journey Simulator
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dynatrace-wwse/bizobs-journey-simulator" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    View Code on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Advanced Features
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Features
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loadrunner-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔌 LoadRunner Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔌 LoadRunner Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-enable-loadrunner-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Enable LoadRunner Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-loadrunner-profile-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. LoadRunner Profile Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-business-metrics-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Business Metrics Collection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-loadrunner-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available LoadRunner Profiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available LoadRunner Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peak-season-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peak Season Profile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regional-failover-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regional Failover Profile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-feature-rollout-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Feature Rollout Profile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration API Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-loadrunner-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start LoadRunner Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-test-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitor Test Progress
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Custom Personas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎭 Custom Personas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Custom Personas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating Custom Personas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persona-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persona Configuration File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-customization-per-persona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journey Customization per Persona
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persona-analytics-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persona Analytics Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-simulation-chaos-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Error Simulation &amp; Chaos Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ Error Simulation & Chaos Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlled-failure-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled Failure Injection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controlled Failure Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-service-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Service Degradation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-payment-gateway-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Payment Gateway Failures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-database-connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Database Connection Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaos-engineering-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chaos Engineering Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chaos Engineering Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#black-friday-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Black Friday Simulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regional-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regional Disaster Recovery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-analytics-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Advanced Analytics &amp; Reporting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Advanced Analytics & Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-intelligence-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Intelligence Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Intelligence Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-dashboard-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynatrace Dashboard Automation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-business-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Business Events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Machine Learning Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#predictive-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predictive Analytics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-dynatrace-davis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Dynatrace Davis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 API Extensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 API Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-journey-builder-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Journey Builder API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webhook Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Demo Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Demo Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executive-demonstration-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executive Demonstration Scripts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Demonstration Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#revenue-impact-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revenue Impact Scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization Scenario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loadrunner-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔌 LoadRunner Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔌 LoadRunner Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-enable-loadrunner-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Enable LoadRunner Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-loadrunner-profile-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. LoadRunner Profile Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-business-metrics-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Business Metrics Collection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-loadrunner-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available LoadRunner Profiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available LoadRunner Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peak-season-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peak Season Profile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regional-failover-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regional Failover Profile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-feature-rollout-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Feature Rollout Profile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration API Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-loadrunner-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start LoadRunner Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-test-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitor Test Progress
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Custom Personas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎭 Custom Personas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Custom Personas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating Custom Personas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persona-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persona Configuration File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journey-customization-per-persona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Journey Customization per Persona
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persona-analytics-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persona Analytics Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-simulation-chaos-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Error Simulation &amp; Chaos Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ Error Simulation & Chaos Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlled-failure-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled Failure Injection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controlled Failure Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-service-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Service Degradation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-payment-gateway-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Payment Gateway Failures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-database-connection-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Database Connection Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaos-engineering-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chaos Engineering Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chaos Engineering Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#black-friday-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Black Friday Simulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regional-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regional Disaster Recovery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-analytics-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Advanced Analytics &amp; Reporting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Advanced Analytics & Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-intelligence-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Intelligence Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Intelligence Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynatrace-dashboard-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynatrace Dashboard Automation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-business-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Business Events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Machine Learning Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#predictive-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predictive Analytics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-dynatrace-davis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Dynatrace Davis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 API Extensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 API Extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-journey-builder-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Journey Builder API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webhook Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Demo Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Demo Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executive-demonstration-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executive Demonstration Scripts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Demonstration Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#revenue-impact-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revenue Impact Scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization Scenario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  dynatrace.sendBizEvent('page_view', {"page": "BizObs Journey Simulator - Advanced Features"});
+});
+</script>
+
+<h1 id="advanced-features">Advanced Features<a class="headerlink" href="#advanced-features" title="Permanent link">#</a></h1>
+<p>The BizObs Journey Simulator provides powerful advanced capabilities for enterprise-grade business observability testing and demonstration scenarios.</p>
+<h2 id="loadrunner-integration">🔌 LoadRunner Integration<a class="headerlink" href="#loadrunner-integration" title="Permanent link">#</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h3>
+<p>Integrate with Micro Focus LoadRunner to combine realistic customer behavior simulation with enterprise-grade performance testing.</p>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Realistic Load Patterns</strong>: Customer personas drive authentic traffic patterns</li>
+<li><strong>Business Context in Load Tests</strong>: Every virtual user carries business meaning</li>
+<li><strong>Scenario-Based Testing</strong>: Test specific business scenarios under load</li>
+<li><strong>Executive Reporting</strong>: Load test results in business terms</li>
+</ul>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
+<h4 id="1-enable-loadrunner-mode">1. Enable LoadRunner Mode<a class="headerlink" href="#1-enable-loadrunner-mode" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Environment variable</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LOADRUNNER_ENABLED</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LOADRUNNER_CONTROLLER_URL</span><span class="o">=</span>http://your-lr-controller:8080
+<span class="nb">export</span><span class="w"> </span><span class="nv">LOADRUNNER_API_TOKEN</span><span class="o">=</span>your-api-token
+</code></pre></div>
+<h4 id="2-loadrunner-profile-configuration">2. LoadRunner Profile Configuration<a class="headerlink" href="#2-loadrunner-profile-configuration" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;insurance-peak-load&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scenario&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10m&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rampUp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2m&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rampDown&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1m&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;personas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;karen&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;virtualUsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;raj&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;virtualUsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;alex&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;virtualUsers&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;journeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;insurance-policy&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quote-only&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="3-business-metrics-collection">3. Business Metrics Collection<a class="headerlink" href="#3-business-metrics-collection" title="Permanent link">#</a></h4>
+<p>LoadRunner scripts automatically collect business metrics:
+<div class="highlight"><pre><span></span><code><span class="nx">lr_start_transaction</span><span class="p">(</span><span class="s2">&quot;quote_generation_karen&quot;</span><span class="p">);</span>
+<span class="c1">// BizObs journey simulation</span>
+<span class="nx">lr_end_transaction</span><span class="p">(</span><span class="s2">&quot;quote_generation_karen&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">LR_PASS</span><span class="p">);</span>
+
+<span class="c1">// Business context</span>
+<span class="nx">lr_save_string</span><span class="p">(</span><span class="s2">&quot;1200&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;business_value&quot;</span><span class="p">);</span>
+<span class="nx">lr_save_string</span><span class="p">(</span><span class="s2">&quot;karen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;persona&quot;</span><span class="p">);</span>
+<span class="nx">lr_save_string</span><span class="p">(</span><span class="s2">&quot;auto-insurance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;product_type&quot;</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 id="available-loadrunner-profiles">Available LoadRunner Profiles<a class="headerlink" href="#available-loadrunner-profiles" title="Permanent link">#</a></h3>
+<h4 id="peak-season-profile">Peak Season Profile<a class="headerlink" href="#peak-season-profile" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Use Case</strong>: Black Friday, Open Enrollment periods</li>
+<li><strong>Load Pattern</strong>: 5x normal traffic with realistic persona distribution</li>
+<li><strong>Duration</strong>: 2-6 hours</li>
+<li><strong>Validation</strong>: Business KPI thresholds maintained under peak load</li>
+</ul>
+<h4 id="regional-failover-profile">Regional Failover Profile<a class="headerlink" href="#regional-failover-profile" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Use Case</strong>: Disaster recovery and geographic redundancy testing</li>
+<li><strong>Load Pattern</strong>: Sudden traffic shift to backup regions</li>
+<li><strong>Duration</strong>: 30 minutes</li>
+<li><strong>Validation</strong>: Journey completion rates remain above 95%</li>
+</ul>
+<h4 id="new-feature-rollout-profile">New Feature Rollout Profile<a class="headerlink" href="#new-feature-rollout-profile" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Use Case</strong>: A/B testing and feature flag deployment</li>
+<li><strong>Load Pattern</strong>: Gradual traffic migration between feature versions</li>
+<li><strong>Duration</strong>: 4 hours</li>
+<li><strong>Validation</strong>: Business metrics comparison between versions</li>
+</ul>
+<h3 id="integration-api-endpoints">Integration API Endpoints<a class="headerlink" href="#integration-api-endpoints" title="Permanent link">#</a></h3>
+<h4 id="start-loadrunner-test">Start LoadRunner Test<a class="headerlink" href="#start-loadrunner-test" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>/api/loadrunner/start
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;profile&quot;</span>:<span class="w"> </span><span class="s2">&quot;insurance-peak-load&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;duration&quot;</span>:<span class="w"> </span><span class="m">600</span>,
+<span class="w">  </span><span class="s2">&quot;personas&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;karen&quot;</span>,<span class="w"> </span><span class="s2">&quot;raj&quot;</span><span class="o">]</span>,
+<span class="w">  </span><span class="s2">&quot;businessScenario&quot;</span>:<span class="w"> </span><span class="s2">&quot;peak-season&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+<h4 id="monitor-test-progress">Monitor Test Progress<a class="headerlink" href="#monitor-test-progress" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>GET<span class="w"> </span>/api/loadrunner/status/<span class="o">{</span>testId<span class="o">}</span>
+Response:
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;testId&quot;</span>:<span class="w"> </span><span class="s2">&quot;lr-test-123&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;status&quot;</span>:<span class="w"> </span><span class="s2">&quot;running&quot;</span>,<span class="w"> </span>
+<span class="w">  </span><span class="s2">&quot;elapsed&quot;</span>:<span class="w"> </span><span class="m">180</span>,
+<span class="w">  </span><span class="s2">&quot;currentVUsers&quot;</span>:<span class="w"> </span><span class="m">200</span>,
+<span class="w">  </span><span class="s2">&quot;businessMetrics&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;completedJourneys&quot;</span>:<span class="w"> </span><span class="m">1247</span>,
+<span class="w">    </span><span class="s2">&quot;averageJourneyTime&quot;</span>:<span class="w"> </span><span class="m">4</span>.2,
+<span class="w">    </span><span class="s2">&quot;conversionRate&quot;</span>:<span class="w"> </span><span class="m">0</span>.87,
+<span class="w">    </span><span class="s2">&quot;revenueGenerated&quot;</span>:<span class="w"> </span><span class="m">1504800</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<h2 id="custom-personas">🎭 Custom Personas<a class="headerlink" href="#custom-personas" title="Permanent link">#</a></h2>
+<h3 id="creating-custom-personas">Creating Custom Personas<a class="headerlink" href="#creating-custom-personas" title="Permanent link">#</a></h3>
+<p>Define personas that match your specific business requirements and customer segments.</p>
+<h4 id="persona-configuration-file">Persona Configuration File<a class="headerlink" href="#persona-configuration-file" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;persona&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;emma&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Emma (Young Professional)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tech-savvy millennial seeking convenience&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;behavior&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;thinkTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;errorTolerance&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;retryAttempts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;sessionDuration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;variance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;preferences&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mobile-app&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;paymentMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;digital-wallet&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;communicationStyle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minimal&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;deviceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mobile&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;businessProfile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;segment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;young-professional&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;averageValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;conversionProbability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;lifetimeValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5200</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;riskProfile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;low&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;technicalProfile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;bandwidth&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4g&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;browserType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mobile-chrome&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;screenSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;375x667&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;connectionQuality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;good&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="journey-customization-per-persona">Journey Customization per Persona<a class="headerlink" href="#journey-customization-per-persona" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;persona&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;emma&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;journeyVariations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;insurance-policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;steps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mobile-quote-quick&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;skipConditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;desktop-device&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;social-login&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;weight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;requirements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;mobile-device&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;shortcuts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;skip-detailed-comparison&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;auto-fill-from-social&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="persona-analytics-dashboard">Persona Analytics Dashboard<a class="headerlink" href="#persona-analytics-dashboard" title="Permanent link">#</a></h3>
+<p>Track persona-specific metrics:
+- <strong>Conversion Rates</strong>: By persona and journey type
+- <strong>Performance Impact</strong>: How technical issues affect different personas
+- <strong>Business Value</strong>: Revenue and retention by persona
+- <strong>Experience Quality</strong>: Satisfaction scores and completion rates</p>
+<h2 id="error-simulation-chaos-engineering">⚠️ Error Simulation &amp; Chaos Engineering<a class="headerlink" href="#error-simulation-chaos-engineering" title="Permanent link">#</a></h2>
+<h3 id="controlled-failure-injection">Controlled Failure Injection<a class="headerlink" href="#controlled-failure-injection" title="Permanent link">#</a></h3>
+<p>Test system resilience with realistic failure scenarios that impact different personas differently.</p>
+<h4 id="error-types">Error Types<a class="headerlink" href="#error-types" title="Permanent link">#</a></h4>
+<h5 id="1-service-degradation">1. Service Degradation<a class="headerlink" href="#1-service-degradation" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;errorType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;service-degradation&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quote-generation-service&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;degradation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;responseTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3x-slower&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;affectedPercentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;businessImpact&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;expectedAbandonmentIncrease&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;affectedPersonas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;karen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sophia&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;revenueRisk&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45000</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="2-payment-gateway-failures">2. Payment Gateway Failures<a class="headerlink" href="#2-payment-gateway-failures" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;errorType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;payment-failure&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;payment-processor&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;failure&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;retryBehavior&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exponential-backoff&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;personaResponses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;karen&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abandon-immediately&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;raj&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;retry-once-then-call&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;alex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;troubleshoot-and-retry&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sophia&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;escalate-to-support&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="3-database-connection-issues">3. Database Connection Issues<a class="headerlink" href="#3-database-connection-issues" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;errorType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;database-connection&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;customer-profiles&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;issue&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;connection-pool-exhaustion&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;fallbackBehavior&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;cacheFirst&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;degradedMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;businessContinuity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;essential-only&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="chaos-engineering-scenarios">Chaos Engineering Scenarios<a class="headerlink" href="#chaos-engineering-scenarios" title="Permanent link">#</a></h3>
+<h4 id="black-friday-simulation">Black Friday Simulation<a class="headerlink" href="#black-friday-simulation" title="Permanent link">#</a></h4>
+<p>Test system behavior during peak traffic with simultaneous challenges:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;scenario&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;black-friday-chaos&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;simultaneous&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;traffic-spike&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;multiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14400</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;payment-provider-slow&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;degradation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2x-latency&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;recommendation-service-failure&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;availability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;successCriteria&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;journeyCompletionRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt;90%&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;revenueImpact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;5%&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;customerSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt;4.0&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h4 id="regional-disaster-recovery">Regional Disaster Recovery<a class="headerlink" href="#regional-disaster-recovery" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;scenario&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regional-disaster&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;primary-datacenter-failure&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;services&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;failoverTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;traffic-reroute&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;newRegion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;us-west-2&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;expectedLatencyIncrease&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;150ms&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;validation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;maxDataLoss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 seconds&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;maxDowntime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;30 seconds&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;businessContinuity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;maintained&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="advanced-analytics-reporting">📊 Advanced Analytics &amp; Reporting<a class="headerlink" href="#advanced-analytics-reporting" title="Permanent link">#</a></h2>
+<h3 id="business-intelligence-integration">Business Intelligence Integration<a class="headerlink" href="#business-intelligence-integration" title="Permanent link">#</a></h3>
+<h4 id="dynatrace-dashboard-automation">Dynatrace Dashboard Automation<a class="headerlink" href="#dynatrace-dashboard-automation" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;dashboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;business-observability&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;business-kpi&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;journey-completion-rate&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dimensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;persona&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;journey-type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;region&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;thresholds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;critical&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.90</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;warning&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.95</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.98</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;revenue-impact&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;calculation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sum(business-value * success-rate)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timeframe&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1h&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;comparison&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;previous-period&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="custom-business-events">Custom Business Events<a class="headerlink" href="#custom-business-events" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Advanced business event with customer journey context</span>
+<span class="nx">dynatrace</span><span class="p">.</span><span class="nx">sendBizEvent</span><span class="p">(</span><span class="s1">&#39;customer.journey.milestone&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="s1">&#39;customerId&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;karen-45789&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;journeyId&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;insurance-policy-abc123&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;milestone&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;quote-accepted&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;value&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;persona&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;karen&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;channel&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;web-mobile&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;conversionProbability&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">0.87</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;nextBestAction&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;upsell-premium-coverage&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;riskScore&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;low&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;satisfactionPrediction&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;churnRisk&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;lifetimeValueProjection&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">8400</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="machine-learning-integration">Machine Learning Integration<a class="headerlink" href="#machine-learning-integration" title="Permanent link">#</a></h3>
+<h4 id="predictive-analytics">Predictive Analytics<a class="headerlink" href="#predictive-analytics" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Journey Outcome Prediction</strong>: Predict journey success probability at each step</li>
+<li><strong>Persona Classification</strong>: Automatically classify customers into personas</li>
+<li><strong>Anomaly Detection</strong>: Identify unusual patterns in business metrics</li>
+<li><strong>Optimization Recommendations</strong>: Suggest journey improvements based on data</li>
+</ul>
+<h4 id="integration-with-dynatrace-davis">Integration with Dynatrace Davis<a class="headerlink" href="#integration-with-dynatrace-davis" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;davis-integration&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;businessProblems&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;problem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;conversion-rate-drop&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;rootCause&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quote-generation-latency&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;affectedPersonas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;karen&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;businessImpact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$12,000/hour&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;recommendedActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;scale-quote-service&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;enable-caching&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;optimize-database-queries&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="api-extensions">🔧 API Extensions<a class="headerlink" href="#api-extensions" title="Permanent link">#</a></h2>
+<h3 id="custom-journey-builder-api">Custom Journey Builder API<a class="headerlink" href="#custom-journey-builder-api" title="Permanent link">#</a></h3>
+<p>Create completely custom journeys programmatically:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Define custom journey</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">customJourney</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mortgage-application&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">steps</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;eligibility-check&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;loan-qualification&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">businessValue</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">validationRules</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;credit-score&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;income-verification&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;document-upload&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;document-processor&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">businessValue</span><span class="o">:</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">requirements</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;identity-verification&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;underwriting&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;underwriting-engine&quot;</span><span class="p">,</span><span class="w">  </span>
+<span class="w">      </span><span class="nx">businessValue</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;5-15 minutes&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;approval-notification&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;notification-service&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">businessValue</span><span class="o">:</span><span class="w"> </span><span class="mf">250000</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">finalStep</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">personas</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;raj&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sophia&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">businessContext</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">industry</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;financial-services&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">product</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mortgage&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">averageValue</span><span class="o">:</span><span class="w"> </span><span class="mf">250000</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">complianceRequirements</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;GDPR&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;SOX&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PCI&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Register journey</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">bizobs</span><span class="p">.</span><span class="nx">registerJourney</span><span class="p">(</span><span class="nx">customJourney</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="webhook-integration">Webhook Integration<a class="headerlink" href="#webhook-integration" title="Permanent link">#</a></h3>
+<p>Real-time notifications for business events:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;webhooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;journey.completed&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://crm.company.com/api/lead-conversion&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer ${CRM_TOKEN}&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Content-Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;payload&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;customerId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${customerId}&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;journeyType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${journeyType}&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;businessValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${businessValue}&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;completionTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${timestamp}&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="demo-scenarios">🎯 Demo Scenarios<a class="headerlink" href="#demo-scenarios" title="Permanent link">#</a></h2>
+<h3 id="executive-demonstration-scripts">Executive Demonstration Scripts<a class="headerlink" href="#executive-demonstration-scripts" title="Permanent link">#</a></h3>
+<h4 id="revenue-impact-scenario">Revenue Impact Scenario<a class="headerlink" href="#revenue-impact-scenario" title="Permanent link">#</a></h4>
+<ol>
+<li><strong>Setup</strong>: Configure Karen persona with high abandonment on payment errors</li>
+<li><strong>Baseline</strong>: Run 100 successful journeys = $120,000 potential revenue</li>
+<li><strong>Introduce Error</strong>: 10% payment failure rate</li>
+<li><strong>Observe Impact</strong>: 15% journey abandonment = $18,000 lost revenue/hour</li>
+<li><strong>Business Case</strong>: Justify payment system reliability investment</li>
+</ol>
+<h4 id="performance-optimization-scenario">Performance Optimization Scenario<a class="headerlink" href="#performance-optimization-scenario" title="Permanent link">#</a></h4>
+<ol>
+<li><strong>Current State</strong>: Quote generation takes 2.5 seconds average</li>
+<li><strong>Business Context</strong>: Karen abandons if &gt; 3 seconds (mobile users)</li>
+<li><strong>Technical Fix</strong>: Implement caching, reduce to 1.2 seconds</li>
+<li><strong>Business Impact</strong>: 8% conversion improvement = $120,000 additional annual revenue</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Enterprise Ready</p>
+<p>These advanced features enable enterprise-grade business observability demonstrations and real-world testing scenarios.</p>
+</div>
+<div class="grid cards">
+<ul>
+<li><a href="../5-troubleshooting/">🔧 Troubleshooting Guide <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span></a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
