@@ -129,7 +129,7 @@ Make sure to install the plugin Todo Tree. This is a great plugin for tracking T
 ## Enhancing the Codespace template
 For enhancing the documentation just create a Fork of this repo and add a PR.
 
-If you want to change core files of the framework like in the `functions.sh` file or adding more apps, please create a [fork](https://github.com/dynatrace-wwse/codespaces-synchronizer/fork) in the [codespaces-synchronizer](https://github.com/dynatrace-wwse/codespaces-synchronizer/fork) repository which is the one synchronizing all repositories using the framework.
+If you want to change core files of the framework like in the `functions.sh` file or adding more apps, please create a [fork](https://github.com/dynatrace-wwse/codespaces-framework/fork) in the [codespaces-framework](https://github.com/dynatrace-wwse/codespaces-framework/fork) repository which is the one managing all repositories using the framework.
 
 
 <div class="grid cards" markdown>
