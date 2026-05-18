@@ -167,6 +167,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -978,18 +983,18 @@
 <h1 id="visualizing-data-in-dynatrace">Visualizing Data in Dynatrace<a class="headerlink" href="#visualizing-data-in-dynatrace" title="Permanent link">#</a></h1>
 <p>Once your customer journey is running, the BizObs Generator automatically sends rich observability data to Dynatrace. This section shows you how to find, analyze, and visualize your business observability data using Dynatrace's powerful capabilities.</p>
 <h2 id="data-flow-overview">🎯 Data Flow Overview<a class="headerlink" href="#data-flow-overview" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>graph TB
-    A[BizObs Generator] --&gt; B[Dynamic Services]
-    B --&gt; C[Enhanced DT_TAGS]
-    B --&gt; D[Distributed Traces]  
-    B --&gt; E[Business Events]
-    C --&gt; F[Dynatrace OneAgent]
-    D --&gt; F
-    E --&gt; F
-    F --&gt; G[Service Maps]
-    F --&gt; H[Trace Analysis]
-    F --&gt; I[Business Dashboards]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph TB
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[BizObs Generator] --&gt; B[Dynamic Services]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[Enhanced DT_TAGS]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    B --&gt; D[Distributed Traces]  
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    B --&gt; E[Business Events]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    C --&gt; F[Dynatrace OneAgent]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    D --&gt; F
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    E --&gt; F
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    F --&gt; G[Service Maps]
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    F --&gt; H[Trace Analysis]
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    F --&gt; I[Business Dashboards]
+</span></code></pre></div>
 <h2 id="finding-your-services">🏗️ Finding Your Services<a class="headerlink" href="#finding-your-services" title="Permanent link">#</a></h2>
 <h3 id="service-discovery">Service Discovery<a class="headerlink" href="#service-discovery" title="Permanent link">#</a></h3>
 <p>Your generated services automatically appear in Dynatrace with clean, identifiable names.</p>
@@ -1004,14 +1009,14 @@
 </ol>
 <h4 id="service-identification"><strong>Service Identification</strong><a class="headerlink" href="#service-identification" title="Permanent link">#</a></h4>
 <p>Services are tagged with comprehensive metadata:
-<div class="highlight"><pre><span></span><code>company:<span class="w"> </span>microsoft
-app:<span class="w"> </span>bizobs-journey<span class="w">  </span>
-service:<span class="w"> </span>productdiscoveryservice
-industry-type:<span class="w"> </span>cloud_software
-journey-detail:<span class="w"> </span>azure_enterprise_purchase
-release-stage:<span class="w"> </span>production
-environment:<span class="w"> </span>ace-box
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>company:<span class="w"> </span>microsoft
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>app:<span class="w"> </span>bizobs-journey<span class="w">  </span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>service:<span class="w"> </span>productdiscoveryservice
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>industry-type:<span class="w"> </span>cloud_software
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>journey-detail:<span class="w"> </span>azure_enterprise_purchase
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>release-stage:<span class="w"> </span>production
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>environment:<span class="w"> </span>ace-box
+</span></code></pre></div></p>
 <h3 id="service-details-analysis">Service Details Analysis<a class="headerlink" href="#service-details-analysis" title="Permanent link">#</a></h3>
 <h4 id="service-overview"><strong>Service Overview</strong><a class="headerlink" href="#service-overview" title="Permanent link">#</a></h4>
 <p>Each service provides detailed metrics:
@@ -1031,36 +1036,36 @@ environment:<span class="w"> </span>ace-box
 <ol>
 <li>Go to <strong>Distributed Traces</strong></li>
 <li>Use filters to find your journeys:
-   <div class="highlight"><pre><span></span><code>Tag: company=microsoft
-Tag: journey-detail=azure_enterprise_purchase
-Service: ProductDiscoveryService
-</code></pre></div></li>
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Tag: company=microsoft
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Tag: journey-detail=azure_enterprise_purchase
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Service: ProductDiscoveryService
+</span></code></pre></div></li>
 </ol>
 <h4 id="trace-structure"><strong>Trace Structure</strong><a class="headerlink" href="#trace-structure" title="Permanent link">#</a></h4>
 <p>Each complete journey shows as an end-to-end trace:
-<div class="highlight"><pre><span></span><code>Journey Trace (7.8 seconds total)
-├── ProductDiscoveryService (154ms)
-│   ├── Business Context Loading (23ms)
-│   ├── Service Processing (108ms)
-│   └── Response Generation (23ms)
-├── Think Time (250ms)
-└── PricingEvaluationService (198ms)
-    ├── Pricing Calculation (145ms)
-    ├── Enterprise Discount Logic (31ms)
-    └── Quote Generation (22ms)
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Journey Trace (7.8 seconds total)
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── ProductDiscoveryService (154ms)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   ├── Business Context Loading (23ms)
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   ├── Service Processing (108ms)
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   └── Response Generation (23ms)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├── Think Time (250ms)
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>└── PricingEvaluationService (198ms)
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    ├── Pricing Calculation (145ms)
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    ├── Enterprise Discount Logic (31ms)
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    └── Quote Generation (22ms)
+</span></code></pre></div></p>
 <h3 id="trace-analysis-features">Trace Analysis Features<a class="headerlink" href="#trace-analysis-features" title="Permanent link">#</a></h3>
 <h4 id="business-attributes"><strong>Business Attributes</strong><a class="headerlink" href="#business-attributes" title="Permanent link">#</a></h4>
 <p>Each span contains rich business context:
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;journey.step&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscovery&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;journey.service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscoveryService&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nt">&quot;journey.correlationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a28fcc4f-d3e0-4290-ba40-4f138f2877aa&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;journey.company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;journey.industryType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cloud Software&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;journey.processingTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">154</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;journey.step&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscovery&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;journey.service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscoveryService&quot;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;journey.correlationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a28fcc4f-d3e0-4290-ba40-4f138f2877aa&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&quot;journey.company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">&quot;journey.industryType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cloud Software&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">&quot;journey.processingTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">154</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <h4 id="w3c-trace-context"><strong>W3C Trace Context</strong><a class="headerlink" href="#w3c-trace-context" title="Permanent link">#</a></h4>
 <p>Proper distributed tracing with W3C headers:
 - <strong>traceparent</strong>: <code>00-7d0860d958c80e4a41e1caf1f2466b2b-a2afe7b537bbdf41-01</code>
@@ -1070,32 +1075,32 @@ Service: ProductDiscoveryService
 <h3 id="automatic-bizevents-generation">Automatic BizEvents Generation<a class="headerlink" href="#automatic-bizevents-generation" title="Permanent link">#</a></h3>
 <p>The BizObs Generator automatically creates business events for key journey milestones:</p>
 <h4 id="journey-step-completed"><strong>Journey Step Completed</strong><a class="headerlink" href="#journey-step-completed" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bizevents.journey.step.completed&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T15:42:15.173Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;industryType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cloud Software&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nt">&quot;journeyDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Azure Enterprise Purchase&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;stepName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscovery&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;serviceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscoveryService&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;processingTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">154</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;businessValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;customerSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;conversionProbability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bizevents.journey.step.completed&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T15:42:15.173Z&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;industryType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cloud Software&quot;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">&quot;journeyDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Azure Enterprise Purchase&quot;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">&quot;stepName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscovery&quot;</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">&quot;serviceName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ProductDiscoveryService&quot;</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">&quot;processingTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">154</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">&quot;businessValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nt">&quot;customerSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2</span><span class="p">,</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">&quot;conversionProbability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
+</span></code></pre></div>
 <h4 id="revenue-generation-events"><strong>Revenue Generation Events</strong><a class="headerlink" href="#revenue-generation-events" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bizevents.revenue.generated&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T15:42:15.173Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;revenueAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;journeyType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Product Purchase&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;customerTier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enterprise&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;acquisitionChannel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;organic&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;eventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bizevents.revenue.generated&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T15:42:15.173Z&quot;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;revenueAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">&quot;journeyType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Product Purchase&quot;</span><span class="p">,</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">&quot;customerTier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enterprise&quot;</span><span class="p">,</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">&quot;acquisitionChannel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;organic&quot;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="bizevents-analysis">BizEvents Analysis<a class="headerlink" href="#bizevents-analysis" title="Permanent link">#</a></h3>
 <h4 id="finding-bizevents"><strong>Finding BizEvents</strong><a class="headerlink" href="#finding-bizevents" title="Permanent link">#</a></h4>
 <ol>
@@ -1107,60 +1112,60 @@ Service: ProductDiscoveryService
 </ol>
 <h4 id="bizevents-queries"><strong>BizEvents Queries</strong><a class="headerlink" href="#bizevents-queries" title="Permanent link">#</a></h4>
 <p>Create custom DQL queries for business insights:</p>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.journey.step.completed&quot;</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;Microsoft&quot;</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgProcessingTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">processingTime</span><span class="p">),</span><span class="w"> </span>
-<span class="w">            </span><span class="n">totalRevenue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">businessValue</span><span class="p">)</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">stepName</span>
-</code></pre></div>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.journey.step.completed&quot;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">company</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;Microsoft&quot;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgProcessingTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">processingTime</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">            </span><span class="n">totalRevenue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">businessValue</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">stepName</span>
+</span></code></pre></div>
 <h2 id="creating-business-dashboards">📈 Creating Business Dashboards<a class="headerlink" href="#creating-business-dashboards" title="Permanent link">#</a></h2>
 <h3 id="executive-summary-dashboard">Executive Summary Dashboard<a class="headerlink" href="#executive-summary-dashboard" title="Permanent link">#</a></h3>
 <h4 id="key-metrics-tiles"><strong>Key Metrics Tiles</strong><a class="headerlink" href="#key-metrics-tiles" title="Permanent link">#</a></h4>
 <p>Create tiles showing critical business KPIs:</p>
 <p><strong>Total Revenue Generated</strong>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.revenue.generated&quot;</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">totalRevenue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">revenueAmount</span><span class="p">)</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.revenue.generated&quot;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">totalRevenue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">revenueAmount</span><span class="p">)</span>
+</span></code></pre></div></p>
 <p><strong>Journey Completion Rate</strong>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="ss">&quot;journey&quot;</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">completionRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="n">journeyId</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="o">==</span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">countDistinct</span><span class="p">(</span><span class="n">journeyId</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="ss">&quot;journey&quot;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">completionRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">countDistinct</span><span class="p">(</span><span class="n">journeyId</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="o">==</span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">countDistinct</span><span class="p">(</span><span class="n">journeyId</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span>
+</span></code></pre></div></p>
 <p><strong>Average Customer Satisfaction</strong>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">isNotNull</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgSatisfaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">isNotNull</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgSatisfaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
+</span></code></pre></div></p>
 <h4 id="journey-performance-analysis"><strong>Journey Performance Analysis</strong><a class="headerlink" href="#journey-performance-analysis" title="Permanent link">#</a></h4>
 <p><strong>Step-by-Step Performance</strong>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.journey.step.completed&quot;</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">processingTime</span><span class="p">),</span>
-<span class="w">            </span><span class="n">successRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">count</span><span class="p">(</span><span class="n">success</span><span class="o">==</span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">count</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">stepName</span>
-<span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="n">avgTime</span><span class="w"> </span><span class="k">desc</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.journey.step.completed&quot;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">processingTime</span><span class="p">),</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">            </span><span class="n">successRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">count</span><span class="p">(</span><span class="n">success</span><span class="o">==</span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">count</span><span class="p">())</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">stepName</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="n">avgTime</span><span class="w"> </span><span class="k">desc</span>
+</span></code></pre></div></p>
 <h3 id="technical-operations-dashboard">Technical Operations Dashboard<a class="headerlink" href="#technical-operations-dashboard" title="Permanent link">#</a></h3>
 <h4 id="service-performance-metrics"><strong>Service Performance Metrics</strong><a class="headerlink" href="#service-performance-metrics" title="Permanent link">#</a></h4>
 <p>Combine technical and business metrics:</p>
 <p><strong>Service Response Time vs Business Value</strong>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">service</span><span class="p">.</span><span class="n">key_request</span>
-<span class="o">|</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="p">(</span><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span><span class="p">,</span><span class="w"> </span><span class="k">from</span><span class="p">:</span><span class="n">now</span><span class="o">-</span><span class="mi">1</span><span class="n">h</span><span class="p">)</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgResponseTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">dt</span><span class="p">.</span><span class="n">service</span><span class="p">.</span><span class="n">key_request</span><span class="p">.</span><span class="n">response_time</span><span class="p">),</span>
-<span class="w">            </span><span class="n">avgBusinessValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">bizevents</span><span class="p">.</span><span class="n">businessValue</span><span class="p">)</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">entity</span><span class="p">.</span><span class="n">service</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">service</span><span class="p">.</span><span class="n">key_request</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="o">|</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="p">(</span><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span><span class="p">,</span><span class="w"> </span><span class="k">from</span><span class="p">:</span><span class="n">now</span><span class="o">-</span><span class="mi">1</span><span class="n">h</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgResponseTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">dt</span><span class="p">.</span><span class="n">service</span><span class="p">.</span><span class="n">key_request</span><span class="p">.</span><span class="n">response_time</span><span class="p">),</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">            </span><span class="n">avgBusinessValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">bizevents</span><span class="p">.</span><span class="n">businessValue</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">entity</span><span class="p">.</span><span class="n">service</span>
+</span></code></pre></div></p>
 <h4 id="error-impact-analysis"><strong>Error Impact Analysis</strong><a class="headerlink" href="#error-impact-analysis" title="Permanent link">#</a></h4>
 <p>Correlate technical errors with business impact:</p>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">service</span><span class="p">.</span><span class="n">errors</span>
-<span class="o">|</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="p">(</span><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span><span class="p">,</span><span class="w"> </span><span class="k">from</span><span class="p">:</span><span class="n">now</span><span class="o">-</span><span class="mi">1</span><span class="n">h</span><span class="p">)</span><span class="w"> </span>
-<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">bizevents</span><span class="p">.</span><span class="n">success</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">false</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">errorCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">count</span><span class="p">(),</span>
-<span class="w">            </span><span class="n">revenueImpact</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">bizevents</span><span class="p">.</span><span class="n">businessValue</span><span class="p">)</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">entity</span><span class="p">.</span><span class="n">service</span><span class="p">,</span><span class="w"> </span><span class="n">errorType</span>
-</code></pre></div>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">service</span><span class="p">.</span><span class="n">errors</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="o">|</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="p">(</span><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span><span class="p">,</span><span class="w"> </span><span class="k">from</span><span class="p">:</span><span class="n">now</span><span class="o">-</span><span class="mi">1</span><span class="n">h</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">bizevents</span><span class="p">.</span><span class="n">success</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">false</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">errorCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">count</span><span class="p">(),</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">            </span><span class="n">revenueImpact</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">bizevents</span><span class="p">.</span><span class="n">businessValue</span><span class="p">)</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">entity</span><span class="p">.</span><span class="n">service</span><span class="p">,</span><span class="w"> </span><span class="n">errorType</span>
+</span></code></pre></div>
 <h2 id="advanced-visualization-techniques">🎨 Advanced Visualization Techniques<a class="headerlink" href="#advanced-visualization-techniques" title="Permanent link">#</a></h2>
 <h3 id="service-flow-maps">Service Flow Maps<a class="headerlink" href="#service-flow-maps" title="Permanent link">#</a></h3>
 <h4 id="business-journey-visualization"><strong>Business Journey Visualization</strong><a class="headerlink" href="#business-journey-visualization" title="Permanent link">#</a></h4>
@@ -1170,52 +1175,52 @@ Service: ProductDiscoveryService
 - <strong>Performance Bottlenecks</strong>: Slow steps impacting conversion</p>
 <h4 id="industry-specific-views"><strong>Industry-Specific Views</strong><a class="headerlink" href="#industry-specific-views" title="Permanent link">#</a></h4>
 <p>Filter service maps by industry context:
-<div class="highlight"><pre><span></span><code>Filter: industry-type=cloud_software
-Group by: journey-detail
-Color by: Business Value Impact
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Filter: industry-type=cloud_software
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Group by: journey-detail
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Color by: Business Value Impact
+</span></code></pre></div></p>
 <h3 id="custom-business-metrics">Custom Business Metrics<a class="headerlink" href="#custom-business-metrics" title="Permanent link">#</a></h3>
 <h4 id="industry-benchmarking"><strong>Industry Benchmarking</strong><a class="headerlink" href="#industry-benchmarking" title="Permanent link">#</a></h4>
 <p>Compare performance across industry types:
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.journey.step.completed&quot;</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgProcessingTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">processingTime</span><span class="p">),</span>
-<span class="w">            </span><span class="n">conversionRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">conversionProbability</span><span class="p">)</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">industryType</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.journey.step.completed&quot;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgProcessingTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">processingTime</span><span class="p">),</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">            </span><span class="n">conversionRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">conversionProbability</span><span class="p">)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">industryType</span>
+</span></code></pre></div></p>
 <h4 id="journey-optimization-insights"><strong>Journey Optimization Insights</strong><a class="headerlink" href="#journey-optimization-insights" title="Permanent link">#</a></h4>
 <p>Identify optimization opportunities:
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">processingTime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">200</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">slowSteps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">count</span><span class="p">(),</span>
-<span class="w">            </span><span class="n">potentialRevenueLoss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">businessValue</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">conversionProbability</span><span class="p">))</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">stepName</span><span class="p">,</span><span class="w"> </span><span class="n">company</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">processingTime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">200</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">slowSteps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">count</span><span class="p">(),</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">            </span><span class="n">potentialRevenueLoss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">businessValue</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">conversionProbability</span><span class="p">))</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">stepName</span><span class="p">,</span><span class="w"> </span><span class="n">company</span>
+</span></code></pre></div></p>
 <h2 id="alerting-monitoring">🔧 Alerting &amp; Monitoring<a class="headerlink" href="#alerting-monitoring" title="Permanent link">#</a></h2>
 <h3 id="business-critical-alerts">Business-Critical Alerts<a class="headerlink" href="#business-critical-alerts" title="Permanent link">#</a></h3>
 <h4 id="revenue-impact-alerts"><strong>Revenue Impact Alerts</strong><a class="headerlink" href="#revenue-impact-alerts" title="Permanent link">#</a></h4>
 <p>Alert when business metrics exceed thresholds:</p>
 <p><strong>High Revenue Impact Errors</strong>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">businessValue</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span>
-<span class="o">|</span><span class="w"> </span><span class="k">count</span><span class="p">()</span>
-</code></pre></div>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">businessValue</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="o">|</span><span class="w"> </span><span class="k">count</span><span class="p">()</span>
+</span></code></pre></div>
 <em>Alert when &gt; 5 high-value failures in 15 minutes</em></p>
 <p><strong>Conversion Rate Drop</strong>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.journey.step.completed&quot;</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">conversionRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">conversionProbability</span><span class="p">)</span>
-<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">conversionRate</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">7</span>
-</code></pre></div>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">eventType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">&quot;bizevents.journey.step.completed&quot;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">conversionRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">conversionProbability</span><span class="p">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">conversionRate</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">7</span>
+</span></code></pre></div>
 <em>Alert when conversion rate drops below 70%</em></p>
 <h4 id="customer-experience-alerts"><strong>Customer Experience Alerts</strong><a class="headerlink" href="#customer-experience-alerts" title="Permanent link">#</a></h4>
 <p>Monitor customer satisfaction metrics:</p>
 <p><strong>Customer Satisfaction Drop</strong>
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">isNotNull</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgSatisfaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
-<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">avgSatisfaction</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="mi">0</span>
-</code></pre></div>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">isNotNull</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">avgSatisfaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">avgSatisfaction</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="mi">0</span>
+</span></code></pre></div>
 <em>Alert when satisfaction drops below 4.0/5.0</em></p>
 <h3 id="slo-configuration">SLO Configuration<a class="headerlink" href="#slo-configuration" title="Permanent link">#</a></h3>
 <h4 id="business-slos"><strong>Business SLOs</strong><a class="headerlink" href="#business-slos" title="Permanent link">#</a></h4>
@@ -1251,27 +1256,27 @@ Color by: Business Value Impact
 <h2 id="advanced-use-cases">🚀 Advanced Use Cases<a class="headerlink" href="#advanced-use-cases" title="Permanent link">#</a></h2>
 <h3 id="ab-testing-analysis">A/B Testing Analysis<a class="headerlink" href="#ab-testing-analysis" title="Permanent link">#</a></h3>
 <p>Use journey variations to test business impact:
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span><span class="w">  </span>
-<span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">journeyDetail</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="ss">&quot;variant&quot;</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">conversionRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">conversionProbability</span><span class="p">),</span>
-<span class="w">            </span><span class="n">avgRevenue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">businessValue</span><span class="p">)</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">journeyDetail</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span><span class="w">  </span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="o">|</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="n">journeyDetail</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="ss">&quot;variant&quot;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">conversionRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">conversionProbability</span><span class="p">),</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">            </span><span class="n">avgRevenue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">businessValue</span><span class="p">)</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">journeyDetail</span>
+</span></code></pre></div></p>
 <h3 id="customer-segmentation">Customer Segmentation<a class="headerlink" href="#customer-segmentation" title="Permanent link">#</a></h3>
 <p>Analyze different customer behaviors:
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
-<span class="o">|</span><span class="w"> </span><span class="n">extend</span><span class="w"> </span><span class="n">customerTier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">businessValue</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Enterprise&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Standard&quot;</span><span class="p">)</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">performance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">processingTime</span><span class="p">),</span>
-<span class="w">            </span><span class="n">satisfaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">customerTier</span><span class="p">,</span><span class="w"> </span><span class="n">industryType</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="o">|</span><span class="w"> </span><span class="n">extend</span><span class="w"> </span><span class="n">customerTier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">businessValue</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Enterprise&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Standard&quot;</span><span class="p">)</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">performance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">processingTime</span><span class="p">),</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">            </span><span class="n">satisfaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">customerSatisfaction</span><span class="p">)</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">customerTier</span><span class="p">,</span><span class="w"> </span><span class="n">industryType</span>
+</span></code></pre></div></p>
 <h3 id="predictive-analytics">Predictive Analytics<a class="headerlink" href="#predictive-analytics" title="Permanent link">#</a></h3>
 <p>Identify patterns for proactive optimization:
-<div class="highlight"><pre><span></span><code><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span><span class="p">,</span><span class="w"> </span><span class="k">from</span><span class="p">:</span><span class="n">now</span><span class="o">-</span><span class="mi">30</span><span class="n">d</span>
-<span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">conversionProbability</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span>
-<span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">commonFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">collectArray</span><span class="p">(</span><span class="n">stepName</span><span class="p">)</span>
-<span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">company</span><span class="p">,</span><span class="w"> </span><span class="n">industryType</span>
-</code></pre></div></p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">fetch</span><span class="w"> </span><span class="n">bizevents</span><span class="p">,</span><span class="w"> </span><span class="k">from</span><span class="p">:</span><span class="n">now</span><span class="o">-</span><span class="mi">30</span><span class="n">d</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="o">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">conversionProbability</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="o">|</span><span class="w"> </span><span class="n">summarize</span><span class="w"> </span><span class="n">commonFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">collectArray</span><span class="p">(</span><span class="n">stepName</span><span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="k">by</span><span class="w"> </span><span class="n">company</span><span class="p">,</span><span class="w"> </span><span class="n">industryType</span>
+</span></code></pre></div></p>
 <div class="admonition success">
 <p class="admonition-title">Comprehensive Observability Achieved!</p>
 <p>Your BizObs Generator data is now fully integrated into Dynatrace, providing unprecedented visibility into the relationship between technical performance and business outcomes.</p>
@@ -1299,6 +1304,8 @@ Color by: Business Value Impact
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1311,6 +1318,8 @@ Color by: Business Value Impact
       </main>
       
         <footer class="md-footer">
+  
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1334,7 +1343,7 @@ Color by: Business Value Impact
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>

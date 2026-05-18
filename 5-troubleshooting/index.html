@@ -167,6 +167,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -826,32 +831,32 @@ document.addEventListener('DOMContentLoaded', function() {
 - Error: <code>EADDRINUSE: address already in use :::8080</code>
 - Server exits immediately after startup</p>
 <p><strong>Solutions:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check what&#39;s using port 8080</span>
-lsof<span class="w"> </span>-i<span class="w"> </span>:8080
-
-<span class="c1"># Kill existing Node.js processes</span>
-pkill<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;node.*server.js&quot;</span>
-
-<span class="c1"># Use alternative port</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PORT</span><span class="o">=</span><span class="m">8081</span>
-npm<span class="w"> </span>start
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Check what&#39;s using port 8080</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>lsof<span class="w"> </span>-i<span class="w"> </span>:8080
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Kill existing Node.js processes</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pkill<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;node.*server.js&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Use alternative port</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PORT</span><span class="o">=</span><span class="m">8081</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>npm<span class="w"> </span>start
+</span></code></pre></div></p>
 <h4 id="issue-missing-dependencies">Issue: Missing dependencies<a class="headerlink" href="#issue-missing-dependencies" title="Permanent link">#</a></h4>
 <p><strong>Symptoms:</strong>
 - Module not found errors
 - NPM installation failures</p>
 <p><strong>Solutions:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Clear NPM cache</span>
-npm<span class="w"> </span>cache<span class="w"> </span>clean<span class="w"> </span>--force
-
-<span class="c1"># Remove node_modules and reinstall</span>
-rm<span class="w"> </span>-rf<span class="w"> </span>node_modules<span class="w"> </span>package-lock.json
-npm<span class="w"> </span>install
-
-<span class="c1"># Use specific Node.js version</span>
-nvm<span class="w"> </span>use<span class="w"> </span><span class="m">18</span>
-npm<span class="w"> </span>install
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Clear NPM cache</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>npm<span class="w"> </span>cache<span class="w"> </span>clean<span class="w"> </span>--force
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Remove node_modules and reinstall</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>rm<span class="w"> </span>-rf<span class="w"> </span>node_modules<span class="w"> </span>package-lock.json
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>npm<span class="w"> </span>install
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Use specific Node.js version</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>nvm<span class="w"> </span>use<span class="w"> </span><span class="m">18</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>npm<span class="w"> </span>install
+</span></code></pre></div></p>
 <h3 id="dynatrace-integration-issues">Dynatrace Integration Issues<a class="headerlink" href="#dynatrace-integration-issues" title="Permanent link">#</a></h3>
 <h4 id="issue-no-traces-appear-in-dynatrace">Issue: No traces appear in Dynatrace<a class="headerlink" href="#issue-no-traces-appear-in-dynatrace" title="Permanent link">#</a></h4>
 <p><strong>Symptoms:</strong>
@@ -859,25 +864,25 @@ npm<span class="w"> </span>install
 - No distributed traces visible in Dynatrace
 - No business events captured</p>
 <p><strong>Diagnosis Steps:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check OneAgent status</span>
-sudo<span class="w"> </span>/opt/dynatrace/oneagent/agent/tools/oactl<span class="w"> </span>status
-
-<span class="c1"># Verify environment variables</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$DYNATRACE_URL</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$DYNATRACE_TOKEN</span>
-
-<span class="c1"># Test API connectivity</span>
-curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Api-Token </span><span class="nv">$DYNATRACE_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">     </span><span class="s2">&quot;</span><span class="nv">$DYNATRACE_URL</span><span class="s2">/api/v1/config/clusterversion&quot;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Check OneAgent status</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>/opt/dynatrace/oneagent/agent/tools/oactl<span class="w"> </span>status
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Verify environment variables</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$DYNATRACE_URL</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$DYNATRACE_TOKEN</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Test API connectivity</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Api-Token </span><span class="nv">$DYNATRACE_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">     </span><span class="s2">&quot;</span><span class="nv">$DYNATRACE_URL</span><span class="s2">/api/v1/config/clusterversion&quot;</span>
+</span></code></pre></div></p>
 <p><strong>Solutions:</strong></p>
 <ol>
 <li>
 <p><strong>OneAgent Installation:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Download and install OneAgent</span>
-wget<span class="w"> </span>-O<span class="w"> </span>oneagent.sh<span class="w"> </span><span class="s2">&quot;https://YOUR-ENVIRONMENT.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&amp;flavor=default&quot;</span>
-sudo<span class="w"> </span>sh<span class="w"> </span>oneagent.sh<span class="w"> </span>--set-app-log-content-access<span class="o">=</span><span class="nb">true</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Download and install OneAgent</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>wget<span class="w"> </span>-O<span class="w"> </span>oneagent.sh<span class="w"> </span><span class="s2">&quot;https://YOUR-ENVIRONMENT.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&amp;flavor=default&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo<span class="w"> </span>sh<span class="w"> </span>oneagent.sh<span class="w"> </span>--set-app-log-content-access<span class="o">=</span><span class="nb">true</span>
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>API Token Permissions:</strong>
@@ -891,10 +896,10 @@ sudo<span class="w"> </span>sh<span class="w"> </span>oneagent.sh<span class="w"
 </li>
 <li>
 <p><strong>Environment Variables (Codespaces):</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># In Codespaces settings, add secrets:</span>
-<span class="nv">DYNATRACE_URL</span><span class="o">=</span>https://your-environment.live.dynatrace.com
-<span class="nv">DYNATRACE_TOKEN</span><span class="o">=</span>dt0c01.ABC123...
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># In Codespaces settings, add secrets:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">DYNATRACE_URL</span><span class="o">=</span>https://your-environment.live.dynatrace.com
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nv">DYNATRACE_TOKEN</span><span class="o">=</span>dt0c01.ABC123...
+</span></code></pre></div></p>
 </li>
 </ol>
 <h4 id="issue-business-events-not-appearing">Issue: Business events not appearing<a class="headerlink" href="#issue-business-events-not-appearing" title="Permanent link">#</a></h4>
@@ -902,15 +907,15 @@ sudo<span class="w"> </span>sh<span class="w"> </span>oneagent.sh<span class="w"
 - Technical traces work
 - No business events in Dynatrace</p>
 <p><strong>Solutions:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check business events configuration</span>
-curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DYNATRACE_URL</span><span class="s2">/api/v2/bizevents/ingest&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Api-Token </span><span class="nv">$DYNATRACE_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;eventType&quot;: &quot;test&quot;, &quot;test&quot;: true}&#39;</span>
-
-<span class="c1"># Enable business events in OneAgent</span>
-sudo<span class="w"> </span>/opt/dynatrace/oneagent/agent/tools/oactl<span class="w"> </span>--set-business-events<span class="o">=</span><span class="nb">true</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Check business events configuration</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$DYNATRACE_URL</span><span class="s2">/api/v2/bizevents/ingest&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Api-Token </span><span class="nv">$DYNATRACE_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;eventType&quot;: &quot;test&quot;, &quot;test&quot;: true}&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Enable business events in OneAgent</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>sudo<span class="w"> </span>/opt/dynatrace/oneagent/agent/tools/oactl<span class="w"> </span>--set-business-events<span class="o">=</span><span class="nb">true</span>
+</span></code></pre></div></p>
 <h3 id="journey-simulation-problems">Journey Simulation Problems<a class="headerlink" href="#journey-simulation-problems" title="Permanent link">#</a></h3>
 <h4 id="issue-journeys-fail-at-specific-steps">Issue: Journeys fail at specific steps<a class="headerlink" href="#issue-journeys-fail-at-specific-steps" title="Permanent link">#</a></h4>
 <p><strong>Symptoms:</strong>
@@ -918,41 +923,41 @@ sudo<span class="w"> </span>/opt/dynatrace/oneagent/agent/tools/oactl<span class
 - Specific persona always fails
 - Timeout errors in logs</p>
 <p><strong>Diagnosis:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check service health</span>
-curl<span class="w"> </span>http://localhost:8080/api/health
-
-<span class="c1"># Check specific service endpoints  </span>
-curl<span class="w"> </span>http://localhost:8081/health<span class="w">  </span><span class="c1"># Quote service</span>
-curl<span class="w"> </span>http://localhost:8082/health<span class="w">  </span><span class="c1"># Payment service</span>
-curl<span class="w"> </span>http://localhost:8083/health<span class="w">  </span><span class="c1"># Policy service</span>
-
-<span class="c1"># View detailed logs</span>
-tail<span class="w"> </span>-f<span class="w"> </span>logs/application.log
-tail<span class="w"> </span>-f<span class="w"> </span>logs/journey-simulation.log
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Check service health</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>curl<span class="w"> </span>http://localhost:8080/api/health
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Check specific service endpoints  </span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>curl<span class="w"> </span>http://localhost:8081/health<span class="w">  </span><span class="c1"># Quote service</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>curl<span class="w"> </span>http://localhost:8082/health<span class="w">  </span><span class="c1"># Payment service</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>curl<span class="w"> </span>http://localhost:8083/health<span class="w">  </span><span class="c1"># Policy service</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># View detailed logs</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/application.log
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/journey-simulation.log
+</span></code></pre></div></p>
 <p><strong>Solutions:</strong></p>
 <ol>
 <li>
 <p><strong>Service Dependencies:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Restart all services</span>
-./restart.sh
-
-<span class="c1"># Check port availability</span>
-netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">808</span><span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>
-
-<span class="c1"># Verify database connections</span>
-curl<span class="w"> </span>http://localhost:8080/api/database/status
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Restart all services</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>./restart.sh
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Check port availability</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">808</span><span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Verify database connections</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>curl<span class="w"> </span>http://localhost:8080/api/database/status
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Memory Issues:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check memory usage</span>
-free<span class="w"> </span>-h
-ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>node<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10
-
-<span class="c1"># Restart with memory limits</span>
-node<span class="w"> </span>--max-old-space-size<span class="o">=</span><span class="m">4096</span><span class="w"> </span>server.js
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Check memory usage</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>free<span class="w"> </span>-h
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>node<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># Restart with memory limits</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>node<span class="w"> </span>--max-old-space-size<span class="o">=</span><span class="m">4096</span><span class="w"> </span>server.js
+</span></code></pre></div></p>
 </li>
 </ol>
 <h3 id="performance-issues">Performance Issues<a class="headerlink" href="#performance-issues" title="Permanent link">#</a></h3>
@@ -962,61 +967,61 @@ node<span class="w"> </span>--max-old-space-size<span class="o">=</span><span cl
 - High CPU usage
 - Memory warnings</p>
 <p><strong>Diagnosis:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Monitor system resources</span>
-top<span class="w"> </span>-p<span class="w"> </span><span class="k">$(</span>pgrep<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;node.*server.js&quot;</span><span class="k">)</span>
-
-<span class="c1"># Check Node.js memory</span>
-curl<span class="w"> </span>http://localhost:8080/api/system/memory
-
-<span class="c1"># Profile journey performance</span>
-curl<span class="w"> </span>http://localhost:8080/api/journey/profile/karen/insurance-policy
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Monitor system resources</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>top<span class="w"> </span>-p<span class="w"> </span><span class="k">$(</span>pgrep<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;node.*server.js&quot;</span><span class="k">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Check Node.js memory</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>curl<span class="w"> </span>http://localhost:8080/api/system/memory
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Profile journey performance</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>curl<span class="w"> </span>http://localhost:8080/api/journey/profile/karen/insurance-policy
+</span></code></pre></div></p>
 <p><strong>Solutions:</strong></p>
 <ol>
 <li>
 <p><strong>Optimize Think Times:</strong>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;persona&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;karen&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;thinkTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">  </span><span class="c1">// Reduce from 3000ms for testing</span>
-<span class="w">  </span><span class="nt">&quot;concurrentJourneys&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="c1">// Reduce concurrent load</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;persona&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;karen&quot;</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;thinkTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">  </span><span class="c1">// Reduce from 3000ms for testing</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">&quot;concurrentJourneys&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="c1">// Reduce concurrent load</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Database Optimization:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Enable connection pooling</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">DB_POOL_SIZE</span><span class="o">=</span><span class="m">10</span>
-
-<span class="c1"># Use in-memory mode for testing</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">DB_MODE</span><span class="o">=</span>memory
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Enable connection pooling</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DB_POOL_SIZE</span><span class="o">=</span><span class="m">10</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Use in-memory mode for testing</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DB_MODE</span><span class="o">=</span>memory
+</span></code></pre></div></p>
 </li>
 </ol>
 <h2 id="configuration-issues">🔧 Configuration Issues<a class="headerlink" href="#configuration-issues" title="Permanent link">#</a></h2>
 <h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">#</a></h3>
 <h4 id="missing-configuration">Missing Configuration<a class="headerlink" href="#missing-configuration" title="Permanent link">#</a></h4>
 <p><strong>Required Variables:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Essential settings</span>
-<span class="nv">PORT</span><span class="o">=</span><span class="m">8080</span>
-<span class="nv">NODE_ENV</span><span class="o">=</span>development
-
-<span class="c1"># Dynatrace integration (optional)</span>
-<span class="nv">DYNATRACE_URL</span><span class="o">=</span>https://your-tenant.live.dynatrace.com
-<span class="nv">DYNATRACE_TOKEN</span><span class="o">=</span>dt0c01.YOUR_TOKEN
-
-<span class="c1"># Advanced features (optional)</span>
-<span class="nv">LOADRUNNER_ENABLED</span><span class="o">=</span><span class="nb">false</span>
-<span class="nv">ERROR_SIMULATION_ENABLED</span><span class="o">=</span><span class="nb">true</span>
-<span class="nv">BUSINESS_EVENTS_ENABLED</span><span class="o">=</span><span class="nb">true</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Essential settings</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nv">PORT</span><span class="o">=</span><span class="m">8080</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nv">NODE_ENV</span><span class="o">=</span>development
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># Dynatrace integration (optional)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nv">DYNATRACE_URL</span><span class="o">=</span>https://your-tenant.live.dynatrace.com
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nv">DYNATRACE_TOKEN</span><span class="o">=</span>dt0c01.YOUR_TOKEN
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1"># Advanced features (optional)</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="nv">LOADRUNNER_ENABLED</span><span class="o">=</span><span class="nb">false</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="nv">ERROR_SIMULATION_ENABLED</span><span class="o">=</span><span class="nb">true</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="nv">BUSINESS_EVENTS_ENABLED</span><span class="o">=</span><span class="nb">true</span>
+</span></code></pre></div></p>
 <h4 id="codespaces-specific-configuration">Codespaces-Specific Configuration<a class="headerlink" href="#codespaces-specific-configuration" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Set in Codespaces secrets</span>
-gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>DYNATRACE_URL<span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;https://your-tenant.live.dynatrace.com&quot;</span>
-gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>DYNATRACE_TOKEN<span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;dt0c01.YOUR_TOKEN&quot;</span>
-
-<span class="c1"># Verify in running Codespace</span>
-env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>DYNATRACE
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Set in Codespaces secrets</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>DYNATRACE_URL<span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;https://your-tenant.live.dynatrace.com&quot;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>gh<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span>DYNATRACE_TOKEN<span class="w"> </span>--body<span class="w"> </span><span class="s2">&quot;dt0c01.YOUR_TOKEN&quot;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># Verify in running Codespace</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>DYNATRACE
+</span></code></pre></div>
 <h3 id="network-configuration">Network Configuration<a class="headerlink" href="#network-configuration" title="Permanent link">#</a></h3>
 <h4 id="issue-services-cant-communicate">Issue: Services can't communicate<a class="headerlink" href="#issue-services-cant-communicate" title="Permanent link">#</a></h4>
 <p><strong>Symptoms:</strong>
@@ -1024,169 +1029,169 @@ env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<
 - DNS resolution failures
 - Intermittent connectivity</p>
 <p><strong>Solutions:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check service discovery</span>
-curl<span class="w"> </span>http://localhost:8080/api/services/status
-
-<span class="c1"># Verify port bindings</span>
-sudo<span class="w"> </span>netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:808
-
-<span class="c1"># Test cross-service communication</span>
-curl<span class="w"> </span>http://localhost:8081/api/test-connectivity
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Check service discovery</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>curl<span class="w"> </span>http://localhost:8080/api/services/status
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Verify port bindings</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>sudo<span class="w"> </span>netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:808
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># Test cross-service communication</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>curl<span class="w"> </span>http://localhost:8081/api/test-connectivity
+</span></code></pre></div></p>
 <h2 id="debugging-guide">🐛 Debugging Guide<a class="headerlink" href="#debugging-guide" title="Permanent link">#</a></h2>
 <h3 id="enable-debug-logging">Enable Debug Logging<a class="headerlink" href="#enable-debug-logging" title="Permanent link">#</a></h3>
 <h4 id="application-debug-mode">Application Debug Mode<a class="headerlink" href="#application-debug-mode" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Start with debug logging</span>
-<span class="nv">DEBUG</span><span class="o">=</span>bizobs:*<span class="w"> </span>npm<span class="w"> </span>start
-
-<span class="c1"># Or set environment variable</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span>bizobs:journey,bizobs:personas
-npm<span class="w"> </span>start
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Start with debug logging</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">DEBUG</span><span class="o">=</span>bizobs:*<span class="w"> </span>npm<span class="w"> </span>start
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Or set environment variable</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span>bizobs:journey,bizobs:personas
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>npm<span class="w"> </span>start
+</span></code></pre></div>
 <h4 id="journey-trace-debugging">Journey Trace Debugging<a class="headerlink" href="#journey-trace-debugging" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Enable journey tracing</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">JOURNEY_DEBUG</span><span class="o">=</span><span class="nb">true</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">TRACE_ALL_STEPS</span><span class="o">=</span><span class="nb">true</span>
-
-<span class="c1"># View real-time journey logs</span>
-tail<span class="w"> </span>-f<span class="w"> </span>logs/journey-debug.log
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Enable journey tracing</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JOURNEY_DEBUG</span><span class="o">=</span><span class="nb">true</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TRACE_ALL_STEPS</span><span class="o">=</span><span class="nb">true</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># View real-time journey logs</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/journey-debug.log
+</span></code></pre></div>
 <h3 id="diagnostic-endpoints">Diagnostic Endpoints<a class="headerlink" href="#diagnostic-endpoints" title="Permanent link">#</a></h3>
 <h4 id="health-check-endpoints">Health Check Endpoints<a class="headerlink" href="#health-check-endpoints" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Overall health</span>
-curl<span class="w"> </span>http://localhost:8080/api/health
-
-<span class="c1"># Detailed system status</span>
-curl<span class="w"> </span>http://localhost:8080/api/status<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
-
-<span class="c1"># Service-specific health</span>
-curl<span class="w"> </span>http://localhost:8080/api/services/health
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Overall health</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>curl<span class="w"> </span>http://localhost:8080/api/health
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Detailed system status</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>curl<span class="w"> </span>http://localhost:8080/api/status<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># Service-specific health</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>curl<span class="w"> </span>http://localhost:8080/api/services/health
+</span></code></pre></div>
 <h4 id="debug-information">Debug Information<a class="headerlink" href="#debug-information" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Current configuration</span>
-curl<span class="w"> </span>http://localhost:8080/api/debug/config
-
-<span class="c1"># Active journeys</span>
-curl<span class="w"> </span>http://localhost:8080/api/debug/journeys
-
-<span class="c1"># Memory and performance</span>
-curl<span class="w"> </span>http://localhost:8080/api/debug/system
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Current configuration</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>curl<span class="w"> </span>http://localhost:8080/api/debug/config
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># Active journeys</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>curl<span class="w"> </span>http://localhost:8080/api/debug/journeys
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1"># Memory and performance</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>curl<span class="w"> </span>http://localhost:8080/api/debug/system
+</span></code></pre></div>
 <h3 id="common-error-messages">Common Error Messages<a class="headerlink" href="#common-error-messages" title="Permanent link">#</a></h3>
 <h4 id="journey-simulation-failed">"Journey simulation failed"<a class="headerlink" href="#journey-simulation-failed" title="Permanent link">#</a></h4>
 <p><strong>Cause:</strong> Service unavailable or configuration error
 <strong>Solution:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check service status</span>
-curl<span class="w"> </span>http://localhost:8080/api/services/status
-
-<span class="c1"># Restart services</span>
-./restart.sh
-
-<span class="c1"># Check configuration</span>
-curl<span class="w"> </span>http://localhost:8080/api/debug/config
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Check service status</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>curl<span class="w"> </span>http://localhost:8080/api/services/status
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Restart services</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>./restart.sh
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1"># Check configuration</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>curl<span class="w"> </span>http://localhost:8080/api/debug/config
+</span></code></pre></div></p>
 <h4 id="persona-not-found">"Persona not found"<a class="headerlink" href="#persona-not-found" title="Permanent link">#</a></h4>
 <p><strong>Cause:</strong> Invalid persona name in journey request
 <strong>Solution:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># List available personas</span>
-curl<span class="w"> </span>http://localhost:8080/api/personas
-
-<span class="c1"># Verify persona configuration</span>
-curl<span class="w"> </span>http://localhost:8080/api/personas/karen
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># List available personas</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>curl<span class="w"> </span>http://localhost:8080/api/personas
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Verify persona configuration</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>curl<span class="w"> </span>http://localhost:8080/api/personas/karen
+</span></code></pre></div></p>
 <h4 id="business-event-ingestion-failed">"Business event ingestion failed"<a class="headerlink" href="#business-event-ingestion-failed" title="Permanent link">#</a></h4>
 <p><strong>Cause:</strong> Dynatrace API token or connectivity issue
 <strong>Solution:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Test API connectivity</span>
-curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Api-Token </span><span class="nv">$DYNATRACE_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">     </span><span class="s2">&quot;</span><span class="nv">$DYNATRACE_URL</span><span class="s2">/api/v1/config/clusterversion&quot;</span>
-
-<span class="c1"># Check token permissions</span>
-curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Api-Token </span><span class="nv">$DYNATRACE_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">     </span><span class="s2">&quot;</span><span class="nv">$DYNATRACE_URL</span><span class="s2">/api/v2/bizevents/ingest&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">     </span>-X<span class="w"> </span>POST<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;eventType&quot;:&quot;test&quot;,&quot;test&quot;:true}&#39;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Test API connectivity</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Api-Token </span><span class="nv">$DYNATRACE_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">     </span><span class="s2">&quot;</span><span class="nv">$DYNATRACE_URL</span><span class="s2">/api/v1/config/clusterversion&quot;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1"># Check token permissions</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Api-Token </span><span class="nv">$DYNATRACE_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">     </span><span class="s2">&quot;</span><span class="nv">$DYNATRACE_URL</span><span class="s2">/api/v2/bizevents/ingest&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">     </span>-X<span class="w"> </span>POST<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;eventType&quot;:&quot;test&quot;,&quot;test&quot;:true}&#39;</span>
+</span></code></pre></div></p>
 <h2 id="monitoring-alerts">📊 Monitoring &amp; Alerts<a class="headerlink" href="#monitoring-alerts" title="Permanent link">#</a></h2>
 <h3 id="application-monitoring">Application Monitoring<a class="headerlink" href="#application-monitoring" title="Permanent link">#</a></h3>
 <h4 id="key-metrics-to-watch">Key Metrics to Watch<a class="headerlink" href="#key-metrics-to-watch" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Journey success rate (should be &gt;95%)</span>
-curl<span class="w"> </span>http://localhost:8080/api/metrics/journey-success-rate
-
-<span class="c1"># Average journey duration (should be &lt;10 seconds)  </span>
-curl<span class="w"> </span>http://localhost:8080/api/metrics/journey-duration
-
-<span class="c1"># Service availability (should be 100%)</span>
-curl<span class="w"> </span>http://localhost:8080/api/metrics/service-availability
-
-<span class="c1"># Memory usage (should be &lt;80%)</span>
-curl<span class="w"> </span>http://localhost:8080/api/metrics/memory-usage
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Journey success rate (should be &gt;95%)</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>curl<span class="w"> </span>http://localhost:8080/api/metrics/journey-success-rate
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Average journey duration (should be &lt;10 seconds)  </span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>curl<span class="w"> </span>http://localhost:8080/api/metrics/journey-duration
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># Service availability (should be 100%)</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>curl<span class="w"> </span>http://localhost:8080/api/metrics/service-availability
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="c1"># Memory usage (should be &lt;80%)</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>curl<span class="w"> </span>http://localhost:8080/api/metrics/memory-usage
+</span></code></pre></div>
 <h4 id="setting-up-alerts">Setting Up Alerts<a class="headerlink" href="#setting-up-alerts" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;alerts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;journey-success-rate&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.95</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;less-than&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;restart-services&quot;</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;average-journey-duration&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">      </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greater-than&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;check-performance&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="nt">&quot;alerts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">      </span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;journey-success-rate&quot;</span><span class="p">,</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">      </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.95</span><span class="p">,</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">      </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;less-than&quot;</span><span class="p">,</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">      </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;restart-services&quot;</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">      </span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;average-journey-duration&quot;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">      </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">      </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;greater-than&quot;</span><span class="p">,</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">      </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;check-performance&quot;</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="log-analysis">Log Analysis<a class="headerlink" href="#log-analysis" title="Permanent link">#</a></h3>
 <h4 id="important-log-locations">Important Log Locations<a class="headerlink" href="#important-log-locations" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Application logs</span>
-tail<span class="w"> </span>-f<span class="w"> </span>logs/application.log
-
-<span class="c1"># Journey simulation logs</span>
-tail<span class="w"> </span>-f<span class="w"> </span>logs/journey-simulation.log
-
-<span class="c1"># Error logs</span>
-tail<span class="w"> </span>-f<span class="w"> </span>logs/error.log
-
-<span class="c1"># Dynatrace integration logs</span>
-tail<span class="w"> </span>-f<span class="w"> </span>logs/dynatrace.log
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Application logs</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/application.log
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Journey simulation logs</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/journey-simulation.log
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="c1"># Error logs</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/error.log
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="c1"># Dynatrace integration logs</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/dynatrace.log
+</span></code></pre></div>
 <h4 id="log-analysis-commands">Log Analysis Commands<a class="headerlink" href="#log-analysis-commands" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Find recent errors</span>
-grep<span class="w"> </span><span class="s2">&quot;ERROR&quot;</span><span class="w"> </span>logs/application.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-10
-
-<span class="c1"># Count journey failures by type</span>
-grep<span class="w"> </span><span class="s2">&quot;Journey failed&quot;</span><span class="w"> </span>logs/journey-simulation.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;:&#39;</span><span class="w"> </span>-f2<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c
-
-<span class="c1"># Monitor real-time activity</span>
-tail<span class="w"> </span>-f<span class="w"> </span>logs/application.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(Journey|ERROR|WARNING)&quot;</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Find recent errors</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>grep<span class="w"> </span><span class="s2">&quot;ERROR&quot;</span><span class="w"> </span>logs/application.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-10
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c1"># Count journey failures by type</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>grep<span class="w"> </span><span class="s2">&quot;Journey failed&quot;</span><span class="w"> </span>logs/journey-simulation.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;:&#39;</span><span class="w"> </span>-f2<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="c1"># Monitor real-time activity</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>tail<span class="w"> </span>-f<span class="w"> </span>logs/application.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(Journey|ERROR|WARNING)&quot;</span>
+</span></code></pre></div>
 <h2 id="getting-help">🆘 Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">#</a></h2>
 <h3 id="self-service-resources">Self-Service Resources<a class="headerlink" href="#self-service-resources" title="Permanent link">#</a></h3>
 <ol>
 <li>
 <p><strong>Check Application Status:</strong>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8080/api/status<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>.
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>curl<span class="w"> </span>http://localhost:8080/api/status<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>.
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Review Recent Logs:</strong>
-<div class="highlight"><pre><span></span><code>tail<span class="w"> </span>-100<span class="w"> </span>logs/application.log
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>tail<span class="w"> </span>-100<span class="w"> </span>logs/application.log
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Verify Configuration:</strong>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8080/api/debug/config
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>curl<span class="w"> </span>http://localhost:8080/api/debug/config
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Test Basic Functionality:</strong>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/journey/simulate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;persona&quot;:&quot;karen&quot;,&quot;journey&quot;:&quot;insurance-policy&quot;}&#39;</span>
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/journey/simulate<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;persona&quot;:&quot;karen&quot;,&quot;journey&quot;:&quot;insurance-policy&quot;}&#39;</span>
+</span></code></pre></div></p>
 </li>
 </ol>
 <h3 id="escalation-path">Escalation Path<a class="headerlink" href="#escalation-path" title="Permanent link">#</a></h3>
@@ -1194,14 +1199,14 @@ tail<span class="w"> </span>-f<span class="w"> </span>logs/application.log<span 
 <ol>
 <li>
 <p><strong>Collect Diagnostic Information:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Generate diagnostic report</span>
-curl<span class="w"> </span>http://localhost:8080/api/debug/report<span class="w"> </span>&gt;<span class="w"> </span>diagnostic-report.json
-
-<span class="c1"># Gather system information  </span>
-uname<span class="w"> </span>-a<span class="w"> </span>&gt;<span class="w"> </span>system-info.txt
-df<span class="w"> </span>-h<span class="w"> </span>&gt;&gt;<span class="w"> </span>system-info.txt
-free<span class="w"> </span>-h<span class="w"> </span>&gt;&gt;<span class="w"> </span>system-info.txt
-</code></pre></div></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Generate diagnostic report</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>curl<span class="w"> </span>http://localhost:8080/api/debug/report<span class="w"> </span>&gt;<span class="w"> </span>diagnostic-report.json
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c1"># Gather system information  </span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>uname<span class="w"> </span>-a<span class="w"> </span>&gt;<span class="w"> </span>system-info.txt
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>df<span class="w"> </span>-h<span class="w"> </span>&gt;&gt;<span class="w"> </span>system-info.txt
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>free<span class="w"> </span>-h<span class="w"> </span>&gt;&gt;<span class="w"> </span>system-info.txt
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Contact Information:</strong></p>
@@ -1240,6 +1245,8 @@ free<span class="w"> </span>-h<span class="w"> </span>&gt;&gt;<span class="w"> <
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1252,6 +1259,8 @@ free<span class="w"> </span>-h<span class="w"> </span>&gt;&gt;<span class="w"> <
       </main>
       
         <footer class="md-footer">
+  
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1275,7 +1284,7 @@ free<span class="w"> </span>-h<span class="w"> </span>&gt;&gt;<span class="w"> <
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>

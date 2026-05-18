@@ -167,6 +167,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -574,13 +579,13 @@
 <h2 id="journey-overview">🏢 Journey Overview<a class="headerlink" href="#journey-overview" title="Permanent link">#</a></h2>
 <p><strong>Business Scenario:</strong> A large enterprise is evaluating Microsoft Azure for their cloud infrastructure needs. The journey represents a typical enterprise sales cycle with multiple stakeholders and complex decision-making processes.</p>
 <p><strong>Journey Steps:</strong>
-<div class="highlight"><pre><span></span><code>graph LR
-    A[Product Discovery] --&gt; B[Pricing Evaluation]
-    B --&gt; C[Proof of Concept]
-    C --&gt; D[Contract Negotiation] 
-    D --&gt; E[Deployment Planning]
-    E --&gt; F[Go-Live]
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph LR
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Product Discovery] --&gt; B[Pricing Evaluation]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[Proof of Concept]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    C --&gt; D[Contract Negotiation] 
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    D --&gt; E[Deployment Planning]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    E --&gt; F[Go-Live]
+</span></code></pre></div></p>
 <p><strong>Expected Business Outcomes:</strong>
 - <strong>Revenue Potential</strong>: $25,000 - $100,000+ per completion
 - <strong>Sales Cycle</strong>: 30-90 days (simulated in minutes)
@@ -602,24 +607,24 @@
 <p><img alt="Customer Details" src="../img/Customer-Details.png" /></p>
 <p>Fill out the form with the following enterprise scenario details:</p>
 <h4 id="company-information">Company Information<a class="headerlink" href="#company-information" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>Company Name: Microsoft
-Domain: www.microsoft.com
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Company Name: Microsoft
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Domain: www.microsoft.com
+</span></code></pre></div>
 <p><strong>Why These Values Matter:</strong>
 - <strong>Company Name</strong> becomes part of service naming: <code>ProductDiscoveryService-Microsoft</code>
 - <strong>Domain</strong> appears in DT_TAGS as <code>domain=www_microsoft_com</code> 
 - Both provide business context in all Dynatrace traces and events</p>
 <h4 id="industry-classification">Industry Classification<a class="headerlink" href="#industry-classification" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>Industry Type: Cloud Software
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Industry Type: Cloud Software
+</span></code></pre></div>
 <p><strong>Business Impact:</strong>
 - Creates <code>industry-type=cloud_software</code> tag for business segmentation
 - Enables industry-specific benchmarking in Dynatrace dashboards
 - Triggers industry-appropriate AI prompt generation</p>
 <h4 id="journey-specifics">Journey Specifics<a class="headerlink" href="#journey-specifics" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>Journey Type: Product Purchase
-Journey Detail: Azure Enterprise Purchase
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Journey Type: Product Purchase
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Journey Detail: Azure Enterprise Purchase
+</span></code></pre></div>
 <p><strong>Observability Value:</strong>
 - <strong>Journey Type</strong> provides high-level process categorization
 - <strong>Journey Detail</strong> creates <code>journey-detail=azure_enterprise_purchase</code> tag
@@ -627,29 +632,29 @@ Journey Detail: Azure Enterprise Purchase
 <h4 id="define-process-steps">Define Process Steps<a class="headerlink" href="#define-process-steps" title="Permanent link">#</a></h4>
 <p><strong>Add the following steps in order:</strong></p>
 <p><strong>Step 1:</strong>
-<div class="highlight"><pre><span></span><code>Step Name: ProductDiscovery
-Description: Azure services discovery and evaluation
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Step Name: ProductDiscovery
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Description: Azure services discovery and evaluation
+</span></code></pre></div></p>
 <p><strong>Step 2:</strong><br />
-<div class="highlight"><pre><span></span><code>Step Name: PricingEvaluation
-Description: Enterprise pricing analysis and cost modeling
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Step Name: PricingEvaluation
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Description: Enterprise pricing analysis and cost modeling
+</span></code></pre></div></p>
 <p><strong>Step 3:</strong>
-<div class="highlight"><pre><span></span><code>Step Name: ProofOfConcept
-Description: Technical proof of concept implementation
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Step Name: ProofOfConcept
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Description: Technical proof of concept implementation
+</span></code></pre></div></p>
 <p><strong>Step 4:</strong>
-<div class="highlight"><pre><span></span><code>Step Name: ContractNegotiation  
-Description: Contract terms and pricing negotiation
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Step Name: ContractNegotiation  
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Description: Contract terms and pricing negotiation
+</span></code></pre></div></p>
 <p><strong>Step 5:</strong>
-<div class="highlight"><pre><span></span><code>Step Name: DeploymentPlanning
-Description: Azure deployment architecture planning
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Step Name: DeploymentPlanning
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Description: Azure deployment architecture planning
+</span></code></pre></div></p>
 <p><strong>Step 6:</strong>
-<div class="highlight"><pre><span></span><code>Step Name: GoLive
-Description: Production environment go-live
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Step Name: GoLive
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Description: Production environment go-live
+</span></code></pre></div></p>
 <p><strong>Click "Generate Prompts"</strong> to proceed to AI-powered content generation.</p>
 <h3 id="step-3-ai-prompt-generation">Step 3: AI Prompt Generation<a class="headerlink" href="#step-3-ai-prompt-generation" title="Permanent link">#</a></h3>
 <p><img alt="Generate Prompts" src="../img/Generate-Prompts.png" /></p>
@@ -661,78 +666,78 @@ The system analyzes your inputs and generates business observability prompts spe
 - <strong>Microsoft</strong> customer journey patterns</p>
 <p><strong>Generated Content Examples:</strong></p>
 <p><strong>Business Observability Focus:</strong>
-<div class="highlight"><pre><span></span><code>🎯 Track enterprise Azure adoption decision points
-📊 Monitor technical evaluation duration vs conversion rates  
-💰 Measure contract value correlation with proof-of-concept success
-🔍 Analyze stakeholder involvement patterns in enterprise purchases
-📈 Correlate technical performance with business decision confidence
-</code></pre></div></p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>🎯 Track enterprise Azure adoption decision points
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>📊 Monitor technical evaluation duration vs conversion rates  
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>💰 Measure contract value correlation with proof-of-concept success
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>🔍 Analyze stakeholder involvement patterns in enterprise purchases
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>📈 Correlate technical performance with business decision confidence
+</span></code></pre></div></p>
 <p><strong>Industry-Specific KPIs:</strong>
-<div class="highlight"><pre><span></span><code>🏭 Cloud Software Industry Benchmarks:
-<span class="k">-</span><span class="w"> </span>Enterprise sales cycle: 60-120 days average
-<span class="k">-</span><span class="w"> </span>Technical evaluation phase: 15-30% of total cycle time
-<span class="k">-</span><span class="w"> </span>Contract negotiation: 20-40% of total cycle time
-<span class="k">-</span><span class="w"> </span>Customer satisfaction correlation with technical performance
-</code></pre></div></p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>🏭 Cloud Software Industry Benchmarks:
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">-</span><span class="w"> </span>Enterprise sales cycle: 60-120 days average
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">-</span><span class="w"> </span>Technical evaluation phase: 15-30% of total cycle time
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">-</span><span class="w"> </span>Contract negotiation: 20-40% of total cycle time
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">-</span><span class="w"> </span>Customer satisfaction correlation with technical performance
+</span></code></pre></div></p>
 <p><strong>Review the generated prompts</strong> and <strong>click "Process Check"</strong> to validate your configuration.</p>
 <h3 id="step-4-configuration-validation">Step 4: Configuration Validation<a class="headerlink" href="#step-4-configuration-validation" title="Permanent link">#</a></h3>
 <p><img alt="Process Checks" src="../img/Process-Checks.png" /></p>
 <p><strong>System Validation Results:</strong></p>
-<div class="highlight"><pre><span></span><code>✅<span class="w"> </span>Configuration<span class="w"> </span>Completeness
-<span class="w">   </span>•<span class="w"> </span>Company:<span class="w"> </span>Microsoft
-<span class="w">   </span>•<span class="w"> </span>Domain:<span class="w"> </span>www.microsoft.com<span class="w">  </span>
-<span class="w">   </span>•<span class="w"> </span>Industry:<span class="w"> </span>Cloud<span class="w"> </span>Software
-<span class="w">   </span>•<span class="w"> </span>Journey<span class="w"> </span>Steps:<span class="w"> </span><span class="m">6</span><span class="w"> </span>steps<span class="w"> </span>defined
-
-✅<span class="w"> </span>Service<span class="w"> </span>Naming<span class="w"> </span>Validation
-<span class="w">   </span>•<span class="w"> </span>ProductDiscoveryService<span class="w"> </span><span class="o">(</span>clean,<span class="w"> </span>no<span class="w"> </span>duplicates<span class="o">)</span>
-<span class="w">   </span>•<span class="w"> </span>PricingEvaluationService<span class="w"> </span><span class="o">(</span>business-aligned<span class="o">)</span><span class="w"> </span>
-<span class="w">   </span>•<span class="w"> </span>ProofOfConceptService<span class="w"> </span><span class="o">(</span>descriptive<span class="o">)</span>
-<span class="w">   </span>•<span class="w"> </span>ContractNegotiationService<span class="w"> </span><span class="o">(</span>process-specific<span class="o">)</span>
-<span class="w">   </span>•<span class="w"> </span>DeploymentPlanningService<span class="w"> </span><span class="o">(</span>outcome-focused<span class="o">)</span>
-<span class="w">   </span>•<span class="w"> </span>GoLiveService<span class="w"> </span><span class="o">(</span>milestone-clear<span class="o">)</span>
-
-✅<span class="w"> </span>Metadata<span class="w"> </span>Structure<span class="w"> </span>Check
-<span class="w">   </span>•<span class="w"> </span>DT_TAGS<span class="w"> </span>format:<span class="w"> </span>Valid<span class="w"> </span>lowercase<span class="w"> </span>with<span class="w"> </span>underscores
-<span class="w">   </span>•<span class="w"> </span>Industry<span class="w"> </span>integration:<span class="w"> </span>cloud_software<span class="w"> </span>configured
-<span class="w">   </span>•<span class="w"> </span>Journey<span class="w"> </span>context:<span class="w"> </span>azure_enterprise_purchase<span class="w"> </span>confirmed
-<span class="w">   </span>•<span class="w"> </span>No<span class="w"> </span>duplicate<span class="w"> </span>sources:<span class="w"> </span>Single<span class="w"> </span><span class="nb">source</span><span class="w"> </span>of<span class="w"> </span>truth<span class="w"> </span>verified
-
-✅<span class="w"> </span>Business<span class="w"> </span>Observability<span class="w"> </span>Ready
-<span class="w">   </span>•<span class="w"> </span>AI<span class="w"> </span>prompts:<span class="w"> </span>Industry-specific<span class="w"> </span>content<span class="w"> </span>generated
-<span class="w">   </span>•<span class="w"> </span>KPI<span class="w"> </span>tracking:<span class="w"> </span>Revenue,<span class="w"> </span>conversion,<span class="w"> </span>satisfaction<span class="w"> </span>configured
-<span class="w">   </span>•<span class="w"> </span>Distributed<span class="w"> </span>tracing:<span class="w"> </span>W3C<span class="w"> </span>context<span class="w"> </span>propagation<span class="w"> </span>enabled
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>✅<span class="w"> </span>Configuration<span class="w"> </span>Completeness
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">   </span>•<span class="w"> </span>Company:<span class="w"> </span>Microsoft
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">   </span>•<span class="w"> </span>Domain:<span class="w"> </span>www.microsoft.com<span class="w">  </span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">   </span>•<span class="w"> </span>Industry:<span class="w"> </span>Cloud<span class="w"> </span>Software
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">   </span>•<span class="w"> </span>Journey<span class="w"> </span>Steps:<span class="w"> </span><span class="m">6</span><span class="w"> </span>steps<span class="w"> </span>defined
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>✅<span class="w"> </span>Service<span class="w"> </span>Naming<span class="w"> </span>Validation
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">   </span>•<span class="w"> </span>ProductDiscoveryService<span class="w"> </span><span class="o">(</span>clean,<span class="w"> </span>no<span class="w"> </span>duplicates<span class="o">)</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">   </span>•<span class="w"> </span>PricingEvaluationService<span class="w"> </span><span class="o">(</span>business-aligned<span class="o">)</span><span class="w"> </span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">   </span>•<span class="w"> </span>ProofOfConceptService<span class="w"> </span><span class="o">(</span>descriptive<span class="o">)</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">   </span>•<span class="w"> </span>ContractNegotiationService<span class="w"> </span><span class="o">(</span>process-specific<span class="o">)</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">   </span>•<span class="w"> </span>DeploymentPlanningService<span class="w"> </span><span class="o">(</span>outcome-focused<span class="o">)</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">   </span>•<span class="w"> </span>GoLiveService<span class="w"> </span><span class="o">(</span>milestone-clear<span class="o">)</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>✅<span class="w"> </span>Metadata<span class="w"> </span>Structure<span class="w"> </span>Check
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">   </span>•<span class="w"> </span>DT_TAGS<span class="w"> </span>format:<span class="w"> </span>Valid<span class="w"> </span>lowercase<span class="w"> </span>with<span class="w"> </span>underscores
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">   </span>•<span class="w"> </span>Industry<span class="w"> </span>integration:<span class="w"> </span>cloud_software<span class="w"> </span>configured
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">   </span>•<span class="w"> </span>Journey<span class="w"> </span>context:<span class="w"> </span>azure_enterprise_purchase<span class="w"> </span>confirmed
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">   </span>•<span class="w"> </span>No<span class="w"> </span>duplicate<span class="w"> </span>sources:<span class="w"> </span>Single<span class="w"> </span><span class="nb">source</span><span class="w"> </span>of<span class="w"> </span>truth<span class="w"> </span>verified
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>✅<span class="w"> </span>Business<span class="w"> </span>Observability<span class="w"> </span>Ready
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">   </span>•<span class="w"> </span>AI<span class="w"> </span>prompts:<span class="w"> </span>Industry-specific<span class="w"> </span>content<span class="w"> </span>generated
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">   </span>•<span class="w"> </span>KPI<span class="w"> </span>tracking:<span class="w"> </span>Revenue,<span class="w"> </span>conversion,<span class="w"> </span>satisfaction<span class="w"> </span>configured
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">   </span>•<span class="w"> </span>Distributed<span class="w"> </span>tracing:<span class="w"> </span>W3C<span class="w"> </span>context<span class="w"> </span>propagation<span class="w"> </span>enabled
+</span></code></pre></div>
 <p><strong>Click "Generate Data"</strong> to create your Microsoft Azure enterprise journey.</p>
 <h3 id="step-5-journey-execution-and-service-creation">Step 5: Journey Execution and Service Creation<a class="headerlink" href="#step-5-journey-execution-and-service-creation" title="Permanent link">#</a></h3>
 <p><img alt="Data Generation" src="../img/Data-Generation.png" /></p>
 <p><strong>Real-Time Service Creation:</strong></p>
 <p>Watch as the system creates your enterprise Azure purchase journey:</p>
-<div class="highlight"><pre><span></span><code>🚀<span class="w"> </span>Creating<span class="w"> </span>Microsoft<span class="w"> </span>Azure<span class="w"> </span>Enterprise<span class="w"> </span>Journey...
-
-📊<span class="w"> </span>Service<span class="w"> </span>Generation<span class="w"> </span>Progress:
-<span class="w">   </span>✅<span class="w"> </span>ProductDiscoveryService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8096</span><span class="o">)</span>
-<span class="w">   </span>✅<span class="w"> </span>PricingEvaluationService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8097</span><span class="o">)</span><span class="w">  </span>
-<span class="w">   </span>✅<span class="w"> </span>ProofOfConceptService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8098</span><span class="o">)</span>
-<span class="w">   </span>✅<span class="w"> </span>ContractNegotiationService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8099</span><span class="o">)</span>
-<span class="w">   </span>✅<span class="w"> </span>DeploymentPlanningService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8100</span><span class="o">)</span>
-<span class="w">   </span>✅<span class="w"> </span>GoLiveService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8101</span><span class="o">)</span>
-
-🏷️<span class="w"> </span>Enhanced<span class="w"> </span>DT_TAGS<span class="w"> </span>Applied:
-<span class="w">   </span><span class="nv">company</span><span class="o">=</span>microsoft
-<span class="w">   </span><span class="nv">app</span><span class="o">=</span>bizobs-journey
-<span class="w">   </span>industry-type<span class="o">=</span>cloud_software
-<span class="w">   </span>journey-detail<span class="o">=</span>azure_enterprise_purchase
-<span class="w">   </span><span class="nv">domain</span><span class="o">=</span>www_microsoft_com
-<span class="w">   </span><span class="nv">product</span><span class="o">=</span>dynatrace
-
-🎯<span class="w"> </span>Journey<span class="w"> </span>Simulation<span class="w"> </span>Complete:
-<span class="w">   </span>Total<span class="w"> </span>Services:<span class="w"> </span><span class="m">6</span><span class="w"> </span>microservices
-<span class="w">   </span>Processing<span class="w"> </span>Time:<span class="w"> </span><span class="m">12</span>.4<span class="w"> </span>seconds<span class="w">  </span>
-<span class="w">   </span>Business<span class="w"> </span>Value<span class="w"> </span>Generated:<span class="w"> </span><span class="nv">$87</span>,500.00
-<span class="w">   </span>Customer<span class="w"> </span>Satisfaction:<span class="w"> </span><span class="m">4</span>.3/5.0
-<span class="w">   </span>Conversion<span class="w"> </span>Probability:<span class="w"> </span><span class="m">82</span>%
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>🚀<span class="w"> </span>Creating<span class="w"> </span>Microsoft<span class="w"> </span>Azure<span class="w"> </span>Enterprise<span class="w"> </span>Journey...
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>📊<span class="w"> </span>Service<span class="w"> </span>Generation<span class="w"> </span>Progress:
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">   </span>✅<span class="w"> </span>ProductDiscoveryService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8096</span><span class="o">)</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">   </span>✅<span class="w"> </span>PricingEvaluationService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8097</span><span class="o">)</span><span class="w">  </span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">   </span>✅<span class="w"> </span>ProofOfConceptService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8098</span><span class="o">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">   </span>✅<span class="w"> </span>ContractNegotiationService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8099</span><span class="o">)</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">   </span>✅<span class="w"> </span>DeploymentPlanningService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8100</span><span class="o">)</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">   </span>✅<span class="w"> </span>GoLiveService-Microsoft<span class="w"> </span><span class="o">(</span>Port:<span class="w"> </span><span class="m">8101</span><span class="o">)</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>🏷️<span class="w"> </span>Enhanced<span class="w"> </span>DT_TAGS<span class="w"> </span>Applied:
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">   </span><span class="nv">company</span><span class="o">=</span>microsoft
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">   </span><span class="nv">app</span><span class="o">=</span>bizobs-journey
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">   </span>industry-type<span class="o">=</span>cloud_software
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">   </span>journey-detail<span class="o">=</span>azure_enterprise_purchase
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">   </span><span class="nv">domain</span><span class="o">=</span>www_microsoft_com
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">   </span><span class="nv">product</span><span class="o">=</span>dynatrace
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>🎯<span class="w"> </span>Journey<span class="w"> </span>Simulation<span class="w"> </span>Complete:
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">   </span>Total<span class="w"> </span>Services:<span class="w"> </span><span class="m">6</span><span class="w"> </span>microservices
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">   </span>Processing<span class="w"> </span>Time:<span class="w"> </span><span class="m">12</span>.4<span class="w"> </span>seconds<span class="w">  </span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">   </span>Business<span class="w"> </span>Value<span class="w"> </span>Generated:<span class="w"> </span><span class="nv">$87</span>,500.00
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">   </span>Customer<span class="w"> </span>Satisfaction:<span class="w"> </span><span class="m">4</span>.3/5.0
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">   </span>Conversion<span class="w"> </span>Probability:<span class="w"> </span><span class="m">82</span>%
+</span></code></pre></div>
 <h2 id="generated-business-data">📊 Generated Business Data<a class="headerlink" href="#generated-business-data" title="Permanent link">#</a></h2>
 <h3 id="service-architecture-created">Service Architecture Created<a class="headerlink" href="#service-architecture-created" title="Permanent link">#</a></h3>
 <p>Your Microsoft Azure enterprise journey now consists of:</p>
@@ -768,32 +773,32 @@ The system analyzes your inputs and generates business observability prompts spe
 - <strong>KPIs Generated</strong>: Go-live success rate, customer satisfaction</p>
 <h3 id="business-metrics-generated">Business Metrics Generated<a class="headerlink" href="#business-metrics-generated" title="Permanent link">#</a></h3>
 <p><strong>Revenue Tracking:</strong>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;totalContractValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">87500.00</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;dealSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enterprise&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;revenueRecognition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Quarterly&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;annualRecurringRevenue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">87500.00</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">&quot;totalContractValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">87500.00</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="nt">&quot;dealSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enterprise&quot;</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="nt">&quot;revenueRecognition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Quarterly&quot;</span><span class="p">,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span><span class="nt">&quot;annualRecurringRevenue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">87500.00</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <p><strong>Customer Experience Metrics:</strong>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;customerSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;netPromoterScore&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;technicalSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span>
-<span class="w">  </span><span class="nt">&quot;businessValueRealized&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;implementationSmoothness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&quot;customerSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.3</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;netPromoterScore&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">&quot;technicalSatisfaction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w">  </span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="nt">&quot;businessValueRealized&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="nt">&quot;implementationSmoothness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <p><strong>Sales Performance:</strong>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;conversionProbability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.82</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;salesCycleDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;touchpointsRequired&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;stakeholdersInvolved&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;competitiveAdvantage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Technical Excellence&quot;</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&quot;conversionProbability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.82</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;salesCycleDays&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="nt">&quot;touchpointsRequired&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="nt">&quot;stakeholdersInvolved&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="nt">&quot;competitiveAdvantage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Technical Excellence&quot;</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <h2 id="what-happens-next">🎯 What Happens Next<a class="headerlink" href="#what-happens-next" title="Permanent link">#</a></h2>
 <h3 id="immediate-results">Immediate Results<a class="headerlink" href="#immediate-results" title="Permanent link">#</a></h3>
 <ul>
@@ -835,6 +840,8 @@ The system analyzes your inputs and generates business observability prompts spe
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -847,6 +854,8 @@ The system analyzes your inputs and generates business observability prompts spe
       </main>
       
         <footer class="md-footer">
+  
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -870,7 +879,7 @@ The system analyzes your inputs and generates business observability prompts spe
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>

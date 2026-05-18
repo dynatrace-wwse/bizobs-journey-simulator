@@ -167,6 +167,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -587,21 +592,21 @@
 <p>Welcome to the comprehensive guide for customer journeys in the BizObs Journey Simulator. This section provides detailed documentation on our 4 distinct customer personas, their behavioral patterns, and the sophisticated journey simulations you can create.</p>
 <h2 id="persona-driven-journey-architecture">🎭 Persona-Driven Journey Architecture<a class="headerlink" href="#persona-driven-journey-architecture" title="Permanent link">#</a></h2>
 <p>Our journey system is built around realistic customer personas, each with unique characteristics, preferences, and behavioral patterns that reflect real-world customer segments:</p>
-<div class="highlight"><pre><span></span><code>graph TB
-    A[Journey Orchestrator] --&gt; B[Persona Engine]
-    B --&gt; C[Karen - Retail]
-    B --&gt; D[Raj - Insurance] 
-    B --&gt; E[Alex - Tech]
-    B --&gt; F[Sophia - Enterprise]
-    C --&gt; G[E-commerce Flow]
-    D --&gt; H[Insurance Flow]
-    E --&gt; I[SaaS Flow]
-    F --&gt; J[Enterprise Flow]
-    G --&gt; K[BizEvents &amp; Analytics]
-    H --&gt; K
-    I --&gt; K
-    J --&gt; K
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph TB
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Journey Orchestrator] --&gt; B[Persona Engine]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[Karen - Retail]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    B --&gt; D[Raj - Insurance] 
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    B --&gt; E[Alex - Tech]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    B --&gt; F[Sophia - Enterprise]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    C --&gt; G[E-commerce Flow]
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    D --&gt; H[Insurance Flow]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    E --&gt; I[SaaS Flow]
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    F --&gt; J[Enterprise Flow]
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    G --&gt; K[BizEvents &amp; Analytics]
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    H --&gt; K
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    I --&gt; K
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    J --&gt; K
+</span></code></pre></div>
 <h2 id="journey-types-by-business-domain">🔍 Journey Types by Business Domain<a class="headerlink" href="#journey-types-by-business-domain" title="Permanent link">#</a></h2>
 <h3 id="1-retail-e-commerce-karens-expertise">1. <strong>Retail E-Commerce</strong> (Karen's Expertise)<a class="headerlink" href="#1-retail-e-commerce-karens-expertise" title="Permanent link">#</a></h3>
 <ul>
@@ -646,57 +651,57 @@
 <li><strong>Error Impact</strong>: How technical issues affect business outcomes</li>
 </ul>
 <h3 id="bizevents-generated">BizEvents Generated<a class="headerlink" href="#bizevents-generated" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="s2">&quot;eventType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bizevents.journeys.step_completed&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;persona&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Karen&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;journey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ecommerce&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;step&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;payment&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;revenue&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">67.50</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;customerSatisfaction&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">4.2</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;timestamp&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2024-11-28T10:30:00Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;sessionId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sess_karen_123456&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;technicalMetrics&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;responseTime&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">245</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;errorCount&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;serviceHealth&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">98.5</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="s2">&quot;eventType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bizevents.journeys.step_completed&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="s2">&quot;persona&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Karen&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="s2">&quot;journey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ecommerce&quot;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="s2">&quot;step&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;payment&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="s2">&quot;revenue&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">67.50</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="s2">&quot;customerSatisfaction&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">4.2</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="s2">&quot;timestamp&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2024-11-28T10:30:00Z&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="s2">&quot;sessionId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sess_karen_123456&quot;</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="s2">&quot;technicalMetrics&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="s2">&quot;responseTime&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">245</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="s2">&quot;errorCount&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="s2">&quot;serviceHealth&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">98.5</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="getting-started-with-journeys">🚀 Getting Started with Journeys<a class="headerlink" href="#getting-started-with-journeys" title="Permanent link">#</a></h2>
 <h3 id="quick-journey-simulation">Quick Journey Simulation<a class="headerlink" href="#quick-journey-simulation" title="Permanent link">#</a></h3>
 <ol>
 <li>
 <p><strong>Select Your Persona</strong>
-   <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/journey/start<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;persona&quot;: &quot;Karen&quot;, &quot;journey&quot;: &quot;ecommerce&quot;}&#39;</span>
-</code></pre></div></p>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/journey/start<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;persona&quot;: &quot;Karen&quot;, &quot;journey&quot;: &quot;ecommerce&quot;}&#39;</span>
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Monitor Real-Time Progress</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># WebSocket connection for live updates</span>
-wscat<span class="w"> </span>-c<span class="w"> </span>ws://localhost:8080/ws/journeys
-</code></pre></div></p>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># WebSocket connection for live updates</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>wscat<span class="w"> </span>-c<span class="w"> </span>ws://localhost:8080/ws/journeys
+</span></code></pre></div></p>
 </li>
 <li>
 <p><strong>View Business Metrics</strong>
-   <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:8080/api/metrics/journey/summary
-</code></pre></div></p>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>http://localhost:8080/api/metrics/journey/summary
+</span></code></pre></div></p>
 </li>
 </ol>
 <h3 id="journey-configuration-options">Journey Configuration Options<a class="headerlink" href="#journey-configuration-options" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;persona&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Karen|Raj|Alex|Sophia&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;journey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ecommerce|insurance|saas|enterprise&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;errorRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0-20</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;thinkTimeMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000-5000</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;iterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1-100</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;includeErrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;generateLoadRunner&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;persona&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Karen|Raj|Alex|Sophia&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;journey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ecommerce|insurance|saas|enterprise&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;errorRate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0-20</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;thinkTimeMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000-5000</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&quot;iterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1-100</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&quot;includeErrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">&quot;generateLoadRunner&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="performance-load-testing">📊 Performance &amp; Load Testing<a class="headerlink" href="#performance-load-testing" title="Permanent link">#</a></h2>
 <p>Each journey automatically generates LoadRunner scripts for performance testing:</p>
 <h3 id="generated-artifacts">Generated Artifacts<a class="headerlink" href="#generated-artifacts" title="Permanent link">#</a></h3>
@@ -707,12 +712,12 @@ wscat<span class="w"> </span>-c<span class="w"> </span>ws://localhost:8080/ws/jo
 <li><strong>Correlation Rules</strong>: Dynamic value extraction</li>
 </ul>
 <h3 id="load-test-scenarios">Load Test Scenarios<a class="headerlink" href="#load-test-scenarios" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Light Load - 10 users, 5min ramp</span>
-<span class="c1"># Medium Load - 50 users, 10min ramp  </span>
-<span class="c1"># Heavy Load - 200 users, 15min ramp</span>
-<span class="c1"># Spike Test - 500 users, 1min spike</span>
-<span class="c1"># Stress Test - 1000 users, sustained</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Light Load - 10 users, 5min ramp</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Medium Load - 50 users, 10min ramp  </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Heavy Load - 200 users, 15min ramp</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Spike Test - 500 users, 1min spike</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Stress Test - 1000 users, sustained</span>
+</span></code></pre></div>
 <h2 id="advanced-error-simulation">🎪 Advanced Error Simulation<a class="headerlink" href="#advanced-error-simulation" title="Permanent link">#</a></h2>
 <p>Test observability and resilience with realistic failure patterns:</p>
 <h3 id="error-categories">Error Categories<a class="headerlink" href="#error-categories" title="Permanent link">#</a></h3>
@@ -723,25 +728,25 @@ wscat<span class="w"> </span>-c<span class="w"> </span>ws://localhost:8080/ws/jo
 <li><strong>Network Problems</strong>: Connectivity, DNS, SSL certificate issues</li>
 </ul>
 <h3 id="error-configuration">Error Configuration<a class="headerlink" href="#error-configuration" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/simulate/error<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;type&quot;: &quot;payment_gateway_timeout&quot;,</span>
-<span class="s1">    &quot;severity&quot;: &quot;high&quot;,</span>
-<span class="s1">    &quot;duration&quot;: &quot;5m&quot;,</span>
-<span class="s1">    &quot;affectedPersona&quot;: &quot;Karen&quot;,</span>
-<span class="s1">    &quot;impactRevenue&quot;: true</span>
-<span class="s1">  }&#39;</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/api/simulate/error<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="s1">    &quot;type&quot;: &quot;payment_gateway_timeout&quot;,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="s1">    &quot;severity&quot;: &quot;high&quot;,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="s1">    &quot;duration&quot;: &quot;5m&quot;,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="s1">    &quot;affectedPersona&quot;: &quot;Karen&quot;,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="s1">    &quot;impactRevenue&quot;: true</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="s1">  }&#39;</span>
+</span></code></pre></div>
 <h2 id="business-intelligence-dashboard">📈 Business Intelligence Dashboard<a class="headerlink" href="#business-intelligence-dashboard" title="Permanent link">#</a></h2>
 <p>Monitor journey performance with comprehensive business metrics:</p>
-<div class="highlight"><pre><span></span><code>📊 Journey Performance Dashboard
-├─ 💰 Total Revenue: $1,247.50 (↑12.3%)
-├─ 📈 Overall Conversion: 73.2% (↓2.1%)
-├─ 😊 Avg Satisfaction: 4.3/5 (↑0.2)
-├─ ⏱️ Avg Duration: 8.4 min (↓1.2 min)
-├─ 🔄 Active Sessions: 12
-└─ 🎯 Top Performer: Sophia (91% conversion)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>📊 Journey Performance Dashboard
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├─ 💰 Total Revenue: $1,247.50 (↑12.3%)
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├─ 📈 Overall Conversion: 73.2% (↓2.1%)
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>├─ 😊 Avg Satisfaction: 4.3/5 (↑0.2)
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>├─ ⏱️ Avg Duration: 8.4 min (↓1.2 min)
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>├─ 🔄 Active Sessions: 12
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>└─ 🎯 Top Performer: Sophia (91% conversion)
+</span></code></pre></div>
 <h2 id="next-steps">🔗 Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <p>Explore the detailed persona documentation to understand each customer type's specific behaviors, preferences, and journey patterns:</p>
 <div class="grid cards">
@@ -780,6 +785,8 @@ wscat<span class="w"> </span>-c<span class="w"> </span>ws://localhost:8080/ws/jo
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -792,6 +799,8 @@ wscat<span class="w"> </span>-c<span class="w"> </span>ws://localhost:8080/ws/jo
       </main>
       
         <footer class="md-footer">
+  
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -815,7 +824,7 @@ wscat<span class="w"> </span>-c<span class="w"> </span>ws://localhost:8080/ws/jo
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.top", "navigation.sections", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
