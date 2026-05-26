@@ -1,4 +1,3 @@
---8<-- "snippets/4-advanced-features.js"
 
 # Advanced Features
 

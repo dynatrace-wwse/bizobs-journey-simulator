@@ -1,4 +1,3 @@
---8<-- "snippets/getting-started.js"
 
 ## 1. Prerequisites & Environment Setup
 

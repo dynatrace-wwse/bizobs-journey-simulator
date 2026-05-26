@@ -1,4 +1,3 @@
---8<-- "snippets/journey1-azure-enterprise.js"
 
 # 🛤️ Journey 1: Microsoft Azure Enterprise Purchase
 

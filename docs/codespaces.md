@@ -1,4 +1,3 @@
---8<-- "snippets/codespaces.js"
 
 ## Launch GitHub Codespaces
 
