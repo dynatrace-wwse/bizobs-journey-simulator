@@ -1,4 +1,3 @@
---8<-- "snippets/7-whats-next.js"
 
 # What's Next?
 

@@ -1,4 +1,3 @@
---8<-- "snippets/4-dynatrace-visualization.js"
 
 # Visualizing Data in Dynatrace
 

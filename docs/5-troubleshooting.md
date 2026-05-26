@@ -1,4 +1,3 @@
---8<-- "snippets/5-troubleshooting.js"
 
 # Troubleshooting
 

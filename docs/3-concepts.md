@@ -1,4 +1,3 @@
---8<-- "snippets/3-creating-journeys.js"
 
 # Creating Your Customer Journey
 
